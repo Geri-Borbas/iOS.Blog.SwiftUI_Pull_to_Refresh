@@ -42,40 +42,40 @@ struct RefreshControl: UIViewRepresentable {
     let isRefreshing: Binding<Bool>
     let onValueChanged: () -> Void
     
-    func makeUIView(context: Context) -> RefreshControlView {
-        RefreshControlView(isRefreshing, onValueChanged)
+    public func makeCoordinator() -> RefreshControlCoordinator {
+        return RefreshControlCoordinator(isRefreshing: self.isRefreshing, onValueChanged: self.onValueChanged)
     }
     
-    func updateUIView(_ refreshControlView: RefreshControlView, context: Context) {
-        refreshControlView.addRefreshControlIfNeeded()
+    func makeUIView(context: Context) -> UIView {
+        UIView(frame: .zero)
+    }
+    
+    func updateUIView(_ uiView: UIView, context: Context) {
+        context.coordinator.addRefreshControlIfNeeded(for: uiView)
         if isRefreshing.wrappedValue == false {
-            refreshControlView.endRefreshing()
+            context.coordinator.endRefreshing()
         }
     }
 }
 
 
 /// A `UIView` subclass that communicates with the `UIRefreshControl` instance.
-class RefreshControlView: UIView {
+class RefreshControlCoordinator: NSObject {
     
     let isRefreshing: Binding<Bool>
     let onValueChanged: () -> Void
+    
     weak var refreshControl: UIRefreshControl?
     
-    init(_ isRefreshing: Binding<Bool>, _ onValueChanged: @escaping () -> Void) {
+    init(isRefreshing: Binding<Bool>, onValueChanged: @escaping () -> Void) {
         self.isRefreshing = isRefreshing
         self.onValueChanged = onValueChanged
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     /// Adds a `UIRefreshControl` to the first `UIScrollView` found amongst the ancestor views.
-    func addRefreshControlIfNeeded() {
+    func addRefreshControlIfNeeded(for view: UIView) {
         if self.refreshControl == nil {
-            self.searchViewAnchestorsFor { (scrollView: UIScrollView) in
+            view.searchViewAnchestorsFor { (scrollView: UIScrollView) in
                 scrollView.refreshControl = UIRefreshControl().withTarget(
                     self,
                     action: #selector(self.onValueChangedAction),
