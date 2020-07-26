@@ -1,36 +1,33 @@
-# SwiftUI Search Bar in Navigation Bar
-🔍 SwiftUI search bar in the navigation bar.
+# SwiftUI Pull to Refresh
+⇣ SwiftUI Pull to Refresh in 100 lines of code.
 
 
-<p align="center"><img src="SwiftUI_Search_Bar_in_Navigation_Bar/Documentation/SwiftUI_Search_Bar_in_Navigation_Bar@2x.png" width="900"></p>
-
-Complementary repository for article [**SwiftUI Search Bar in the Navigation Bar**]. For more details on motivations and implementation please refer to the full article, or lookup the basic usage example below otherwise.
+Complementary repository for article [**SwiftUI Pull to Refresh**] (in progress). See [`ContentView.swift`] for usage, and [`RefreshControl.swift`] for the source.
 
 ```Swift
-struct ContentView: View
-{
+struct ContentView: View {
     
-    var planets =
-        ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"] +
-        ["Ceres", "Pluto", "Haumea", "Makemake", "Eris"]
-    
-    @ObservedObject var searchBar: SearchBar = SearchBar()
+    @State var isRefreshing: Bool = false
     
     var body: some View {
-        NavigationView {
-            List {                
-                ForEach(
-                    planets.filter {
-                        searchBar.text.isEmpty ||
-                        $0.localizedStandardContains(searchBar.text)
-                    },
-                    id: \.self
-                ) { eachPlanet in
-                    Text(eachPlanet)
-                }
+        List {
+            RefreshControl(isRefreshing: $isRefreshing) {
+                self.refresh()
             }
-                .navigationBarTitle("Planets")
-                .add(self.searchBar)
+            ForEach(1...100, id: \.self) { eachRowIndex in
+                Text("Row \(eachRowIndex)")
+            }
+                .opacity(isRefreshing ? 0.2 : 1.0)
+        }
+            .onAppear {
+                self.isRefreshing = true
+                self.refresh()
+            }
+    }
+    
+    func refresh() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            self.isRefreshing = false
         }
     }
 }
@@ -41,7 +38,6 @@ struct ContentView: View
 
 > Licensed under the [**MIT License**](https://en.wikipedia.org/wiki/MIT_License).
 
+[`ContentView.swift`]: SwiftUI_Pull_to_Refresh/Views/ContentView.swift.swift
+[`RefreshControl.swift`]: SwiftUI_Pull_to_Refresh/Views/RefreshControl.swift.swift
 
-[**SwiftUI Search Bar in the Navigation Bar**]: http://blog.eppz.eu/swiftui-search-bar-in-the-navigation-bar
-[`SearchBar/SearchBar.swift`]: SwiftUI_Search_Bar_in_Navigation_Bar/SearchBar/SearchBar.swift
-[`ContentView.swift`]: SwiftUI_Search_Bar_in_Navigation_Bar/ContentView.swift

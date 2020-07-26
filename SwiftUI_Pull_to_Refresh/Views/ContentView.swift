@@ -14,20 +14,13 @@ struct ContentView: View {
     
     var body: some View {
         List {
-            
             RefreshControl(isRefreshing: $isRefreshing) {
                 self.refresh()
             }
-            
-            ForEach(
-                1...100,
-                id: \.self,
-                content: { eachRowIndex in
-                    Text("Row \(eachRowIndex)")
-                }
-            )
+            ForEach(1...100, id: \.self) { eachRowIndex in
+                Text("Row \(eachRowIndex)")
+            }
                 .opacity(isRefreshing ? 0.2 : 1.0)
-            
         }
             .onAppear {
                 self.isRefreshing = true
