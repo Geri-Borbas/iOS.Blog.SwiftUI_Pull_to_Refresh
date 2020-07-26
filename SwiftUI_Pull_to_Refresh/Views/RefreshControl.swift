@@ -1,65 +1,39 @@
 //
-//  ContentView.swift
+//  RefreshControl.swift
 //  SwiftUI_Pull_to_Refresh
 //
-//  Created by Geri Borbás on 2020. 07. 25..
+//  Created by Geri Borbás on 2020. 07. 26..
 //
 
 import SwiftUI
 
 
-struct ContentView: View {
-    
-    @State var isRefreshing: Bool = false
-    
-    var body: some View {
-        List {
-            
-            // Refresh control.
-            RefreshControl(isRefreshing: $isRefreshing) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                        self.isRefreshing = false
-                }
-            }
-            
-            // Rows.
-            ForEach(
-                1...100,
-                id: \.self,
-                content: { eachRowIndex in
-                    Text("Row \(eachRowIndex)")
-                }
-            )
-            .opacity(isRefreshing ? 0.2 : 1.0)
-        }
-    }
-}
-
-
-/// SwiftUI View.
 struct RefreshControl: UIViewRepresentable {
     
     let isRefreshing: Binding<Bool>
     let onValueChanged: () -> Void
-    
+        
     public func makeCoordinator() -> RefreshControlCoordinator {
+        print("RefreshControl.makeCoordinator()")
         return RefreshControlCoordinator(isRefreshing: self.isRefreshing, onValueChanged: self.onValueChanged)
     }
     
     func makeUIView(context: Context) -> UIView {
-        UIView(frame: .zero)
+        print("RefreshControl.makeUIView()")
+        return UIView(frame: .zero)
     }
     
     func updateUIView(_ uiView: UIView, context: Context) {
-        context.coordinator.addRefreshControlIfNeeded(for: uiView)
+        print("RefreshControl.updateUIView()")
         if isRefreshing.wrappedValue == false {
-            context.coordinator.endRefreshing()
+            context.coordinator.refreshControl?.endRefreshing()
         }
+        context.coordinator.addRefreshControlIfNeeded(for: uiView)
     }
 }
 
 
-/// A `UIView` subclass that communicates with the `UIRefreshControl` instance.
+/// An `NSObject` that communicates with the `UIRefreshControl` instance.
 class RefreshControlCoordinator: NSObject {
     
     let isRefreshing: Binding<Bool>
@@ -92,6 +66,7 @@ class RefreshControlCoordinator: NSObject {
     }
     
     func endRefreshing() {
+        self.isRefreshing.wrappedValue = false
         self.refreshControl?.endRefreshing()
     }
 }

@@ -17,7 +17,7 @@
 		551C492C24CC691A007C7C03 /* SwiftUI_Pull_to_RefreshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551C492B24CC691A007C7C03 /* SwiftUI_Pull_to_RefreshUITests.swift */; };
 		551C493B24CC69D4007C7C03 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 551C493924CC69D4007C7C03 /* README.md */; };
 		551C493C24CC69D4007C7C03 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 551C493A24CC69D4007C7C03 /* .swiftlint.yml */; };
-		551C494124CC6FA2007C7C03 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551C494024CC6FA2007C7C03 /* UIView+Extensions.swift */; };
+		55BDEC4F24CCF92400225C07 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEC4E24CCF92400225C07 /* RefreshControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		551C492D24CC691A007C7C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		551C493924CC69D4007C7C03 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		551C493A24CC69D4007C7C03 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		551C494024CC6FA2007C7C03 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		55BDEC4E24CCF92400225C07 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +107,9 @@
 		551C490824CC690E007C7C03 /* SwiftUI_Pull_to_Refresh */ = {
 			isa = PBXGroup;
 			children = (
-				551C494024CC6FA2007C7C03 /* UIView+Extensions.swift */,
+				55BDEC5024CD07E100225C07 /* Views */,
 				551C490924CC690E007C7C03 /* AppDelegate.swift */,
 				551C490B24CC690E007C7C03 /* SceneDelegate.swift */,
-				551C490D24CC690E007C7C03 /* ContentView.swift */,
 				551C490F24CC6918007C7C03 /* Assets.xcassets */,
 				551C491424CC6918007C7C03 /* LaunchScreen.storyboard */,
 				551C491724CC6918007C7C03 /* Info.plist */,
@@ -143,6 +142,15 @@
 				551C492D24CC691A007C7C03 /* Info.plist */,
 			);
 			path = SwiftUI_Pull_to_RefreshUITests;
+			sourceTree = "<group>";
+		};
+		55BDEC5024CD07E100225C07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				551C490D24CC690E007C7C03 /* ContentView.swift */,
+				55BDEC4E24CCF92400225C07 /* RefreshControl.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,7 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				551C490A24CC690E007C7C03 /* AppDelegate.swift in Sources */,
-				551C494124CC6FA2007C7C03 /* UIView+Extensions.swift in Sources */,
+				55BDEC4F24CCF92400225C07 /* RefreshControl.swift in Sources */,
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
 				551C490E24CC690E007C7C03 /* ContentView.swift in Sources */,
 			);
