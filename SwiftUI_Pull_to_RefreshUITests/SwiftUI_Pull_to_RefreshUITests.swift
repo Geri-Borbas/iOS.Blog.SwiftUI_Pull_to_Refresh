@@ -6,37 +6,78 @@
 //
 
 import XCTest
+import CoreGraphics
 
 class SwiftUI_Pull_to_RefreshUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        disableQuiescenceWaiting()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testRefreshControlAfterScrollOffScreen() throws {
+        
+        // App.
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        // Wait 3 seconds.
+        app.press(forDuration: 3)
+        
+        // Pull to refresh.
+        app.row("Row 1").drag(to: CGVector(dx: 0, dy: 10))
+        
+        // Refresh control should be appeared.
+        XCTAssertTrue(
+            app.refreshControl.waitForExistence(timeout: 1),
+            "Refresh control should be appeared."
+        )
+        
+        // Scroll off-screen.
+        let dragAmount = 20
+        app.row("Row 1").drag(to: CGVector(dx: 0, dy: -dragAmount))
+        app.row("Row 10").drag(to: CGVector(dx: 0, dy: dragAmount))
+        
+        // Pull to refresh.
+        app.row("Row 1").drag(to: CGVector(dx: 0, dy: 10))
+        
+        // Refresh control should be disappeared (within 3 seconds).
+        XCTAssertTrue(
+            app.refreshControl.waitForNonExistence(timeout: 6),
+            "Refresh control should be disappeared (within 3 seconds)."
+        )
     }
+}
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+extension XCUIApplication {
+    
+    func row(_ name: String) -> XCUIElement {
+        self.tables.cells[name].children(matching: .other).element(boundBy: 0)
+    }
+    
+    var refreshControl: XCUIElement {
+        self.otherElements["RefreshControl"]
+    }
+}
+
+extension XCUIElement {
+    
+    func drag(to vector: CGVector) {
+        self.coordinate(withNormalizedOffset: CGVector())
+            .press(
+                forDuration: 0,
+                thenDragTo: self.coordinate(withNormalizedOffset: vector)
+            )
+    }
+    
+    func waitForNonExistence(timeout: TimeInterval) -> Bool {
+        return XCTWaiter()
+            .wait(
+                for: [
+                    XCTNSPredicateExpectation(
+                        predicate: NSPredicate(format: "exists == false"),
+                        object: self)
+                ],
+                timeout: timeout
+            ) == .completed
     }
 }
