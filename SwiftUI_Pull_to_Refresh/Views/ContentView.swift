@@ -7,30 +7,61 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
     
-    @State var isRefreshing: Bool = false
+    @ObservedObject var refreshControl_1: RefreshControl = RefreshControl()
+    @ObservedObject var refreshControl_2: RefreshControl = RefreshControl()
     
+    @ViewBuilder
     var body: some View {
+        
         List {
-            RefreshControl(isRefreshing: $isRefreshing) {
-                self.refresh()
-            }
+            RefreshControlInjector(
+                refreshControl: self.refreshControl_1,
+                onValueChanged: {
+                self.refresh_1()
+            })
             ForEach(1...100, id: \.self) { eachRowIndex in
                 Text("Row \(eachRowIndex)")
             }
-                .opacity(isRefreshing ? 0.2 : 1.0)
+                .opacity(self.refreshControl_1.isRefreshing ? 0.2 : 1.0)
         }
-            .onAppear {
-                self.isRefreshing = true
-                self.refresh()
+        
+        List {
+            RefreshControlInjector(
+                refreshControl: self.refreshControl_2,
+                onValueChanged: {
+                self.refresh_2()
+            })
+            ForEach(1...100, id: \.self) { eachRowIndex in
+                Text("Row \(eachRowIndex)")
             }
+                .opacity(self.refreshControl_2.isRefreshing ? 0.2 : 1.0)
+        }
     }
     
-    func refresh() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.isRefreshing = false
+    func refresh_1() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.refreshControl_1.isRefreshing = false
         }
+    }
+    
+    func refresh_2() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.refreshControl_2.isRefreshing = false
+        }
+    }
+}
+
+struct RefreshControlInjector: View {
+    
+    var refreshControl: RefreshControl
+    let onValueChanged: () -> Void
+    
+    var body: some View {
+        ScrollViewResolver(onResolve: { (scrollView: UIScrollView) in
+            self.refreshControl.add(to: scrollView)
+            self.refreshControl.add(onValueChanged: onValueChanged)
+        })
     }
 }

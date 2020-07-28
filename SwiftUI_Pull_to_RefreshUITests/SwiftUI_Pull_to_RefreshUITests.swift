@@ -20,15 +20,15 @@ class SwiftUI_Pull_to_RefreshUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        // Wait 3 seconds.
-        app.press(forDuration: 3)
+        // Wait 2 seconds.
+        app.press(forDuration: 2)
         
         // Pull to refresh.
         app.row("Row 1").drag(to: CGVector(dx: 0, dy: 10))
         
         // Refresh control should be appeared.
         XCTAssertTrue(
-            app.refreshControl.waitForExistence(timeout: 1),
+            app.refreshControl.waitForExistence(timeout: 2),
             "Refresh control should be appeared."
         )
         
@@ -40,10 +40,10 @@ class SwiftUI_Pull_to_RefreshUITests: XCTestCase {
         // Pull to refresh.
         app.row("Row 1").drag(to: CGVector(dx: 0, dy: 10))
         
-        // Refresh control should be disappeared (within 3 seconds).
+        // Refresh control should be disappeared (within 1 seconds).
         XCTAssertTrue(
-            app.refreshControl.waitForNonExistence(timeout: 6),
-            "Refresh control should be disappeared (within 3 seconds)."
+            app.refreshControl.waitForNonExistence(timeout: 2),
+            "Refresh control should be disappeared (within 1 seconds)."
         )
     }
 }

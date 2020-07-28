@@ -6,79 +6,92 @@
 //
 
 import SwiftUI
+import Combine
 
-
-struct RefreshControl: UIViewRepresentable {
+class RefreshControl: ObservableObject {
     
-    let isRefreshing: Binding<Bool>
-    let onValueChanged: () -> Void
-        
-    public func makeCoordinator() -> RefreshControlCoordinator {
-        print("RefreshControl.\(#function)")
-        return RefreshControlCoordinator(isRefreshing: self.isRefreshing, onValueChanged: self.onValueChanged)
-    }
-    
-    func makeUIView(context: Context) -> UIView {
-        print("RefreshControl.\(#function)")
-        return UIView(frame: .zero)
-    }
-    
-    func updateUIView(_ uiView: UIView, context: Context) {
-        print("RefreshControl.\(#function)")
-        if isRefreshing.wrappedValue == false {
-            let refreshControl = context.coordinator.refreshControl(for: uiView)
-            print("refreshControl = \(String(describing: refreshControl))")
-            refreshControl?.endRefreshing()
-        }
-    }
-}
-
-
-/// An `NSObject` that communicates with the `UIRefreshControl` instance.
-class RefreshControlCoordinator: NSObject {
-    
-    let isRefreshing: Binding<Bool>
-    let onValueChanged: () -> Void
+    var onValueChanged: (() -> Void)?
+    @Published /* private(set) */ var isRefreshing: Bool = false
     
     private weak var refreshControl: UIRefreshControl?
+    private var subscribers: Set<AnyCancellable> = []
     
-    init(isRefreshing: Binding<Bool>, onValueChanged: @escaping () -> Void) {
-        print("RefreshControlCoordinator.\(#function)")
-        self.isRefreshing = isRefreshing
+    func add(onValueChanged: @escaping () -> Void) {
         self.onValueChanged = onValueChanged
     }
     
-    /// Lazily adds (and returns) a `UIRefreshControl` to the first
-    /// `UIScrollView` found amongst the ancestor views if needed.
-    func refreshControl(for view: UIView) -> UIRefreshControl? {
-        if self.refreshControl == nil {
-            view.searchViewAnchestorsFor { (scrollView: UIScrollView) in
-                scrollView.refreshControl = UIRefreshControl().withTarget(
-                    self,
-                    action: #selector(self.onValueChangedAction),
-                    for: .valueChanged
-                ).testable(as: "RefreshControl")
-                self.refreshControl = scrollView.refreshControl
+    init() {
+        $isRefreshing.removeDuplicates().sink { (isRefreshing: Bool) in
+            if isRefreshing == false {
+                self.refreshControl?.endRefreshing()
             }
-        }
-        return self.refreshControl
+        }.store(in: &subscribers)
     }
     
-    @objc func onValueChangedAction() {
-        print("RefreshControlCoordinator.\(#function)")
-        self.isRefreshing.wrappedValue = true
-        self.onValueChanged()
+    /// Adds (and stores) a `UIRefreshControl` to the `UIScrollView` provided.
+    func add(to scrollView: UIScrollView) {
+        print("RefreshControl.\(#function)")
+        
+        // Only if not added already.
+        guard self.refreshControl == nil else { return }
+        
+        // Create then add to scroll view.
+        scrollView.refreshControl = UIRefreshControl().withTarget(
+            self,
+            action: #selector(self.onValueChangedAction),
+            for: .valueChanged
+        ).testable(as: "RefreshControl")
+        
+        // Reference (weak).
+        self.refreshControl = scrollView.refreshControl
     }
     
-    func endRefreshing() {
-        print("RefreshControlCoordinator.\(#function)")
-        self.isRefreshing.wrappedValue = false
-        self.refreshControl?.endRefreshing()
+    @objc private func onValueChangedAction() {
+        print("RefreshControl.\(#function)")
+        self.isRefreshing = true
+        self.onValueChanged?()
     }
     
     deinit {
         print("RefreshControlCoordinator.\(#function)")
+        subscribers.removeAll()
     }
+}
+
+
+struct ScrollViewResolver: UIViewRepresentable {
+    
+    let onResolve: (UIScrollView) -> Void
+    
+    func makeCoordinator() -> ScrollViewResolverCoordinator {
+        ScrollViewResolverCoordinator()
+    }
+    
+    func makeUIView(context: Context) -> UIView {
+        print("RefreshControl.\(#function)")
+        let view = UIView(frame: .zero)
+        view.isHidden = true
+        view.isUserInteractionEnabled = false
+        return view
+    }
+    
+    func updateUIView(_ view: UIView, context: Context) {
+        
+        // Only if not resolved yet.
+        guard context.coordinator.scrollView == nil else { return }
+        
+        // Lookup view ancestry for any `UIScrollView`.
+        view.searchViewAnchestorsFor { (scrollView: UIScrollView) in
+            print("view.searchViewAnchestorsFor(scrollView: \(scrollView)")
+            self.onResolve(scrollView)
+            context.coordinator.scrollView = scrollView
+        }
+    }
+}
+
+class ScrollViewResolverCoordinator: NSObject {
+    
+    var scrollView: UIScrollView?
 }
 
 
@@ -112,5 +125,17 @@ extension UIView {
         } else {
             superview?.searchViewAnchestorsFor(onViewFound)
         }
+    }
+    
+    func printViewHierarchyInformation(_ level: Int = 0) {
+        printViewInformation(level)
+        self.subviews.forEach { $0.printViewHierarchyInformation(level + 1) }
+    }
+        
+    func printViewInformation(_ level: Int) {
+        let leadingWhitespace = String(repeating: "  ", count: level)
+        let className = "\(Self.self)"
+        let superclassName = "\(self.superclass!)"
+        print("\(leadingWhitespace)\(className): \(superclassName)")
     }
 }
