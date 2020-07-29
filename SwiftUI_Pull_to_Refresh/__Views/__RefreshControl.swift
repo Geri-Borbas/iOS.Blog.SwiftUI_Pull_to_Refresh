@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class RefreshControl: ObservableObject {
+class __RefreshControl: ObservableObject {
     
     var onValueChanged: (() -> Void)?
     @Published /* private(set) */ var isRefreshing: Bool = false
@@ -59,12 +59,12 @@ class RefreshControl: ObservableObject {
 }
 
 
-struct ScrollViewResolver: UIViewRepresentable {
+struct __ScrollViewResolver: UIViewRepresentable {
     
     let onResolve: (UIScrollView) -> Void
     
-    func makeCoordinator() -> ScrollViewResolverCoordinator {
-        ScrollViewResolverCoordinator()
+    func makeCoordinator() -> __ScrollViewResolverCoordinator {
+        __ScrollViewResolverCoordinator()
     }
     
     func makeUIView(context: Context) -> UIView {
@@ -81,15 +81,15 @@ struct ScrollViewResolver: UIViewRepresentable {
         guard context.coordinator.scrollView == nil else { return }
         
         // Lookup view ancestry for any `UIScrollView`.
-        view.searchViewAnchestorsFor { (scrollView: UIScrollView) in
-            print("view.searchViewAnchestorsFor(scrollView: \(scrollView)")
+        if let scrollView = view.searchViewAnchestors(for: UIScrollView.self) {
+            print("🎉")
             self.onResolve(scrollView)
             context.coordinator.scrollView = scrollView
         }
     }
 }
 
-class ScrollViewResolverCoordinator: NSObject {
+class __ScrollViewResolverCoordinator: NSObject {
     
     var scrollView: UIScrollView?
 }
@@ -124,6 +124,24 @@ extension UIView {
             onViewFound(matchingView)
         } else {
             superview?.searchViewAnchestorsFor(onViewFound)
+        }
+    }
+    
+    /// Search ancestral view hierarcy for the given view type.
+    func searchViewAnchestorsFor<ViewType: UIView>() -> ViewType? {
+        if let matchingView = self.superview as? ViewType {
+            return matchingView
+        } else {
+            return superview?.searchViewAnchestorsFor()
+        }
+    }
+    
+    /// Search ancestral view hierarcy for the given view type.
+    func searchViewAnchestors<ViewType: UIView>(for viewType: ViewType.Type) -> ViewType? {
+        if let matchingView = self.superview as? ViewType {
+            return matchingView
+        } else {
+            return superview?.searchViewAnchestors(for: viewType)
         }
     }
     
