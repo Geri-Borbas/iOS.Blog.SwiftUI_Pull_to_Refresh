@@ -136,15 +136,6 @@ extension UIView {
         }
     }
     
-    /// Search ancestral view hierarcy for the given view type.
-    func searchViewAnchestors<ViewType: UIView>(for viewType: ViewType.Type) -> ViewType? {
-        if let matchingView = self.superview as? ViewType {
-            return matchingView
-        } else {
-            return superview?.searchViewAnchestors(for: viewType)
-        }
-    }
-    
     func printViewHierarchyInformation(_ level: Int = 0) {
         printViewInformation(level)
         self.subviews.forEach { $0.printViewHierarchyInformation(level + 1) }

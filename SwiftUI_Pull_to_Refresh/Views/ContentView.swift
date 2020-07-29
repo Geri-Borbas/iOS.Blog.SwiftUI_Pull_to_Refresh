@@ -9,9 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var scrollView: UIScrollView?
+    
     var body: some View {
         
         List {
+            ScrollViewResolver(scrollView: $scrollView)
             ForEach(1...100, id: \.self) { eachRowIndex in
                 Text("Row \(eachRowIndex)")
             }

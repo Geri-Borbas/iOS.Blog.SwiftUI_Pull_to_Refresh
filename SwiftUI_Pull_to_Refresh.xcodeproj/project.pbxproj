@@ -18,6 +18,7 @@
 		551C493C24CC69D4007C7C03 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 551C493A24CC69D4007C7C03 /* .swiftlint.yml */; };
 		55BDEC4F24CCF92400225C07 /* __RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEC4E24CCF92400225C07 /* __RefreshControl.swift */; };
 		55F2D60F24D1032500E3BDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2D60E24D1032500E3BDDF /* ContentView.swift */; };
+		55F2D61224D106CF00E3BDDF /* ScrollViewResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */; };
 		55FD8E6F24CE55260057D91E /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		551C493A24CC69D4007C7C03 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		55BDEC4E24CCF92400225C07 /* __RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __RefreshControl.swift; sourceTree = "<group>"; };
 		55F2D60E24D1032500E3BDDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewResolver.swift; sourceTree = "<group>"; };
 		55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				55F2D60E24D1032500E3BDDF /* ContentView.swift */,
+				55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				551C490A24CC690E007C7C03 /* AppDelegate.swift in Sources */,
 				55F2D60F24D1032500E3BDDF /* ContentView.swift in Sources */,
 				55BDEC4F24CCF92400225C07 /* __RefreshControl.swift in Sources */,
+				55F2D61224D106CF00E3BDDF /* ScrollViewResolver.swift in Sources */,
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
 				551C490E24CC690E007C7C03 /* __ContentView.swift in Sources */,
 			);
