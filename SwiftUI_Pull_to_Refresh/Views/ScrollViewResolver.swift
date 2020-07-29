@@ -9,15 +9,20 @@ import SwiftUI
 
 struct ScrollViewResolver: UIViewRepresentable {
     
+    @Binding var viewController: UIViewController?
     @Binding var scrollView: UIScrollView?
     
     func makeUIView(context: Context) -> UIView {
         print("ScrollViewResolver.makeUIView()")
-        return UIView(frame: .zero)
+        return UIView(frame: .zero).testable(as: "ScrollViewResolver")
     }
     
     func updateUIView(_ view: UIView, context: Context) {
         print("ScrollViewResolver.updateUIView()")
+        
+        // Log.
+        print(self.viewController)
+        self.viewController?.view.superview?.printViewHierarchyInformation()
         
         // Only if not resolved yet.
         if let scrollView = self.scrollView {
@@ -53,5 +58,12 @@ extension UIView {
         } else {
             return superview?.searchViewAnchestors(for: viewType)
         }
+    }
+    
+    /// Convinience.
+    func testable(as id: String) -> Self {
+        self.isAccessibilityElement = true
+        self.accessibilityIdentifier = id
+        return self
     }
 }

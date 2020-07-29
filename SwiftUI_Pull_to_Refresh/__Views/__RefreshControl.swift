@@ -106,7 +106,7 @@ extension UIRefreshControl {
     }
     
     /// Convinience method to assign target action inline.
-    func testable(as id: String) -> UIRefreshControl {
+    func testable_(as id: String) -> UIRefreshControl {
         self.isAccessibilityElement = true
         self.accessibilityIdentifier = id
         return self
@@ -142,9 +142,10 @@ extension UIView {
     }
         
     func printViewInformation(_ level: Int) {
-        let leadingWhitespace = String(repeating: "  ", count: level)
+        let leadingWhitespace = String(repeating: "    ", count: level)
         let className = "\(Self.self)"
         let superclassName = "\(self.superclass!)"
-        print("\(leadingWhitespace)\(className): \(superclassName)")
+        let id = (self.accessibilityIdentifier == nil) ? "" : " `\(self.accessibilityIdentifier!)`"
+        print("\(leadingWhitespace)\(className): \(superclassName)\(id)")
     }
 }
