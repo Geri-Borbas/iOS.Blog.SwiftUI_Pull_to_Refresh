@@ -19,6 +19,7 @@ class RefreshControl: ObservableObject, ScrollViewConsumer {
     }
     
     weak var refreshControl: UIRefreshControl?
+    var onValueChanged: (() -> Void)?
     
     /// Adds (and stores) a `UIRefreshControl` to the `UIScrollView` provided.
     func add(to scrollView: UIScrollView) {
@@ -40,5 +41,6 @@ class RefreshControl: ObservableObject, ScrollViewConsumer {
     
     @objc private func onValueChangedAction() {
         print("RefreshControl.\(#function)")
+        self.onValueChanged?()
     }
 }

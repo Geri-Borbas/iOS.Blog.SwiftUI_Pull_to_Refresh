@@ -11,12 +11,19 @@ struct ContentView: View {
     
     let refreshControl: RefreshControl = RefreshControl()
     
-    var body: some View {    
+    var body: some View {
         List {
             ScrollViewResolver(for: refreshControl)
             ForEach(1...100, id: \.self) { eachRowIndex in
                 Text("Row \(eachRowIndex)")
             }
         }
+            .onAppear {
+                self.refreshControl.onValueChanged = {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        self.refreshControl.refreshControl?.endRefreshing()
+                    }
+                }
+            }
     }
 }
