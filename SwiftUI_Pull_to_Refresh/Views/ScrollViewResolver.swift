@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ScrollViewResolver: UIViewRepresentable {
     
-    @Binding var viewController: UIViewController?
-    @Binding var scrollView: UIScrollView?
+    let refreshControl: RefreshControl
     
     func makeUIView(context: Context) -> UIView {
         print("ScrollViewResolver.makeUIView()")
@@ -20,12 +19,8 @@ struct ScrollViewResolver: UIViewRepresentable {
     func updateUIView(_ view: UIView, context: Context) {
         print("ScrollViewResolver.updateUIView()")
         
-        // Log.
-        print(self.viewController)
-        self.viewController?.view.superview?.printViewHierarchyInformation()
-        
         // Only if not resolved yet.
-        if let scrollView = self.scrollView {
+        if let scrollView = refreshControl.scrollView {
             print("Already resolved scrollView: \(scrollView)")
             return
         }
@@ -33,25 +28,14 @@ struct ScrollViewResolver: UIViewRepresentable {
         // Lookup view ancestry for any `UIScrollView` then callback if any.
         if let scrollView = view.searchViewAnchestors(for: UIScrollView.self) {
             print("Resolved scrollView: \(scrollView)")
-            self.scrollView = scrollView
+            refreshControl.scrollView = scrollView
         }
-    }
-}
-
-extension ScrollViewResolver {
-    
-    class Coordinator: NSObject {
-        var scrollView: UIScrollView?
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator()
     }
 }
 
 extension UIView {
     
-    /// Search ancestral view hierarcy for the given view type.
+    /// Search ancestral view hierarchy for the given view type.
     func searchViewAnchestors<ViewType: UIView>(for viewType: ViewType.Type) -> ViewType? {
         if let matchingView = self.superview as? ViewType {
             return matchingView

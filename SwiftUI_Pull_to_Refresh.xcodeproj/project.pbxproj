@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551A6FAC24D2575D0071245A /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551A6FAB24D2575D0071245A /* RefreshControl.swift */; };
 		551C490A24CC690E007C7C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551C490924CC690E007C7C03 /* AppDelegate.swift */; };
 		551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551C490B24CC690E007C7C03 /* SceneDelegate.swift */; };
 		551C490E24CC690E007C7C03 /* __ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551C490D24CC690E007C7C03 /* __ContentView.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		551A6FAB24D2575D0071245A /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		551C490624CC690E007C7C03 /* SwiftUI_Pull_to_Refresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_Pull_to_Refresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		551C490924CC690E007C7C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		551C490B24CC690E007C7C03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				55F2D60E24D1032500E3BDDF /* ContentView.swift */,
 				55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */,
+				551A6FAB24D2575D0071245A /* RefreshControl.swift */,
 				55F2D61324D111FD00E3BDDF /* ViewControllerResolver.swift */,
 			);
 			path = Views;
@@ -274,6 +277,7 @@
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
 				551C490E24CC690E007C7C03 /* __ContentView.swift in Sources */,
 				55F2D61424D111FD00E3BDDF /* ViewControllerResolver.swift in Sources */,
+				551A6FAC24D2575D0071245A /* RefreshControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
