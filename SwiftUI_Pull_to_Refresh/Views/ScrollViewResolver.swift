@@ -7,9 +7,17 @@
 
 import SwiftUI
 
-struct ScrollViewResolver: UIViewRepresentable {
+protocol ScrollViewConsumer: class {
+    var scrollView: UIScrollView? { get set }
+}
+
+struct ScrollViewResolver<ConsumerType: ScrollViewConsumer>: UIViewRepresentable {
     
-    let refreshControl: RefreshControl
+    let consumer: ConsumerType
+    
+    init(for consumer: ConsumerType) {
+        self.consumer = consumer
+    }
     
     func makeUIView(context: Context) -> UIView {
         print("ScrollViewResolver.makeUIView()")
@@ -20,15 +28,15 @@ struct ScrollViewResolver: UIViewRepresentable {
         print("ScrollViewResolver.updateUIView()")
         
         // Only if not resolved yet.
-        if let scrollView = refreshControl.scrollView {
-            print("Already resolved scrollView: \(scrollView)")
+        if consumer.scrollView != nil {
+            print("Already resolved scrollView.")
             return
         }
         
         // Lookup view ancestry for any `UIScrollView` then callback if any.
         if let scrollView = view.searchViewAnchestors(for: UIScrollView.self) {
             print("Resolved scrollView: \(scrollView)")
-            refreshControl.scrollView = scrollView
+            consumer.scrollView = scrollView
         }
     }
 }

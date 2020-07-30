@@ -8,17 +8,19 @@
 import SwiftUI
 import Combine
 
-class RefreshControl: ObservableObject {
+class RefreshControl: ObservableObject, ScrollViewConsumer {
     
-    @Published var scrollView: UIScrollView?
-    private var subscribers: Set<AnyCancellable> = []
+    weak var scrollView: UIScrollView? {
+        didSet {
+            if let scrollView = scrollView {
+                self.add(to: scrollView)
+            }
+        }
+    }
     
-    init() {
-        $scrollView
-            .compactMap { $0 }
-            .removeDuplicates()
-            .sink { (scrollView: UIScrollView) in
-            print("RefreshControl.scrollView: \(scrollView)")
-        }.store(in: &subscribers)
+    /// Adds (and stores) a `UIRefreshControl` to the `UIScrollView` provided.
+    func add(to scrollView: UIScrollView) {
+        print("RefreshControl.\(#function)")
+        print("scrollView: \(scrollView)")
     }
 }

@@ -9,13 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var scrollView: UIScrollView?
     let refreshControl: RefreshControl = RefreshControl()
     
-    var body: some View {
-        
+    var body: some View {    
         List {
-            ScrollViewResolver(refreshControl: refreshControl).background(Color(.gray))
+            ScrollViewResolver(for: refreshControl)
             ForEach(1...100, id: \.self) { eachRowIndex in
                 Text("Row \(eachRowIndex)")
             }
