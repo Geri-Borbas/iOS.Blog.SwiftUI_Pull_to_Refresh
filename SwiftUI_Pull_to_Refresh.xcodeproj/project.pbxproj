@@ -17,6 +17,7 @@
 		551C492C24CC691A007C7C03 /* SwiftUI_Pull_to_RefreshUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551C492B24CC691A007C7C03 /* SwiftUI_Pull_to_RefreshUITests.swift */; };
 		551C493B24CC69D4007C7C03 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 551C493924CC69D4007C7C03 /* README.md */; };
 		551C493C24CC69D4007C7C03 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 551C493A24CC69D4007C7C03 /* .swiftlint.yml */; };
+		5529E98526F4FBCE00CFA9C7 /* ScrollViewMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E98426F4FBCE00CFA9C7 /* ScrollViewMatcher.swift */; };
 		55BDEC4F24CCF92400225C07 /* __RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEC4E24CCF92400225C07 /* __RefreshControl.swift */; };
 		55F2D60F24D1032500E3BDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2D60E24D1032500E3BDDF /* ContentView.swift */; };
 		55F2D61224D106CF00E3BDDF /* ScrollViewResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */; };
@@ -49,6 +50,7 @@
 		551C492D24CC691A007C7C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		551C493924CC69D4007C7C03 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		551C493A24CC69D4007C7C03 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		5529E98426F4FBCE00CFA9C7 /* ScrollViewMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewMatcher.swift; sourceTree = "<group>"; };
 		55BDEC4E24CCF92400225C07 /* __RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __RefreshControl.swift; sourceTree = "<group>"; };
 		55F2D60E24D1032500E3BDDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewResolver.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				55F2D60E24D1032500E3BDDF /* ContentView.swift */,
+				5529E98426F4FBCE00CFA9C7 /* ScrollViewMatcher.swift */,
 				55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */,
 				551A6FAB24D2575D0071245A /* RefreshControl.swift */,
 				55F2D61324D111FD00E3BDDF /* ViewControllerResolver.swift */,
@@ -275,6 +278,7 @@
 				55BDEC4F24CCF92400225C07 /* __RefreshControl.swift in Sources */,
 				55F2D61224D106CF00E3BDDF /* ScrollViewResolver.swift in Sources */,
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
+				5529E98526F4FBCE00CFA9C7 /* ScrollViewMatcher.swift in Sources */,
 				551C490E24CC690E007C7C03 /* __ContentView.swift in Sources */,
 				55F2D61424D111FD00E3BDDF /* ViewControllerResolver.swift in Sources */,
 				551A6FAC24D2575D0071245A /* RefreshControl.swift in Sources */,

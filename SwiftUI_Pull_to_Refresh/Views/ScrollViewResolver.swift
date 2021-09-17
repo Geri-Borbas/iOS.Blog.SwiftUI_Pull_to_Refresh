@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-protocol ScrollViewConsumer: class {
+protocol ScrollViewConsumer: AnyObject {
+	
     var scrollView: UIScrollView? { get set }
 }
 
