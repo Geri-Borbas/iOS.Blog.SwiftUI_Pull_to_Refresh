@@ -10,6 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
 	
+	@State var appleTimeSeries: IntradayTimeSeries = .empty
+	@State var teslaTimeSeries: IntradayTimeSeries = .empty
+	@State var appleIsLoading = false
+	@State var teslaIsLoading = false
+	
 	var body: some View {
 		VStack {
 			HStack {
@@ -18,8 +23,17 @@ struct ContentView: View {
 						Text("Left \(eachRowIndex)")
 					}
 				}
+				.redacted(reason: appleIsLoading ? .placeholder : .init())
 				.refreshControl { refreshControl in
-					Network.refresh {
+					appleIsLoading = true
+					API.get(symbol: "AAPL") { result in
+						switch result {
+						case .success(let response):
+							self.appleTimeSeries = response
+						case .failure(_):
+							break
+						}
+						appleIsLoading = false
 						refreshControl.endRefreshing()
 					}
 				}
@@ -28,11 +42,42 @@ struct ContentView: View {
 						Text("Right \(eachRowIndex)")
 					}
 				}
+				.redacted(reason: teslaIsLoading ? .placeholder : .init())
 				.refreshControl { refreshControl in
-					Network.refresh {
+					teslaIsLoading = true
+					API.get(symbol: "TSLA") { result in
+						switch result {
+						case .success(let response):
+							self.teslaTimeSeries = response
+						case .failure(_):
+							break
+						}
+						teslaIsLoading = false
 						refreshControl.endRefreshing()
 					}
 				}
+			}
+		}
+		.onAppear {
+			appleIsLoading = true
+			API.get(symbol: "AAPL") { result in
+				switch result {
+				case .success(let response):
+					self.appleTimeSeries = response
+				case .failure(_):
+					break
+				}
+				appleIsLoading = false
+			}
+			teslaIsLoading = true
+			API.get(symbol: "TSLA") { result in
+				switch result {
+				case .success(let response):
+					self.teslaTimeSeries = response
+				case .failure(_):
+					break
+				}
+				teslaIsLoading = false
 			}
 		}
 	}

@@ -20,8 +20,9 @@
 		5529E98526F4FBCE00CFA9C7 /* ScrollViewMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E98426F4FBCE00CFA9C7 /* ScrollViewMatcher.swift */; };
 		5529E98726F63F6E00CFA9C7 /* RefreshControlModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E98626F63F6E00CFA9C7 /* RefreshControlModifier.swift */; };
 		5529E98B26F6429800CFA9C7 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E98A26F6429800CFA9C7 /* RefreshControl.swift */; };
-		5529E98D26F646EA00CFA9C7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E98C26F646EA00CFA9C7 /* Network.swift */; };
 		5529E99326F64A3900CFA9C7 /* .editorconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5529E99226F64A3900CFA9C7 /* .editorconfig */; };
+		5529E99626F682FA00CFA9C7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E99526F682FA00CFA9C7 /* API.swift */; };
+		5529E99826F6866E00CFA9C7 /* IntradayTimeSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E99726F6866E00CFA9C7 /* IntradayTimeSeries.swift */; };
 		55BDEC4F24CCF92400225C07 /* __RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDEC4E24CCF92400225C07 /* __RefreshControl.swift */; };
 		55F2D60F24D1032500E3BDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2D60E24D1032500E3BDDF /* ContentView.swift */; };
 		55F2D61224D106CF00E3BDDF /* ScrollViewResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */; };
@@ -57,8 +58,9 @@
 		5529E98426F4FBCE00CFA9C7 /* ScrollViewMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewMatcher.swift; sourceTree = "<group>"; };
 		5529E98626F63F6E00CFA9C7 /* RefreshControlModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlModifier.swift; sourceTree = "<group>"; };
 		5529E98A26F6429800CFA9C7 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
-		5529E98C26F646EA00CFA9C7 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		5529E99226F64A3900CFA9C7 /* .editorconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .editorconfig; sourceTree = "<group>"; };
+		5529E99526F682FA00CFA9C7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5529E99726F6866E00CFA9C7 /* IntradayTimeSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayTimeSeries.swift; sourceTree = "<group>"; };
 		55BDEC4E24CCF92400225C07 /* __RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __RefreshControl.swift; sourceTree = "<group>"; };
 		55F2D60E24D1032500E3BDDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewResolver.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		551C490824CC690E007C7C03 /* SwiftUI_Pull_to_Refresh */ = {
 			isa = PBXGroup;
 			children = (
+				5529E99426F682EF00CFA9C7 /* API */,
 				55F2D61024D1033B00E3BDDF /* Views */,
 				55BDEC5024CD07E100225C07 /* History */,
 				551C490924CC690E007C7C03 /* AppDelegate.swift */,
@@ -138,6 +141,15 @@
 			path = SwiftUI_Pull_to_RefreshUITests;
 			sourceTree = "<group>";
 		};
+		5529E99426F682EF00CFA9C7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5529E99526F682FA00CFA9C7 /* API.swift */,
+				5529E99726F6866E00CFA9C7 /* IntradayTimeSeries.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		55BDEC5024CD07E100225C07 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +165,6 @@
 		55F2D61024D1033B00E3BDDF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5529E98C26F646EA00CFA9C7 /* Network.swift */,
 				55F2D60E24D1032500E3BDDF /* ContentView.swift */,
 				5529E98626F63F6E00CFA9C7 /* RefreshControlModifier.swift */,
 				5529E98A26F6429800CFA9C7 /* RefreshControl.swift */,
@@ -288,14 +299,15 @@
 			files = (
 				551C490A24CC690E007C7C03 /* AppDelegate.swift in Sources */,
 				55F2D60F24D1032500E3BDDF /* ContentView.swift in Sources */,
-				5529E98D26F646EA00CFA9C7 /* Network.swift in Sources */,
 				55BDEC4F24CCF92400225C07 /* __RefreshControl.swift in Sources */,
 				55F2D61224D106CF00E3BDDF /* ScrollViewResolver.swift in Sources */,
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
 				5529E98B26F6429800CFA9C7 /* RefreshControl.swift in Sources */,
 				5529E98526F4FBCE00CFA9C7 /* ScrollViewMatcher.swift in Sources */,
+				5529E99626F682FA00CFA9C7 /* API.swift in Sources */,
 				551C490E24CC690E007C7C03 /* __ContentView.swift in Sources */,
 				55F2D61424D111FD00E3BDDF /* ViewControllerResolver.swift in Sources */,
+				5529E99826F6866E00CFA9C7 /* IntradayTimeSeries.swift in Sources */,
 				5529E98726F63F6E00CFA9C7 /* RefreshControlModifier.swift in Sources */,
 				551A6FAC24D2575D0071245A /* _RefreshControl.swift in Sources */,
 			);
