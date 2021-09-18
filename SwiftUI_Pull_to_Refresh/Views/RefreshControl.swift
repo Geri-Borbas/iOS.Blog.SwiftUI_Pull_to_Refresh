@@ -2,45 +2,50 @@
 //  RefreshControl.swift
 //  SwiftUI_Pull_to_Refresh
 //
-//  Created by Geri Borbás on 2020. 07. 30..
+//  Created by Geri Borbás on 18/09/2021.
 //
 
-import SwiftUI
+import Foundation
+import UIKit
 import Combine
 
-class RefreshControl: ObservableObject, ScrollViewConsumer {
-    
-    weak var scrollView: UIScrollView? {
-        didSet {
-            if let scrollView = scrollView {
-                self.add(to: scrollView)
-            }
-        }
-    }
-    
-    weak var refreshControl: UIRefreshControl?
-    var onValueChanged: (() -> Void)?
-    
-    /// Adds (and stores) a `UIRefreshControl` to the `UIScrollView` provided.
-    func add(to scrollView: UIScrollView) {
-        print("RefreshControl.\(#function)")
-        
-        // Only if not added already.
-        guard self.refreshControl == nil else { return }
 
-        // Create then add to scroll view.
-        scrollView.refreshControl = UIRefreshControl().withTarget(
-            self,
-            action: #selector(self.onValueChangedAction),
-            for: .valueChanged
-        ).testable(as: "RefreshControl")
+class RefreshControl: ObservableObject {
+	
+	let onValueChanged: ((_ refreshControl: UIRefreshControl) -> Void)
+	
+	internal init(onValueChanged: @escaping ((UIRefreshControl) -> Void)) {
+		self.onValueChanged = onValueChanged
+	}
+	
+	/// Adds a `UIRefreshControl` to the `UIScrollView` provided.
+	func add(to scrollView: UIScrollView) {
+		scrollView.refreshControl = UIRefreshControl().withTarget(
+			self,
+			action: #selector(self.onValueChangedAction),
+			for: .valueChanged
+		).testable(as: "RefreshControl")
+	}
+	
+	@objc private func onValueChangedAction(sender: UIRefreshControl) {
+		print("RefreshControl.\(#function)")
+		self.onValueChanged(sender)
+	}
+}
 
-        // Reference (weak).
-        self.refreshControl = scrollView.refreshControl
-    }
-    
-    @objc private func onValueChangedAction() {
-        print("RefreshControl.\(#function)")
-        self.onValueChanged?()
-    }
+
+extension UIRefreshControl {
+	
+	/// Convinience method to assign target action inline.
+	func withTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) -> UIRefreshControl {
+		self.addTarget(target, action: action, for: controlEvents)
+		return self
+	}
+	
+	/// Convinience method to match refresh control for UI testing.
+	func testable_(as id: String) -> UIRefreshControl {
+		self.isAccessibilityElement = true
+		self.accessibilityIdentifier = id
+		return self
+	}
 }

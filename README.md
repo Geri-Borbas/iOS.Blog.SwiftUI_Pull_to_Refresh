@@ -1,35 +1,38 @@
 # SwiftUI Pull to Refresh
-⇣ SwiftUI Pull to Refresh in 100 lines of code.
+⇣ SwiftUI Pull to Refresh (for iOS 13 and iOS 14) condensed into a single modifier.
 
 
-Complementary repository for article [**SwiftUI Pull to Refresh**] (in progress). See [`ContentView.swift`] for usage, and [`RefreshControl.swift`] for the source.
+Complementary repository for article [**SwiftUI Pull to Refresh**] (in progress). See [`ContentView.swift`] for usage, and [`RefreshControlModifier.swift`] for the source. Designed to work with **multiple scroll views** on the same screen.
 
 ```Swift
 struct ContentView: View {
-    
-    @State var isRefreshing: Bool = false
-    
-    var body: some View {
-        List {
-            RefreshControl(isRefreshing: $isRefreshing) {
-                self.refresh()
-            }
-            ForEach(1...100, id: \.self) { eachRowIndex in
-                Text("Row \(eachRowIndex)")
-            }
-                .opacity(isRefreshing ? 0.2 : 1.0)
-        }
-            .onAppear {
-                self.isRefreshing = true
-                self.refresh()
-            }
-    }
-    
-    func refresh() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.isRefreshing = false
-        }
-    }
+	
+	var body: some View {
+		VStack {
+			HStack {
+				List {
+					ForEach(1...100, id: \.self) { eachRowIndex in
+						Text("Left \(eachRowIndex)")
+					}
+				}
+				.refreshControl { refreshControl in
+					Network.refresh {
+						refreshControl.endRefreshing()
+					}
+				}
+				List {
+					ForEach(1...100, id: \.self) { eachRowIndex in
+						Text("Right \(eachRowIndex)")
+					}
+				}
+				.refreshControl { refreshControl in
+					Network.refresh {
+						refreshControl.endRefreshing()
+					}
+				}
+			}
+		}
+	}
 }
 ```
 

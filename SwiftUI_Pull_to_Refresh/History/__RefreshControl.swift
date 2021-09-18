@@ -95,25 +95,6 @@ class __ScrollViewResolverCoordinator: NSObject {
 }
 
 
-// MARK: - Extensions
-
-extension UIRefreshControl {
-    
-    /// Convinience method to assign target action inline.
-    func withTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) -> UIRefreshControl {
-        self.addTarget(target, action: action, for: controlEvents)
-        return self
-    }
-    
-    /// Convinience method to assign target action inline.
-    func testable_(as id: String) -> UIRefreshControl {
-        self.isAccessibilityElement = true
-        self.accessibilityIdentifier = id
-        return self
-    }
-}
-
-
 extension UIView {
     
     /// Search ancestral view hierarcy for the given view type.

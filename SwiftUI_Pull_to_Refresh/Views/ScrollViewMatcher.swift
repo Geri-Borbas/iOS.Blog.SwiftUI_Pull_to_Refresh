@@ -11,36 +11,34 @@ import SwiftUI
 
 final class ScrollViewMatcher: UIViewControllerRepresentable {
 	
-	let onResolve: (UIScrollView) -> Void
-	@Binding var frame: CGRect
+	let onMatch: (UIScrollView) -> Void
+	@Binding var globalFrame: CGRect
 		
-	init(onResolve: @escaping (UIScrollView) -> Void, frame: Binding<CGRect>) {
-		self.onResolve = onResolve
-		self._frame = frame
+	init(onResolve: @escaping (UIScrollView) -> Void, geometryReaderFrame: Binding<CGRect>) {
+		self.onMatch = onResolve
+		self._globalFrame = geometryReaderFrame
 	}
 	
 	func makeUIViewController(context: Context) -> ScrollViewMatcherViewController {
-		ScrollViewMatcherViewController(onResolve: onResolve, frame: $frame)
+		ScrollViewMatcherViewController(onResolve: onMatch, geometryReaderFrame: $globalFrame)
 	}
 	
-	func updateUIViewController(_ uiViewController: ScrollViewMatcherViewController, context: Context) {
-		// context
-	}
+	func updateUIViewController(_ uiViewController: ScrollViewMatcherViewController, context: Context) { }
 }
 
 class ScrollViewMatcherViewController: UIViewController {
 	
-	let onResolve: (UIScrollView) -> Void
-	@Binding var frame: CGRect
+	let onMatch: (UIScrollView) -> Void
+	@Binding var geometryReaderFrame: CGRect
 	
-	init(onResolve: @escaping (UIScrollView) -> Void, frame: Binding<CGRect>) {
-		self.onResolve = onResolve
-		self._frame = frame
+	init(onResolve: @escaping (UIScrollView) -> Void, geometryReaderFrame: Binding<CGRect>) {
+		self.onMatch = onResolve
+		self._geometryReaderFrame = geometryReaderFrame
 		super.init(nibName: nil, bundle: nil)
 	}
 	
 	required init?(coder: NSCoder) {
-		fatalError("Use init(onResolve:) to instantiate ParentResolverViewController.")
+		fatalError("Use init(onMatch:) to instantiate ScrollViewMatcherViewController.")
 	}
 		
 	override func didMove(toParent parent: UIViewController?) {
@@ -48,28 +46,47 @@ class ScrollViewMatcherViewController: UIViewController {
 		
 		if let parent = parent {
 			
-			print("view.frame: \(view.frame)")
-			
 			if let scrollViewsInHierarchy: [UIScrollView] = parent.viewsInHierarchy() {
 				
-				// Return first match if only one scroll view is present.
+				print("---")
+				print("scrollViewsInHierarchy.count \(scrollViewsInHierarchy.count).")
+				
+				// Return first match if only a single scroll view is found in the hierarchy.
 				if scrollViewsInHierarchy.count == 1,
 				   let firstScrollViewInHierarchy = scrollViewsInHierarchy.first {
-					print("Only one.")
-					onResolve(firstScrollViewInHierarchy)
-					
+					onMatch(firstScrollViewInHierarchy)
+
 				// Filter by frames if multiple matches found.
 				} else {
-					if let firstScrollViewWithMatchingFrame = scrollViewsInHierarchy.filter({ eachScrollViewInHierarchy in
-						print("frame: \(frame)")
-						print("eachScrollViewInHierarchy.frameInWindowCoordinateSpace: \(eachScrollViewInHierarchy.frameInWindowCoordinateSpace)")
-						return eachScrollViewInHierarchy.frameInWindowCoordinateSpace == frame
+					if let firstMatchingFrame = scrollViewsInHierarchy.filter({ eachScrollView in
+						
+						let globalFrame = eachScrollView.globalFrame
+						let areOriginsClose = globalFrame.origin.close(to: geometryReaderFrame.origin)
+						
+						// Log.
+						print("---")
+						print("geometryReaderFrame: \(geometryReaderFrame)")
+						print("globalFrame: \(globalFrame)")
+						print("areOriginsClose: \(areOriginsClose)")
+						
+						return areOriginsClose
 					}).first {
-						onResolve(firstScrollViewWithMatchingFrame)
+						onMatch(firstMatchingFrame)
 					}
 				}
 			}
 		}
+	}
+}
+
+
+fileprivate extension CGPoint {
+	
+	/// Returns `true` if this point is close the other point (considering a ~1 point tolerance).
+	func close(to point: CGPoint) -> Bool {
+		let inset = CGFloat(1)
+		let rect = CGRect(x: x - inset, y: y - inset, width: inset * 2, height: inset * 2)
+		return rect.contains(point)
 	}
 }
 
@@ -84,9 +101,9 @@ fileprivate extension UIViewController {
 
 fileprivate extension UIView {
 	
-	var frameInWindowCoordinateSpace: CGRect {
+	var globalFrame: CGRect {
 		if let window = window {
-			return convert(frame, to: window.screen.fixedCoordinateSpace)
+			return convert(frame, to: window.screen.coordinateSpace)
 		} else {
 			return .zero
 		}
@@ -95,7 +112,6 @@ fileprivate extension UIView {
 	func viewsInHierarchy<ViewType: UIView>() -> [ViewType]? {
 		var views: [ViewType] = []
 		viewsInHierarchy(views: &views)
-		print("views: \(views)")
 		return views.count > 0 ? views : nil
 	}
 	
