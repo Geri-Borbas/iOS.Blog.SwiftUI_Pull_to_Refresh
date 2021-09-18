@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
 	
+	// TODO: Wrap this up to a view model.
 	@State var appleTimeSeries: IntradayTimeSeries = .empty
 	@State var teslaTimeSeries: IntradayTimeSeries = .empty
 	@State var appleIsLoading = false
