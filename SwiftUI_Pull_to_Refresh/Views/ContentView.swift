@@ -32,7 +32,8 @@ struct ContentView: View {
 		.background(
 			GeometryReader { geometry in
 				ScrollViewMatcher(onResolve: { scrollView in
-					print(scrollView)
+					scrollView.isPagingEnabled = true
+					// scrollView.refreshControl = UIRefreshControl()
 				}, frame: $frame)
 				.preference(key: FramePreferenceKey.self, value: geometry.frame(in: .global))
 				.onPreferenceChange(FramePreferenceKey.self) { frame in
@@ -50,3 +51,5 @@ struct ContentView: View {
 		}
 	}
 }
+
+

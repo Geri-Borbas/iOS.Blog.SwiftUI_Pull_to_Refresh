@@ -46,21 +46,65 @@ class ScrollViewMatcherViewController: UIViewController {
 	override func didMove(toParent parent: UIViewController?) {
 		super.didMove(toParent: parent)
 		
-		if parent != nil {
+		if let parent = parent {
 			
-			print("frame: \(frame)")
 			print("view.frame: \(view.frame)")
 			
-			if let scrollViewMatch = scrollViewsInHierarchy.first {
-				onResolve(scrollViewMatch)
+			if let scrollViewsInHierarchy: [UIScrollView] = parent.viewsInHierarchy() {
+				
+				// Return first match if only one scroll view is present.
+				if scrollViewsInHierarchy.count == 1,
+				   let firstScrollViewInHierarchy = scrollViewsInHierarchy.first {
+					print("Only one.")
+					onResolve(firstScrollViewInHierarchy)
+					
+				// Filter by frames if multiple matches found.
+				} else {
+					if let firstScrollViewWithMatchingFrame = scrollViewsInHierarchy.filter({ eachScrollViewInHierarchy in
+						print("frame: \(frame)")
+						print("eachScrollViewInHierarchy.frameInWindowCoordinateSpace: \(eachScrollViewInHierarchy.frameInWindowCoordinateSpace)")
+						return eachScrollViewInHierarchy.frameInWindowCoordinateSpace == frame
+					}).first {
+						onResolve(firstScrollViewWithMatchingFrame)
+					}
+				}
 			}
 		}
 	}
 }
 
+
 fileprivate extension UIViewController {
 	
-	var scrollViewsInHierarchy: [UIScrollView] {
-		[]
+	func viewsInHierarchy<ViewType: UIView>() -> [ViewType]? {
+		view.viewsInHierarchy()
+	}
+}
+
+
+fileprivate extension UIView {
+	
+	var frameInWindowCoordinateSpace: CGRect {
+		if let window = window {
+			return convert(frame, to: window.screen.fixedCoordinateSpace)
+		} else {
+			return .zero
+		}
+	}
+	
+	func viewsInHierarchy<ViewType: UIView>() -> [ViewType]? {
+		var views: [ViewType] = []
+		viewsInHierarchy(views: &views)
+		print("views: \(views)")
+		return views.count > 0 ? views : nil
+	}
+	
+	func viewsInHierarchy<ViewType: UIView>(views: inout [ViewType]) {
+		subviews.forEach { eachSubView in
+			if let matchingView = eachSubView as? ViewType {
+				views.append(matchingView)
+			}
+			eachSubView.viewsInHierarchy(views: &views)
+		}
 	}
 }
