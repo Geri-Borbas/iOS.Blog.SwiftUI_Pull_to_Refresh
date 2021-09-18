@@ -51,7 +51,7 @@
 		551C492724CC691A007C7C03 /* SwiftUI_Pull_to_RefreshUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUI_Pull_to_RefreshUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		551C492B24CC691A007C7C03 /* SwiftUI_Pull_to_RefreshUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_Pull_to_RefreshUITests.swift; sourceTree = "<group>"; };
 		551C492D24CC691A007C7C03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		551C493924CC69D4007C7C03 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		551C493924CC69D4007C7C03 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; tabWidth = 4; };
 		551C493A24CC69D4007C7C03 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		5529E98426F4FBCE00CFA9C7 /* ScrollViewMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewMatcher.swift; sourceTree = "<group>"; };
 		5529E98626F63F6E00CFA9C7 /* RefreshControlModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlModifier.swift; sourceTree = "<group>"; };
