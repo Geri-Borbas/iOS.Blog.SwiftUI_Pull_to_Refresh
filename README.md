@@ -43,4 +43,3 @@ struct ContentView: View {
 
 [`ContentView.swift`]: SwiftUI_Pull_to_Refresh/Views/ContentView.swift
 [`RefreshControl.swift`]: SwiftUI_Pull_to_Refresh/Views/RefreshControl.swift
-
