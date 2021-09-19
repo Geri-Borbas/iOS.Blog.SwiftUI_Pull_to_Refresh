@@ -18,3 +18,12 @@ public struct Location {
 		self.longitude = longitude
 	}
 }
+
+
+extension Location: Hashable {
+	
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(latitude)
+		hasher.combine(longitude)
+	}
+}

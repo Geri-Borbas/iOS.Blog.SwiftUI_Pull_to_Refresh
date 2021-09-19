@@ -31,7 +31,7 @@ public struct API {
 		components.queryItems = [
 			.init(name: "lat", value: String(location.latitude)),
 			.init(name: "lon", value: String(location.longitude)),
-			.init(name: "exclude", value: "minutely,daily,alerts"), // current,hourly
+			.init(name: "exclude", value: "minutely,daily,alerts"),
 			.init(name: "appid", value: "9ef3309fd13bb2c83a3cea4b8b68afda") // Be my guest
 		]
 		guard let url = components.url else {

@@ -11,12 +11,12 @@ import Foundation
 /// From https://openweathermap.org/api/one-call-api
 public struct HourlyForecast: Decodable {
 	
-	let latitude: Double
-	let longitude: Double
-	let timezone: String
-	let timezoneOffset: Int
-	let currentWeather: WeatherData
-	let hourlyWeather: [WeatherData]
+	public let latitude: Double
+	public let longitude: Double
+	public let timezone: String
+	public let timezoneOffset: Int
+	public let currentWeather: WeatherData
+	public let hourlyWeather: [WeatherData]
 	
 	enum CodingKeys: String, CodingKey {
 		case latitude = "lat"
@@ -27,26 +27,26 @@ public struct HourlyForecast: Decodable {
 		case hourlyWeather = "hourly"
 	}
 	
-	struct WeatherData: Decodable {
+	public struct WeatherData: Decodable {
 		
-		let time: Date
-		let sunriseTime: Date?
-		let sunsetTime: Date?
-		let temperature: Double
-		let temperatureFeelsLike: Double
-		let pressure: Double
-		let humidity: Double
-		let dewPoint: Double
-		let clouds: Double
-		let uvIndex: Double
-		let visibility: Double
-		let windSpeed: Double
-		let windGust: Double?
-		let windDirection: Double
-		let precipitationProbability: Double?
-		let rain: Volume?
-		let snow: Volume?
-		let weather: [Weather]
+		public let time: Date
+		public let sunriseTime: Date?
+		public let sunsetTime: Date?
+		public let temperature: Double
+		public let temperatureFeelsLike: Double
+		public let pressure: Double
+		public let humidity: Double
+		public let dewPoint: Double
+		public let clouds: Double
+		public let uvIndex: Double
+		public let visibility: Double
+		public let windSpeed: Double
+		public let windGust: Double?
+		public let windDirection: Double
+		public let precipitationProbability: Double?
+		public let rain: Volume?
+		public let snow: Volume?
+		public let weather: [Weather]
 		
 		enum CodingKeys: String, CodingKey {
 			case time = "dt"
@@ -69,21 +69,21 @@ public struct HourlyForecast: Decodable {
 			case weather = "weather"
 		}
 		
-		struct Volume: Decodable {
+		public struct Volume: Decodable {
 			
-			let volumeLastHour: Double
+			public let volumeLastHour: Double
 			
 			enum CodingKeys: String, CodingKey {
 				case volumeLastHour = "1h"
 			}
 		}
 		
-		struct Weather: Decodable {
+		public struct Weather: Decodable {
 
-			let id: Int
-			let main: String
-			let description: String
-			let icon: String
+			public let id: Int
+			public let main: String
+			public let description: String
+			public let icon: String
 		}
 	}
 }

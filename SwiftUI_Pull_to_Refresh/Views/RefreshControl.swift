@@ -28,7 +28,6 @@ class RefreshControl: ObservableObject {
 	}
 	
 	@objc private func onValueChangedAction(sender: UIRefreshControl) {
-		print("RefreshControl.\(#function)")
 		self.onValueChanged(sender)
 	}
 }

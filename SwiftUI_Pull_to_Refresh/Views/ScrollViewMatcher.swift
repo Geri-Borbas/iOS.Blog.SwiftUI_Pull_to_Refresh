@@ -48,9 +48,6 @@ class ScrollViewMatcherViewController: UIViewController {
 			
 			if let scrollViewsInHierarchy: [UIScrollView] = parent.viewsInHierarchy() {
 				
-				print("---")
-				print("scrollViewsInHierarchy.count \(scrollViewsInHierarchy.count).")
-				
 				// Return first match if only a single scroll view is found in the hierarchy.
 				if scrollViewsInHierarchy.count == 1,
 				   let firstScrollViewInHierarchy = scrollViewsInHierarchy.first {
@@ -58,18 +55,8 @@ class ScrollViewMatcherViewController: UIViewController {
 
 				// Filter by frames if multiple matches found.
 				} else {
-					if let firstMatchingFrame = scrollViewsInHierarchy.filter({ eachScrollView in
-						
-						let globalFrame = eachScrollView.globalFrame
-						let areOriginsClose = globalFrame.origin.close(to: geometryReaderFrame.origin)
-						
-						// Log.
-						print("---")
-						print("geometryReaderFrame: \(geometryReaderFrame)")
-						print("globalFrame: \(globalFrame)")
-						print("areOriginsClose: \(areOriginsClose)")
-						
-						return areOriginsClose
+					if let firstMatchingFrame = scrollViewsInHierarchy.filter({
+						$0.globalFrame.origin.close(to: geometryReaderFrame.origin)
 					}).first {
 						onMatch(firstMatchingFrame)
 					}
@@ -82,7 +69,7 @@ class ScrollViewMatcherViewController: UIViewController {
 
 fileprivate extension CGPoint {
 	
-	/// Returns `true` if this point is close the other point (considering a ~1 point tolerance).
+	/// Returns `true` if this point is close the other point (considering a ~1 pt tolerance).
 	func close(to point: CGPoint) -> Bool {
 		let inset = CGFloat(1)
 		let rect = CGRect(x: x - inset, y: y - inset, width: inset * 2, height: inset * 2)
