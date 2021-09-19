@@ -30,6 +30,7 @@
 		55A7E25B26F7E87B0077936F /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25A26F7E87B0077936F /* HourlyForecast.swift */; };
 		55A7E25D26F7ED0A0077936F /* HourlyForecast+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25C26F7ED0A0077936F /* HourlyForecast+Preview.swift */; };
 		55A7E25F26F7ED5B0077936F /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */; };
+		55A7E26126F7EF600077936F /* HourlyForecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A7E25926F7E85C0077936F /* HourlyForecast.json */; };
 		55F2D60F24D1032500E3BDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2D60E24D1032500E3BDDF /* ContentView.swift */; };
 		55FD8E6F24CE55260057D91E /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -435,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A7E26126F7EF600077936F /* HourlyForecast.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

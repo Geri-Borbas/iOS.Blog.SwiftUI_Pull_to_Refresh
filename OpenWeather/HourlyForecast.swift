@@ -15,7 +15,8 @@ public struct HourlyForecast: Decodable {
 	let longitude: Double
 	let timezone: String
 	let timezoneOffset: Int
-	let currentWeather: Weather
+	let currentWeather: WeatherData
+	let hourlyWeather: [WeatherData]
 	
 	enum CodingKeys: String, CodingKey {
 		case latitude = "lat"
@@ -23,18 +24,29 @@ public struct HourlyForecast: Decodable {
 		case timezone = "timezone"
 		case timezoneOffset = "timezone_offset"
 		case currentWeather = "current"
+		case hourlyWeather = "hourly"
 	}
 	
-	struct Weather: Decodable {
+	struct WeatherData: Decodable {
 		
 		let time: Date
-		let sunriseTime: Date
-		let sunsetTime: Date
+		let sunriseTime: Date?
+		let sunsetTime: Date?
 		let temperature: Double
 		let temperatureFeelsLike: Double
 		let pressure: Double
 		let humidity: Double
 		let dewPoint: Double
+		let clouds: Double
+		let uvIndex: Double
+		let visibility: Double
+		let windSpeed: Double
+		let windGust: Double?
+		let windDirection: Double
+		let precipitationProbability: Double?
+		let rain: Volume?
+		let snow: Volume?
+		let weather: [Weather]
 		
 		enum CodingKeys: String, CodingKey {
 			case time = "dt"
@@ -45,6 +57,33 @@ public struct HourlyForecast: Decodable {
 			case pressure = "pressure"
 			case humidity = "humidity"
 			case dewPoint = "dew_point"
+			case clouds = "clouds"
+			case uvIndex = "uvi"
+			case visibility = "visibility"
+			case windSpeed = "wind_speed"
+			case windGust = "wind_gust"
+			case windDirection = "wind_deg"
+			case precipitationProbability = "pop"
+			case rain = "rain"
+			case snow = "snow"
+			case weather = "weather"
+		}
+		
+		struct Volume: Decodable {
+			
+			let volumeLastHour: Double
+			
+			enum CodingKeys: String, CodingKey {
+				case volumeLastHour = "1h"
+			}
+		}
+		
+		struct Weather: Decodable {
+
+			let id: Int
+			let main: String
+			let description: String
+			let icon: String
 		}
 	}
 }
