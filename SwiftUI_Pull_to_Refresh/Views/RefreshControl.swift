@@ -43,7 +43,7 @@ extension UIRefreshControl {
 	}
 	
 	/// Convinience method to match refresh control for UI testing.
-	func testable_(as id: String) -> UIRefreshControl {
+	func testable(as id: String) -> UIRefreshControl {
 		self.isAccessibilityElement = true
 		self.accessibilityIdentifier = id
 		return self

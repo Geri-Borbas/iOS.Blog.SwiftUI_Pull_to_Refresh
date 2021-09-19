@@ -16,7 +16,7 @@ struct __ContentView: View {
     var body: some View {
         
         List {
-            __ScrollViewResolver(onResolve: { (scrollView: UIScrollView) in
+            __ScrollViewResolver(onResolve: { _ /*(scrollView: UIScrollView)*/ in
                 // self.refreshControl.add(to: scrollView)
                 // self.refreshControl.add(onValueChanged: onValueChanged)
             })

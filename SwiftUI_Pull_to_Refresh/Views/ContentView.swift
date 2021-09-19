@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import OpenWeather
 
 
 struct ContentView: View {
 	
 	// TODO: Wrap this up to a view model.
-	@State var appleTimeSeries: IntradayTimeSeries = .empty
-	@State var teslaTimeSeries: IntradayTimeSeries = .empty
-	@State var appleIsLoading = false
-	@State var teslaIsLoading = false
+	@State var weather: [String: Any] = [:]
+	@State var weatherIsLoading = false
+	
+	// 37.7749° N, 122.4194
 	
 	var body: some View {
 		VStack {
@@ -24,17 +25,17 @@ struct ContentView: View {
 						Text("Left \(eachRowIndex)")
 					}
 				}
-				.redacted(reason: appleIsLoading ? .placeholder : .init())
+				.redacted(reason: weatherIsLoading ? .placeholder : .init())
 				.refreshControl { refreshControl in
-					appleIsLoading = true
-					API.get(symbol: "AAPL") { result in
+					weatherIsLoading = true
+					API.get { result in
 						switch result {
 						case .success(let response):
-							self.appleTimeSeries = response
+							self.weather = response
 						case .failure(_):
 							break
 						}
-						appleIsLoading = false
+						weatherIsLoading = false
 						refreshControl.endRefreshing()
 					}
 				}
@@ -43,42 +44,32 @@ struct ContentView: View {
 						Text("Right \(eachRowIndex)")
 					}
 				}
-				.redacted(reason: teslaIsLoading ? .placeholder : .init())
+				.redacted(reason: weatherIsLoading ? .placeholder : .init())
 				.refreshControl { refreshControl in
-					teslaIsLoading = true
-					API.get(symbol: "TSLA") { result in
+					weatherIsLoading = true
+					API.get { result in
 						switch result {
 						case .success(let response):
-							self.teslaTimeSeries = response
+							self.weather = response
 						case .failure(_):
 							break
 						}
-						teslaIsLoading = false
+						weatherIsLoading = false
 						refreshControl.endRefreshing()
 					}
 				}
 			}
 		}
 		.onAppear {
-			appleIsLoading = true
-			API.get(symbol: "AAPL") { result in
+			weatherIsLoading = true
+			API.get { result in
 				switch result {
 				case .success(let response):
-					self.appleTimeSeries = response
+					self.weather = response
 				case .failure(_):
 					break
 				}
-				appleIsLoading = false
-			}
-			teslaIsLoading = true
-			API.get(symbol: "TSLA") { result in
-				switch result {
-				case .success(let response):
-					self.teslaTimeSeries = response
-				case .failure(_):
-					break
-				}
-				teslaIsLoading = false
+				weatherIsLoading = false
 			}
 		}
 	}

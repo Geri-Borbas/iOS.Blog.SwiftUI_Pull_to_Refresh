@@ -9,7 +9,7 @@ import Foundation
 
 
 /// From https://www.alphavantage.co/documentation/#intraday
-struct IntradayTimeSeries: Decodable {
+public struct IntradayTimeSeries: Decodable {
 	
 	let metaData: MetaData
 	let timeSeries: TimeSeries
@@ -26,7 +26,7 @@ struct IntradayTimeSeries: Decodable {
 		let lastRefreshed: String
 		let interval: String
 		let outputSize: String
-		let timeZome: String
+		let timeZone: String
 		
 		enum CodingKeys: String, CodingKey {
 			case information = "1. Information"
@@ -34,7 +34,7 @@ struct IntradayTimeSeries: Decodable {
 			case lastRefreshed = "3. Last Refreshed"
 			case interval = "4. Interval"
 			case outputSize = "5. Output Size"
-			case timeZome = "6. Time Zone"
+			case timeZone = "6. Time Zone"
 		}
 	}
 	
@@ -103,7 +103,7 @@ struct IntradayTimeSeries: Decodable {
 }
 
 
-extension IntradayTimeSeries {
+public extension IntradayTimeSeries {
 	
 	static let empty: IntradayTimeSeries = IntradayTimeSeries(
 		metaData: MetaData(
@@ -112,7 +112,7 @@ extension IntradayTimeSeries {
 			lastRefreshed: "",
 			interval: "",
 			outputSize: "",
-			timeZome: ""
+			timeZone: ""
 		),
 		timeSeries: TimeSeries()
 	)

@@ -8,15 +8,16 @@
 import Foundation
 
 
-enum APIError: Error {
+public enum APIError: Error {
 	case wrongUrl
 	case noData
 }
 
 
-struct API {
+/// From https://www.alphavantage.co/documentation/#intraday
+public struct API {
 	
-	static func get(symbol: String = "AAPL", completion: @escaping (_ result: Result<IntradayTimeSeries, Error>) -> Void) {
+	public static func get(symbol: String = "AAPL", completion: @escaping (_ result: Result<IntradayTimeSeries, Error>) -> Void) {
 		
 		// Query.
 		var components = URLComponents()
