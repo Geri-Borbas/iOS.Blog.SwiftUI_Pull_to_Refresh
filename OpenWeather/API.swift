@@ -20,7 +20,7 @@ public struct API {
 	
 	public static func get(
 		at location: Location = .init(latitude: 33.44, longitude: -94.04),
-		completion: @escaping (_ result: Result<[String: Any], Error>) -> Void
+		completion: @escaping (_ result: Result<HourlyForecast, Error>) -> Void
 		) {
 		
 		// Query.
@@ -52,13 +52,8 @@ public struct API {
 						completion(.failure(error))
 					} else if let data = data {
 						do {
-							if let response = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-								print("response: \(String(decoding: data, as: UTF8.self))")
-								completion(.success(response))
-							} else {
-								print("error: \(APIError.wrongJSON)")
-								completion(.failure(APIError.wrongJSON))
-							}
+							let response = try JSONDecoder().decode(HourlyForecast.self, from: data)
+							completion(.success(response))
 						} catch {
 							print("error: \(error)")
 							completion(.failure(error))

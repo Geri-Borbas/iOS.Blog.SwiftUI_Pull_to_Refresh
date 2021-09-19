@@ -12,7 +12,7 @@ import OpenWeather
 struct ContentView: View {
 	
 	// TODO: Wrap this up to a view model.
-	@State var weather: [String: Any] = [:]
+	@State var weather: HourlyForecast = HourlyForecast.preview
 	@State var weatherIsLoading = false
 	
 	// 37.7749° N, 122.4194

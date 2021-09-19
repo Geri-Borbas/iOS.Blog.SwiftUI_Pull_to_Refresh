@@ -28,6 +28,8 @@
 		55A7E25526F7E1810077936F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25426F7E1810077936F /* API.swift */; };
 		55A7E25726F7E3AD0077936F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25626F7E3AD0077936F /* Location.swift */; };
 		55A7E25B26F7E87B0077936F /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25A26F7E87B0077936F /* HourlyForecast.swift */; };
+		55A7E25D26F7ED0A0077936F /* HourlyForecast+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25C26F7ED0A0077936F /* HourlyForecast+Preview.swift */; };
+		55A7E25F26F7ED5B0077936F /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */; };
 		55F2D60F24D1032500E3BDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2D60E24D1032500E3BDDF /* ContentView.swift */; };
 		55FD8E6F24CE55260057D91E /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -92,8 +94,10 @@
 		55A7E24B26F7E1710077936F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A7E25426F7E1810077936F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		55A7E25626F7E3AD0077936F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		55A7E25926F7E85C0077936F /* Response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Response.json; sourceTree = "<group>"; };
+		55A7E25926F7E85C0077936F /* HourlyForecast.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HourlyForecast.json; sourceTree = "<group>"; };
 		55A7E25A26F7E87B0077936F /* HourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecast.swift; sourceTree = "<group>"; };
+		55A7E25C26F7ED0A0077936F /* HourlyForecast+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HourlyForecast+Preview.swift"; sourceTree = "<group>"; };
+		55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		55BDEC4E24CCF92400225C07 /* __RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __RefreshControl.swift; sourceTree = "<group>"; };
 		55F2D60E24D1032500E3BDDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		55F2D61124D106CF00E3BDDF /* ScrollViewResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewResolver.swift; sourceTree = "<group>"; };
@@ -219,9 +223,19 @@
 				55A7E25426F7E1810077936F /* API.swift */,
 				55A7E25626F7E3AD0077936F /* Location.swift */,
 				55A7E25A26F7E87B0077936F /* HourlyForecast.swift */,
-				55A7E25926F7E85C0077936F /* Response.json */,
+				55A7E25C26F7ED0A0077936F /* HourlyForecast+Preview.swift */,
+				55A7E25926F7E85C0077936F /* HourlyForecast.json */,
+				55A7E26026F7EEE60077936F /* Extensions */,
 			);
 			path = OpenWeather;
+			sourceTree = "<group>";
+		};
+		55A7E26026F7EEE60077936F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		55BDEC5024CD07E100225C07 /* History */ = {
@@ -483,7 +497,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A7E25726F7E3AD0077936F /* Location.swift in Sources */,
+				55A7E25F26F7ED5B0077936F /* Bundle+Extensions.swift in Sources */,
 				55A7E25B26F7E87B0077936F /* HourlyForecast.swift in Sources */,
+				55A7E25D26F7ED0A0077936F /* HourlyForecast+Preview.swift in Sources */,
 				55A7E25526F7E1810077936F /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
