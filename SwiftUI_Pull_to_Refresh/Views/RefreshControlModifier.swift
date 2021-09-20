@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 
 struct FramePreferenceKey: PreferenceKey {
@@ -22,7 +23,7 @@ struct FramePreferenceKey: PreferenceKey {
 
 struct RefreshControlModifier: ViewModifier {
 	
-	@State var globalFrame: CGRect = .zero
+	@State var geometryReaderFrame: CGRect = .zero
 	let refreshControl: RefreshControl
 	
 	internal init(onValueChanged: @escaping (UIRefreshControl) -> Void) {
@@ -37,12 +38,11 @@ struct RefreshControlModifier: ViewModifier {
 						onResolve: { scrollView in
 							refreshControl.add(to: scrollView)
 						},
-						geometryReaderFrame: $globalFrame
+						geometryReaderFrame: $geometryReaderFrame
 					)
-					.background(Color.blue)
 					.preference(key: FramePreferenceKey.self, value: geometry.frame(in: .global))
 					.onPreferenceChange(FramePreferenceKey.self) { frame in
-						self.globalFrame = frame
+						self.geometryReaderFrame = frame
 					}
 				}
 			)

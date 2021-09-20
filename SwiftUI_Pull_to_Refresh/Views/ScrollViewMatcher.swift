@@ -7,58 +7,76 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 
 final class ScrollViewMatcher: UIViewControllerRepresentable {
 	
 	let onMatch: (UIScrollView) -> Void
-	@Binding var globalFrame: CGRect
-		
+	@Binding var geometryReaderFrame: CGRect
+	private var subscribers: Set<AnyCancellable> = []
+	
 	init(onResolve: @escaping (UIScrollView) -> Void, geometryReaderFrame: Binding<CGRect>) {
 		self.onMatch = onResolve
-		self._globalFrame = geometryReaderFrame
+		self._geometryReaderFrame = geometryReaderFrame
 	}
 	
 	func makeUIViewController(context: Context) -> ScrollViewMatcherViewController {
-		ScrollViewMatcherViewController(onResolve: onMatch, geometryReaderFrame: $globalFrame)
+		ScrollViewMatcherViewController(onResolve: onMatch, geometryReaderFrame: geometryReaderFrame)
 	}
 	
-	func updateUIViewController(_ uiViewController: ScrollViewMatcherViewController, context: Context) { }
+	func updateUIViewController(_ viewController: ScrollViewMatcherViewController, context: Context) {
+		viewController.geometryReaderFrame = geometryReaderFrame
+	}
 }
 
 class ScrollViewMatcherViewController: UIViewController {
 	
 	let onMatch: (UIScrollView) -> Void
-	@Binding var geometryReaderFrame: CGRect
+	private var scrollView: UIScrollView? {
+		didSet {
+			if oldValue != scrollView,
+			   let scrollView = scrollView {
+				print("ScrollViewMatcherViewController.scrollView.didSet.onMatch")
+				onMatch(scrollView)
+			}
+		}
+	}
 	
-	init(onResolve: @escaping (UIScrollView) -> Void, geometryReaderFrame: Binding<CGRect>) {
+	var geometryReaderFrame: CGRect {
+		didSet {
+			match()
+		}
+	}
+	
+	init(onResolve: @escaping (UIScrollView) -> Void, geometryReaderFrame: CGRect) {
 		self.onMatch = onResolve
-		self._geometryReaderFrame = geometryReaderFrame
+		self.geometryReaderFrame = geometryReaderFrame
 		super.init(nibName: nil, bundle: nil)
 	}
 	
 	required init?(coder: NSCoder) {
 		fatalError("Use init(onMatch:) to instantiate ScrollViewMatcherViewController.")
 	}
-		
-	override func didMove(toParent parent: UIViewController?) {
-		super.didMove(toParent: parent)
-		
+	
+	func match() {
 		if let parent = parent {
-			
 			if let scrollViewsInHierarchy: [UIScrollView] = parent.viewsInHierarchy() {
 				
 				// Return first match if only a single scroll view is found in the hierarchy.
 				if scrollViewsInHierarchy.count == 1,
 				   let firstScrollViewInHierarchy = scrollViewsInHierarchy.first {
-					onMatch(firstScrollViewInHierarchy)
-
-				// Filter by frames if multiple matches found.
+					self.scrollView = firstScrollViewInHierarchy
+					
+				// Filter by frame origins if multiple matches found.
 				} else {
-					if let firstMatchingFrame = scrollViewsInHierarchy.filter({
-						$0.globalFrame.origin.close(to: geometryReaderFrame.origin)
+					if let firstMatchingFrameOrigin = scrollViewsInHierarchy.filter({
+						let globalFrame = $0.globalFrame
+//						print("globalFrame: \(globalFrame)")
+//						print("geometryReaderFrame: \(geometryReaderFrame)")
+						return globalFrame.origin.close(to: geometryReaderFrame.origin)
 					}).first {
-						onMatch(firstMatchingFrame)
+						self.scrollView = firstMatchingFrameOrigin
 					}
 				}
 			}

@@ -17,35 +17,47 @@ struct WeatherView: View {
 	@StateObject var viewModel = WeatherViewModel()
 	
 	var body: some View {
-		VStack {
-			HStack {
-				List {
-					ForEach(viewModel.weather(for: sanFrancisco).indices, id: \.self) { eachIndex in
-						WeatherItemView(viewModel: viewModel.weather(for: sanFrancisco)[eachIndex])
+		GeometryReader { geometry in
+			ScrollView(.horizontal) {
+				HStack {
+					VStack {
+						Text("San Francisco")
+							.font(.largeTitle)
+						List {
+							ForEach(viewModel.weather(for: sanFrancisco).indices, id: \.self) { eachIndex in
+								WeatherItemView(viewModel: viewModel.weather(for: sanFrancisco)[eachIndex])
+							}
+						}
+						.frame(width: geometry.size.width)
+						.redacted(reason: viewModel.isLoading ? .placeholder : .init())
+						.refreshControl { refreshControl in
+							viewModel.fetchWeather(at: sanFrancisco) {
+								refreshControl.endRefreshing()
+							}
+						}
 					}
-				}
-				.redacted(reason: viewModel.isLoading ? .placeholder : .init())
-				.refreshControl { refreshControl in
-					viewModel.fetchWeather(at: sanFrancisco) {
-						refreshControl.endRefreshing()
-					}
-				}
-				List {
-					ForEach(viewModel.weather(for: london).indices, id: \.self) { eachIndex in
-						WeatherItemView(viewModel: viewModel.weather(for: london)[eachIndex])
-					}
-				}
-				.redacted(reason: viewModel.isLoading ? .placeholder : .init())
-				.refreshControl { refreshControl in
-					viewModel.fetchWeather(at: london) {
-						refreshControl.endRefreshing()
+					VStack {
+						Text("London")
+							.font(.largeTitle)
+						List {
+							ForEach(viewModel.weather(for: london).indices, id: \.self) { eachIndex in
+								WeatherItemView(viewModel: viewModel.weather(for: london)[eachIndex])
+							}
+						}
+						.frame(width: geometry.size.width)
+						.redacted(reason: viewModel.isLoading ? .placeholder : .init())
+						.refreshControl { refreshControl in
+							viewModel.fetchWeather(at: london) {
+								refreshControl.endRefreshing()
+							}
+						}
 					}
 				}
 			}
-		}
-		.onAppear {
-			viewModel.fetchWeather(at: sanFrancisco)
-			viewModel.fetchWeather(at: london)
+			.onAppear {
+				viewModel.fetchWeather(at: sanFrancisco)
+				viewModel.fetchWeather(at: london)
+			}
 		}
 	}
 }
