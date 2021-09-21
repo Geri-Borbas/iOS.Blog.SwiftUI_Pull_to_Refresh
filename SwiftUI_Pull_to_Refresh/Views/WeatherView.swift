@@ -18,8 +18,8 @@ struct WeatherView: View {
 	
 	var body: some View {
 		GeometryReader { geometry in
-			ScrollView(.horizontal) {
-				HStack {
+			ScrollView(.horizontal, showsIndicators: false) {
+				HStack(spacing: 0) {
 					VStack {
 						Text("San Francisco")
 							.font(.largeTitle)
@@ -60,5 +60,6 @@ struct WeatherView: View {
 				viewModel.fetchWeather(at: london)
 			}
 		}
+		.edgesIgnoringSafeArea(.bottom)
 	}
 }

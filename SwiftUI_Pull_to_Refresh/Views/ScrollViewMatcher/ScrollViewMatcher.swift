@@ -35,7 +35,6 @@ class ScrollViewMatcherViewController: UIViewController {
 		didSet {
 			if oldValue != scrollView,
 			   let scrollView = scrollView {
-				print("ScrollViewMatcherViewController.scrollView.didSet.onMatch")
 				onMatch(scrollView)
 			}
 		}
@@ -91,6 +90,11 @@ class ScrollViewMatcherViewController: UIViewController {
 				}
 			}
 		}
+	}
+	
+	override func didMove(toParent parent: UIViewController?) {
+		super.didMove(toParent: parent)
+		match()
 	}
 }
 
