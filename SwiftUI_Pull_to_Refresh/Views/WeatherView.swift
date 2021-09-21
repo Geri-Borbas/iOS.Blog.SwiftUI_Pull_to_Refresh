@@ -81,6 +81,9 @@ struct WeatherView: View {
 				}
 			}
 			.paging()
+			.onScroll { scrollView in
+				print("scrollView.contentOffset: \(scrollView.contentOffset)")
+			}
 		}
 		.edgesIgnoringSafeArea(.bottom)
 	}

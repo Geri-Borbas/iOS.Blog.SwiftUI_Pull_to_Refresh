@@ -17,3 +17,6 @@ identifier_name:
   
 nesting:
   type_level: 4
+
+disabled_rules:
+  - weak_delegate

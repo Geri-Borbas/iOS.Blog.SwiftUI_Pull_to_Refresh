@@ -4,6 +4,11 @@
 
 	+ Design
 
+
+* 0.8.21 - 0.8.22
+
+	+ Added `onScroll {}` modifier 
+
 * 0.8.18 - 0.8.20
 
 	+ Refactor view models, view states
