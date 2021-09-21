@@ -21,7 +21,7 @@ public struct API {
 	public static func get(
 		at location: Location = .init(latitude: 33.44, longitude: -94.04),
 		completion: @escaping (_ result: Result<HourlyForecast, Error>) -> Void
-		) {
+	) {
 		
 		// Query.
 		var components = URLComponents()
@@ -43,27 +43,29 @@ public struct API {
 		request.httpMethod = "GET"
 		
 		// Task.
-		URLSession(configuration: URLSessionConfiguration.ephemeral).dataTask(
-			with: request,
-			completionHandler: { data, _, error in
-				DispatchQueue.main.async {
-					if let error = error {
-						print("error: \(error)")
-						completion(.failure(error))
-					} else if let data = data {
-						do {
-							let response = try JSONDecoder().decode(HourlyForecast.self, from: data)
-							completion(.success(response))
-						} catch {
+		// URLSession(configuration: URLSessionConfiguration.ephemeral)
+		URLSession.shared
+			.dataTask(
+				with: request,
+				completionHandler: { data, _, error in
+					DispatchQueue.main.async {
+						if let error = error {
 							print("error: \(error)")
 							completion(.failure(error))
+						} else if let data = data {
+							do {
+								let response = try JSONDecoder().decode(HourlyForecast.self, from: data)
+								completion(.success(response))
+							} catch {
+								print("error: \(error)")
+								completion(.failure(error))
+							}
+						} else {
+							print("error: \(APIError.noData)")
+							completion(.failure(APIError.noData))
 						}
-					} else {
-						print("error: \(APIError.noData)")
-						completion(.failure(APIError.noData))
 					}
 				}
-			}
-		).resume()
+			).resume()
 	}
 }
