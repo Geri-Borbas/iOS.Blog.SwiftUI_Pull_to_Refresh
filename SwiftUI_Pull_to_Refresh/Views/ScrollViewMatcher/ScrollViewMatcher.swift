@@ -7,14 +7,12 @@
 
 import Foundation
 import SwiftUI
-import Combine
 
 
 final class ScrollViewMatcher: UIViewControllerRepresentable {
 	
 	let onMatch: (UIScrollView) -> Void
 	@Binding var geometryReaderFrame: CGRect
-	private var subscribers: Set<AnyCancellable> = []
 	
 	init(onResolve: @escaping (UIScrollView) -> Void, geometryReaderFrame: Binding<CGRect>) {
 		self.onMatch = onResolve
@@ -49,7 +47,7 @@ class ScrollViewMatcherViewController: UIViewController {
 		}
 	}
 	
-	init(onResolve: @escaping (UIScrollView) -> Void, geometryReaderFrame: CGRect) {
+	init(onResolve: @escaping (UIScrollView) -> Void, geometryReaderFrame: CGRect, debug: Bool = false) {
 		self.onMatch = onResolve
 		self.geometryReaderFrame = geometryReaderFrame
 		super.init(nibName: nil, bundle: nil)
@@ -60,8 +58,23 @@ class ScrollViewMatcherViewController: UIViewController {
 	}
 	
 	func match() {
+		// matchUsingHierarchy()
+		matchUsingGeometry()
+	}
+	
+	func matchUsingHierarchy() {
+		if parent != nil {
+			
+			// Lookup view ancestry for any `UIScrollView`.
+			view.searchViewAnchestorsFor { (scrollView: UIScrollView) in
+				self.scrollView = scrollView
+			}
+		}
+	}
+	
+	func matchUsingGeometry() {
 		if let parent = parent {
-			if let scrollViewsInHierarchy: [UIScrollView] = parent.viewsInHierarchy() {
+			if let scrollViewsInHierarchy: [UIScrollView] = parent.view.viewsInHierarchy() {
 				
 				// Return first match if only a single scroll view is found in the hierarchy.
 				if scrollViewsInHierarchy.count == 1,
@@ -71,10 +84,7 @@ class ScrollViewMatcherViewController: UIViewController {
 				// Filter by frame origins if multiple matches found.
 				} else {
 					if let firstMatchingFrameOrigin = scrollViewsInHierarchy.filter({
-						let globalFrame = $0.globalFrame
-//						print("globalFrame: \(globalFrame)")
-//						print("geometryReaderFrame: \(geometryReaderFrame)")
-						return globalFrame.origin.close(to: geometryReaderFrame.origin)
+						$0.globalFrame.origin.close(to: geometryReaderFrame.origin)
 					}).first {
 						self.scrollView = firstMatchingFrameOrigin
 					}
@@ -84,7 +94,6 @@ class ScrollViewMatcherViewController: UIViewController {
 	}
 }
 
-
 fileprivate extension CGPoint {
 	
 	/// Returns `true` if this point is close the other point (considering a ~1 pt tolerance).
@@ -92,40 +101,5 @@ fileprivate extension CGPoint {
 		let inset = CGFloat(1)
 		let rect = CGRect(x: x - inset, y: y - inset, width: inset * 2, height: inset * 2)
 		return rect.contains(point)
-	}
-}
-
-
-fileprivate extension UIViewController {
-	
-	func viewsInHierarchy<ViewType: UIView>() -> [ViewType]? {
-		view.viewsInHierarchy()
-	}
-}
-
-
-fileprivate extension UIView {
-	
-	var globalFrame: CGRect {
-		if let window = window {
-			return convert(frame, to: window.screen.coordinateSpace)
-		} else {
-			return .zero
-		}
-	}
-	
-	func viewsInHierarchy<ViewType: UIView>() -> [ViewType]? {
-		var views: [ViewType] = []
-		viewsInHierarchy(views: &views)
-		return views.count > 0 ? views : nil
-	}
-	
-	func viewsInHierarchy<ViewType: UIView>(views: inout [ViewType]) {
-		subviews.forEach { eachSubView in
-			if let matchingView = eachSubView as? ViewType {
-				views.append(matchingView)
-			}
-			eachSubView.viewsInHierarchy(views: &views)
-		}
 	}
 }

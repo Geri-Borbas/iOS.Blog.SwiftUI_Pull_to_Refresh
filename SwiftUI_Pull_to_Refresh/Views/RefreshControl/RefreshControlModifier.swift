@@ -7,18 +7,6 @@
 
 import Foundation
 import SwiftUI
-import Combine
-
-
-struct FramePreferenceKey: PreferenceKey {
-	
-	typealias Value = CGRect
-	static var defaultValue = CGRect.zero
-	
-	static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
-		value = nextValue()
-	}
-}
 
 
 struct RefreshControlModifier: ViewModifier {

@@ -54,6 +54,7 @@ struct WeatherView: View {
 					}
 				}
 			}
+			.paging()
 			.onAppear {
 				viewModel.fetchWeather(at: sanFrancisco)
 				viewModel.fetchWeather(at: london)
