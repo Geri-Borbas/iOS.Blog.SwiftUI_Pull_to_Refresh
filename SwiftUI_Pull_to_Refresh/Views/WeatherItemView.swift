@@ -15,6 +15,6 @@ struct WeatherItemView: View {
 	let viewModel: OpenWeather.HourlyForecast.WeatherData
 	
 	var body: some View {
-		Text("\(viewModel.time), \(viewModel.temperature - 273.15) °C")
+		Text("\(viewModel.time), \(viewModel.displayTemperature)")
 	}
 }

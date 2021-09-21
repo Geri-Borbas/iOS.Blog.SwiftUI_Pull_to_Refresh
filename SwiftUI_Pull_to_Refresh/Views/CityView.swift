@@ -12,31 +12,52 @@ import OpenWeather
 
 struct CityView: View {
 	
-	let name: String
-	let location: OpenWeather.Location
+	@ObservedObject var viewModel: CityViewModel
 	let width: CGFloat
-	
-	@ObservedObject var viewModel: WeatherViewModel
 	
 	var body: some View {
 		VStack {
-			Text(name)
+			
+			// Title.
+			Text(viewModel.name)
 				.font(.largeTitle)
+			
+			// List.
 			List {
-				ForEach(viewModel.weather(for: location).indices, id: \.self) { eachIndex in
-					WeatherItemView(viewModel: viewModel.weather(for: location)[eachIndex])
+				
+				// Elements.
+				switch viewModel.state {
+				case .idle:
+					Color.clear
+				case .loading:
+					ForEach(Array(repeating: 0, count: 100).indices, id: \.self) { _ in
+						Text("Loading")
+							.redacted(reason: .placeholder)
+					}
+				case .error(let error):
+					Text("Could not refresh weather data. \(error.localizedDescription)")
+					ForEach(Array(repeating: 0, count: 100).indices, id: \.self) { _ in
+						Text("Loading")
+							.redacted(reason: .placeholder)
+					}
+				case .loaded(let weather):
+					Text(weather.currentWeather.displayTemperature)
+						.font(.largeTitle)
+					ForEach(weather.hourlyWeather.indices, id: \.self) { eachIndex in
+						WeatherItemView(viewModel: weather.hourlyWeather[eachIndex])
+					}
 				}
+				
 			}
-			.frame(width: width)
-			.redacted(reason: viewModel.isLoading ? .placeholder : .init())
 			.refreshControl { refreshControl in
-				viewModel.fetchWeather(at: location) {
-					refreshControl.endRefreshing()
-				}
-			}
+				viewModel.fetch {
+				   refreshControl.endRefreshing()
+			   }
+		   }
 		}
+		.frame(width: width)
 		.onAppear {
-			viewModel.fetchWeather(at: location)
+			viewModel.fetch()
 		}
 	}
 }
