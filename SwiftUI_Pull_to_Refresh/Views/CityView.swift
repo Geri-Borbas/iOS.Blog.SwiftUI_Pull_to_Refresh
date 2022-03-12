@@ -32,13 +32,13 @@ struct CityView: View {
 				case .loading:
 					ForEach(Array(repeating: 0, count: 100).indices, id: \.self) { _ in
 						Text("Loading")
-							.redacted(reason: .placeholder)
+//							.redacted(reason: .placeholder)
 					}
 				case .error(let error):
 					Text("Could not refresh weather data. \(error.localizedDescription)")
 					ForEach(Array(repeating: 0, count: 100).indices, id: \.self) { _ in
 						Text("Loading")
-							.redacted(reason: .placeholder)
+//							.redacted(reason: .placeholder)
 					}
 				case .loaded(let weather):
 					Text(weather.currentWeather.displayTemperature)

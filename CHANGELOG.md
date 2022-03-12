@@ -4,6 +4,11 @@
 
 	+ Design
 
+* 0.9.0
+
+	+ Deployment target to iOS 13
+	+ Added `Introspect`
+	+ Added view to test nested scrollviews with `Introspect`
 
 * 0.8.21 - 0.8.22
 

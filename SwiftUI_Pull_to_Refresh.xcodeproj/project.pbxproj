@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,8 @@
 		55A7E25F26F7ED5B0077936F /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */; };
 		55A7E26126F7EF600077936F /* HourlyForecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A7E25926F7E85C0077936F /* HourlyForecast.json */; };
 		55A7E26526F800340077936F /* WeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E26426F800340077936F /* WeatherItemView.swift */; };
+		55D6299B27DD38B70043188D /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 55D6299A27DD38B70043188D /* Introspect */; };
+		55D6299D27DD39070043188D /* IntrospectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6299C27DD39070043188D /* IntrospectView.swift */; };
 		55E82F2226F905E7003E8B68 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E82F2126F905E7003E8B68 /* UIView+Extensions.swift */; };
 		55E82F2426F90A94003E8B68 /* PagingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E82F2326F90A94003E8B68 /* PagingModifier.swift */; };
 		55E82F2626F9D9C5003E8B68 /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E82F2526F9D9C5003E8B68 /* FramePreferenceKey.swift */; };
@@ -107,6 +109,7 @@
 		55A7E25C26F7ED0A0077936F /* HourlyForecast+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HourlyForecast+Preview.swift"; sourceTree = "<group>"; };
 		55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		55A7E26426F800340077936F /* WeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemView.swift; sourceTree = "<group>"; };
+		55D6299C27DD39070043188D /* IntrospectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrospectView.swift; sourceTree = "<group>"; };
 		55E82F2126F905E7003E8B68 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		55E82F2326F90A94003E8B68 /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
 		55E82F2526F9D9C5003E8B68 /* FramePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramePreferenceKey.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A7E24F26F7E1710077936F /* OpenWeather.framework in Frameworks */,
+				55D6299B27DD38B70043188D /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +294,7 @@
 		55F2D61024D1033B00E3BDDF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55D6299C27DD39070043188D /* IntrospectView.swift */,
 				55F2D60E24D1032500E3BDDF /* WeatherView.swift */,
 				55E82F2D26F9E32E003E8B68 /* CityView.swift */,
 				55E82F2F26FA272E003E8B68 /* CityViewModel.swift */,
@@ -341,6 +346,9 @@
 				55A7E24E26F7E1710077936F /* PBXTargetDependency */,
 			);
 			name = SwiftUI_Pull_to_Refresh;
+			packageProductDependencies = (
+				55D6299A27DD38B70043188D /* Introspect */,
+			);
 			productName = SwiftUI_Pull_to_Refresh;
 			productReference = 551C490624CC690E007C7C03 /* SwiftUI_Pull_to_Refresh.app */;
 			productType = "com.apple.product-type.application";
@@ -433,6 +441,9 @@
 				Base,
 			);
 			mainGroup = 551C48FD24CC690D007C7C03;
+			packageReferences = (
+				55D6299927DD38B60043188D /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = 551C490724CC690E007C7C03 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -512,6 +523,7 @@
 				551C490A24CC690E007C7C03 /* AppDelegate.swift in Sources */,
 				55F2D60F24D1032500E3BDDF /* WeatherView.swift in Sources */,
 				55E82F2626F9D9C5003E8B68 /* FramePreferenceKey.swift in Sources */,
+				55D6299D27DD39070043188D /* IntrospectView.swift in Sources */,
 				55E82F2426F90A94003E8B68 /* PagingModifier.swift in Sources */,
 				55A7E26526F800340077936F /* WeatherItemView.swift in Sources */,
 				55E82F3026FA272E003E8B68 /* CityViewModel.swift in Sources */,
@@ -634,7 +646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -689,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -710,7 +722,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -733,7 +745,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -854,7 +866,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = OpenWeather/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -884,7 +896,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = OpenWeather/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -949,6 +961,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		55D6299927DD38B60043188D /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55D6299A27DD38B70043188D /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55D6299927DD38B60043188D /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 551C48FE24CC690D007C7C03 /* Project object */;
 }
