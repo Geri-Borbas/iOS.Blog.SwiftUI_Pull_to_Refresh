@@ -25,5 +25,5 @@ struct ConventView: View {
 
 > Licensed under the [**MIT License**](https://en.wikipedia.org/wiki/MIT_License).
 
-[`ContentView.swift`]: SwiftUI_Pull_to_Refresh/Views/ContentView.swift
-[`RefreshControl.swift`]: SwiftUI_Pull_to_Refresh/Views/RefreshControl.swift
+[`RefreshModifierView.swift`]: SwiftUI_Pull_to_Refresh/Prototypes/RefreshModifierView.swift
+[`RefreshModifier.swift`]: SwiftUI_Pull_to_Refresh/RefreshModifier/RefreshModifier.swift
