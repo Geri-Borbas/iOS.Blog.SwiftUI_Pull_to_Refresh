@@ -4,6 +4,12 @@
 
 	+ Design
 
+* 0.10.0
+
+	+ Created `RefreshModifier` implementation (according article update)
+	+ Added `Prototype` views (according article update)
+	+ Renaming, grouping
+
 * 0.9.0
 
 	+ Deployment target to iOS 13

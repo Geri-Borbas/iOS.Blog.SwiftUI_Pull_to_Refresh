@@ -8,6 +8,7 @@
 import SwiftUI
 import Introspect
 
+
 struct IntrospectView: View {
 	
 	let size = CGSize(width: 375, height: 800)
@@ -48,8 +49,11 @@ struct IntrospectView: View {
 							Text("\(horizontalIndex + 1) : \(verticalIndex + 1)")
 						}
 						.padding(.vertical)
-						.introspectTableView { view in
-							view.backgroundColor = colors[horizontalIndex]
+						.onRefresh { refreshControl in
+							refreshControl.attributedTitle = NSAttributedString(string: "List \(horizontalIndex + 1)")
+							Network.load {
+								refreshControl.endRefreshing()
+							}
 						}
 					}
 					.background(Color.gray)

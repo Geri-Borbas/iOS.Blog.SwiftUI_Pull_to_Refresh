@@ -2,34 +2,18 @@
 ⇣ SwiftUI Pull to Refresh (for iOS 13 and iOS 14) condensed into a single modifier.
 
 
-Complementary repository for article [**SwiftUI Pull to Refresh**] (in progress). See [`ContentView.swift`] for usage, and [`RefreshControlModifier.swift`] for the source. Designed to work with **multiple scroll views** on the same screen.
+Complementary repository for article [**SwiftUI Pull to Refresh**] (in progress). See [`RefreshModifierView.swift`] for usage, and [`RefreshModifier.swift`] for the source.
 
 ```Swift
-struct ContentView: View {
+struct ConventView: View {
 	
 	var body: some View {
-		VStack {
-			HStack {
-				List {
-					ForEach(1...100, id: \.self) { eachRowIndex in
-						Text("Left \(eachRowIndex)")
-					}
-				}
-				.refreshControl { refreshControl in
-					Network.refresh {
-						refreshControl.endRefreshing()
-					}
-				}
-				List {
-					ForEach(1...100, id: \.self) { eachRowIndex in
-						Text("Right \(eachRowIndex)")
-					}
-				}
-				.refreshControl { refreshControl in
-					Network.refresh {
-						refreshControl.endRefreshing()
-					}
-				}
+		List {
+			...
+		}
+		.onRefresh { refreshControl in
+			Network.load {
+				refreshControl.endRefreshing()
 			}
 		}
 	}
