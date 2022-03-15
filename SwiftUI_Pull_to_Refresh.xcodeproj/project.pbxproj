@@ -27,6 +27,7 @@
 		5583A93927E0CBCC00DF9BDF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93727E0CBCC00DF9BDF /* RefreshControl.swift */; };
 		5583A93A27E0CBCC00DF9BDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93827E0CBCC00DF9BDF /* ContentView.swift */; };
 		5583A93C27E0D46400DF9BDF /* AsyncAwaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93B27E0D46400DF9BDF /* AsyncAwaitView.swift */; };
+		5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A95727E1175800DF9BDF /* RefreshableModifier.swift */; };
 		55A7E23526F7DFCE0077936F /* AlphaVantage.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A7E23326F7DFCE0077936F /* AlphaVantage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55A7E23E26F7DFD70077936F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E99526F682FA00CFA9C7 /* API.swift */; };
 		55A7E23F26F7DFD70077936F /* IntradayTimeSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E99726F6866E00CFA9C7 /* IntradayTimeSeries.swift */; };
@@ -108,6 +109,7 @@
 		5583A93727E0CBCC00DF9BDF /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		5583A93827E0CBCC00DF9BDF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5583A93B27E0D46400DF9BDF /* AsyncAwaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitView.swift; sourceTree = "<group>"; };
+		5583A95727E1175800DF9BDF /* RefreshableModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableModifier.swift; sourceTree = "<group>"; };
 		55A7E23126F7DFCE0077936F /* AlphaVantage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlphaVantage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A7E23326F7DFCE0077936F /* AlphaVantage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaVantage.h; sourceTree = "<group>"; };
 		55A7E23426F7DFCE0077936F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				55679B4727DECE6700A0800B /* RefreshModifier.swift */,
+				5583A95727E1175800DF9BDF /* RefreshableModifier.swift */,
 			);
 			path = RefreshModifier;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */,
 				55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */,
 				55679B4627DECAAD00A0800B /* Network.swift in Sources */,
+				5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */,
 				55E82F2226F905E7003E8B68 /* UIView+Extensions.swift in Sources */,
 				55679B4827DECE6700A0800B /* RefreshModifier.swift in Sources */,
 				55679B4A27DECEB500A0800B /* RefreshModifierView.swift in Sources */,
@@ -678,7 +682,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -733,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -754,7 +758,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -777,7 +781,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

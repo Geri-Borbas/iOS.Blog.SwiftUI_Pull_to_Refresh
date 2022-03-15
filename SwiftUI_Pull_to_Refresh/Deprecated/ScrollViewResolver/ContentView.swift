@@ -60,7 +60,6 @@ fileprivate class RefreshControl: ObservableObject {
 }
 
 
-
 struct ContentView: View {
     
     @ObservedObject fileprivate var refreshControl_1: RefreshControl = RefreshControl()
@@ -105,6 +104,7 @@ struct ContentView: View {
         }
     }
 }
+
 
 struct RefreshControlInjector: View {
     

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Introspect
 
 
 struct AsyncAwaitView: View {
@@ -20,29 +19,5 @@ struct AsyncAwaitView: View {
 		.refreshable {
 			await Network.load()
 		}
-	}
-}
-
-
-struct RefreshableModifier: ViewModifier {
-	
-	let action: () async -> Void
-	
-	func body(content: Content) -> some View {
-		content
-			.onRefresh { refreshControl in
-				Task {
-					await action()
-					refreshControl.endRefreshing()
-				}
-			}
-	}
-}
-
-
-extension View {
-
-	func refreshable(action: @escaping () async -> Void) -> some View {
-		self.modifier(RefreshableModifier(action: action))
 	}
 }

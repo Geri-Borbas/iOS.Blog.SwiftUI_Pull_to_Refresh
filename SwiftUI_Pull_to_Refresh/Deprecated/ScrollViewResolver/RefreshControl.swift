@@ -9,8 +9,6 @@ import SwiftUI
 import Combine
 
 
-
-
 struct ScrollViewResolver: UIViewRepresentable {
     
     let onResolve: (UIScrollView) -> Void

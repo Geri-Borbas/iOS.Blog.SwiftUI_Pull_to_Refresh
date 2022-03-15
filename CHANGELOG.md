@@ -4,6 +4,10 @@
 
 	+ Design
 
+* 1.0.0
+
+	+ Added `Refreshable` (with availability) 
+
 * 0.12.0
 
 	+ Added `AsyncAwaitView`
