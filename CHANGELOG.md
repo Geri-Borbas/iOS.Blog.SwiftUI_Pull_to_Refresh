@@ -4,6 +4,14 @@
 
 	+ Design
 
+* 0.12.0
+
+	+ Added `AsyncAwaitView`
+
+* 0.11.0
+	
+	+ Added `ScrollViewResolver` (deprecated)
+
 * 0.10.0
 
 	+ Created `RefreshModifier` implementation (according article update)

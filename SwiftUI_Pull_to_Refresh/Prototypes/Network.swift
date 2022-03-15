@@ -15,4 +15,12 @@ struct Network {
 			completion()
 		}
 	}
+	
+	static func load() async {
+		await withCheckedContinuation { continuation in
+			DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+				continuation.resume()
+			}
+		}
+	}
 }
