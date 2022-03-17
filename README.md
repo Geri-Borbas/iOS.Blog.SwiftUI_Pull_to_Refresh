@@ -36,9 +36,6 @@ struct ContentView: View {
 }
 ```
 
-See more in the complementary article at [SwiftUI Pull to Refresh (for iOS 13 and iOS 14)].
-
-
 ## License
 
 > Licensed under the [**MIT License**](https://en.wikipedia.org/wiki/MIT_License).
