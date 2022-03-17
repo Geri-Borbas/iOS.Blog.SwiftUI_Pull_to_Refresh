@@ -4,6 +4,12 @@
 
 	+ Design
 
+* 1.0.1
+
+	+ Update README.md
+	+ Added entirely unrelated `Marquee` prototype
+		+ From https://twitter.com/Geri_Borbas/status/1504461022219968516
+
 * 1.0.0
 
 	+ Added `Refreshable` (with availability) 

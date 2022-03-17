@@ -40,6 +40,7 @@
 		55A7E25D26F7ED0A0077936F /* HourlyForecast+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25C26F7ED0A0077936F /* HourlyForecast+Preview.swift */; };
 		55A7E25F26F7ED5B0077936F /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */; };
 		55A7E26126F7EF600077936F /* HourlyForecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A7E25926F7E85C0077936F /* HourlyForecast.json */; };
+		55B81CBA27E37C4500025A4E /* Marquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B81CB927E37C4500025A4E /* Marquee.swift */; };
 		55D6299B27DD38B70043188D /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 55D6299A27DD38B70043188D /* Introspect */; };
 		55D6299D27DD39070043188D /* IntrospectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6299C27DD39070043188D /* IntrospectView.swift */; };
 		55E82F2226F905E7003E8B68 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E82F2126F905E7003E8B68 /* UIView+Extensions.swift */; };
@@ -123,6 +124,7 @@
 		55A7E25C26F7ED0A0077936F /* HourlyForecast+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HourlyForecast+Preview.swift"; sourceTree = "<group>"; };
 		55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		55A7E26426F800340077936F /* WeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemView.swift; sourceTree = "<group>"; };
+		55B81CB927E37C4500025A4E /* Marquee.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Marquee.swift; sourceTree = "<group>"; usesTabs = 0; };
 		55D6299C27DD39070043188D /* IntrospectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrospectView.swift; sourceTree = "<group>"; };
 		55E82F2126F905E7003E8B68 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		55E82F2326F90A94003E8B68 /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 		55679B3C27DEB65800A0800B /* Prototypes */ = {
 			isa = PBXGroup;
 			children = (
+				55B81CB927E37C4500025A4E /* Marquee.swift */,
 				55679B4527DECAAD00A0800B /* Network.swift */,
 				55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */,
 				55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */,
@@ -561,6 +564,7 @@
 				55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */,
 				55679B4627DECAAD00A0800B /* Network.swift in Sources */,
 				5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */,
+				55B81CBA27E37C4500025A4E /* Marquee.swift in Sources */,
 				55E82F2226F905E7003E8B68 /* UIView+Extensions.swift in Sources */,
 				55679B4827DECE6700A0800B /* RefreshModifier.swift in Sources */,
 				55679B4A27DECEB500A0800B /* RefreshModifierView.swift in Sources */,
@@ -682,7 +686,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -737,7 +741,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -758,7 +762,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -781,7 +785,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
