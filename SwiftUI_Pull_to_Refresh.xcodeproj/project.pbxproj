@@ -25,6 +25,8 @@
 		552AFE3F27E3E6F4002F18F2 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552AFE3427E3E6F4002F18F2 /* Lato-Black.ttf */; };
 		552AFE4027E3E6F4002F18F2 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552AFE3527E3E6F4002F18F2 /* Lato-Regular.ttf */; };
 		552AFE4427E3E6F4002F18F2 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552AFE3927E3E6F4002F18F2 /* Lato-Light.ttf */; };
+		553EBF5A27E3F4FE00C1B40D /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5927E3F4FD00C1B40D /* Withable.swift */; };
+		553EBF5D27E3F5B900C1B40D /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5C27E3F5B900C1B40D /* UI.swift */; };
 		55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */; };
 		55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */; };
 		55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */; };
@@ -109,6 +111,8 @@
 		552AFE3527E3E6F4002F18F2 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		552AFE3727E3E6F4002F18F2 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		552AFE3927E3E6F4002F18F2 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		553EBF5927E3F4FD00C1B40D /* Withable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withable.swift; sourceTree = "<group>"; };
+		553EBF5C27E3F5B900C1B40D /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRefreshControlView.swift; sourceTree = "<group>"; };
 		55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlTargetView.swift; sourceTree = "<group>"; };
 		55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlClosureView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 				551C490B24CC690E007C7C03 /* SceneDelegate.swift */,
 				55679B4D27DEDFD000A0800B /* RefreshModifier */,
 				55F2D61024D1033B00E3BDDF /* Views */,
+				553EBF5B27E3F51800C1B40D /* Extensions */,
 				55679B3C27DEB65800A0800B /* Prototypes */,
 				55679B4E27DEE05600A0800B /* Deprecated */,
 				551C490F24CC6918007C7C03 /* Assets.xcassets */,
@@ -255,6 +260,14 @@
 				552AFE3727E3E6F4002F18F2 /* OFL.txt */,
 			);
 			path = Lato;
+			sourceTree = "<group>";
+		};
+		553EBF5B27E3F51800C1B40D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				553EBF5927E3F4FD00C1B40D /* Withable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		55679B3C27DEB65800A0800B /* Prototypes */ = {
@@ -361,6 +374,7 @@
 		55F2D61024D1033B00E3BDDF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				553EBF5C27E3F5B900C1B40D /* UI.swift */,
 				55F2D60E24D1032500E3BDDF /* WeatherView.swift */,
 				55E82F2D26F9E32E003E8B68 /* CityView.swift */,
 				55E82F2F26FA272E003E8B68 /* CityViewModel.swift */,
@@ -597,11 +611,13 @@
 				55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */,
 				55679B4627DECAAD00A0800B /* Network.swift in Sources */,
 				5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */,
+				553EBF5A27E3F4FE00C1B40D /* Withable.swift in Sources */,
 				55679B4827DECE6700A0800B /* RefreshModifier.swift in Sources */,
 				55679B4A27DECEB500A0800B /* RefreshModifierView.swift in Sources */,
 				55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */,
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
 				5583A93C27E0D46400DF9BDF /* AsyncAwaitView.swift in Sources */,
+				553EBF5D27E3F5B900C1B40D /* UI.swift in Sources */,
 				55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

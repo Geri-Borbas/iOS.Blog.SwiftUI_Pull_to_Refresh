@@ -20,3 +20,7 @@ nesting:
 
 disabled_rules:
   - weak_delegate
+  - private_over_fileprivate
+
+excluded:
+  - SwiftUI_Pull_to_Refresh/Extensions

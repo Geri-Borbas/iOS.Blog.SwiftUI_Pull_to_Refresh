@@ -4,6 +4,11 @@
 
 	+ Design
 
+* 1.1.2
+
+	+ Added `Withable`
+	+ SwiftLint updates
+
 * 1.1.1
 
 	+ Added `Lato` font

@@ -84,7 +84,6 @@ struct WeatherView: View {
 			.introspectScrollView {
 				$0.isPagingEnabled = true
 			}
-			
 		}
 		.edgesIgnoringSafeArea(.bottom)
 	}

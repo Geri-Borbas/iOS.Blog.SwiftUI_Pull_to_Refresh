@@ -21,7 +21,9 @@ struct CityView: View {
 			
 			// Title.
 			Text(viewModel.name)
-				.font(Font.custom("Lato-Light", size: 40))
+				.titleStyle()
+			Text(viewModel.state.displayDate)
+				.subtitleStyle()
 			
 			// List.
 			List {
@@ -31,17 +33,22 @@ struct CityView: View {
 				case .idle:
 					Color.clear
 				case .loading:
+					
 					Text("Loading")
 						.font(.largeTitle)
 					ForEach(Array(repeating: 0, count: 20).indices, id: \.self) { _ in
 						Text("Loading")
 					}
 				case .error(let error):
+					
 					Text("Could not refresh weather data. \(error.localizedDescription)")
 					ForEach(Array(repeating: 0, count: 20).indices, id: \.self) { _ in
 						Text("Loading")
 					}
+					
 				case .loaded(let weather):
+					
+					
 					Text(weather.currentWeather.displayTemperature)
 						.font(.largeTitle)
 					ForEach(weather.hourlyWeather.indices, id: \.self) { eachIndex in

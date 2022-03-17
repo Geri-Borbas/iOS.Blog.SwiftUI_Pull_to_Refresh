@@ -64,6 +64,15 @@ extension CityViewModel.State {
 			return false
 		}
 	}
+		
+	var displayDate: String {
+		switch self {
+		case .loaded(let weather):
+			return DateFormatter().with { $0.dateStyle = .medium }.string(from: weather.currentWeather.time)
+		default:
+			return "-"
+		}
+	}
 }
 
 
