@@ -10,6 +10,7 @@ import SwiftUI
 import OpenWeather
 
 
+@MainActor
 struct CityView: View {
 	
 	@ObservedObject var viewModel: CityViewModel
@@ -20,7 +21,7 @@ struct CityView: View {
 			
 			// Title.
 			Text(viewModel.name)
-				.font(.largeTitle)
+				.font(Font.custom("Lato-Light", size: 40))
 			
 			// List.
 			List {
@@ -30,15 +31,15 @@ struct CityView: View {
 				case .idle:
 					Color.clear
 				case .loading:
-					ForEach(Array(repeating: 0, count: 100).indices, id: \.self) { _ in
+					Text("Loading")
+						.font(.largeTitle)
+					ForEach(Array(repeating: 0, count: 20).indices, id: \.self) { _ in
 						Text("Loading")
-//							.redacted(reason: .placeholder)
 					}
 				case .error(let error):
 					Text("Could not refresh weather data. \(error.localizedDescription)")
-					ForEach(Array(repeating: 0, count: 100).indices, id: \.self) { _ in
+					ForEach(Array(repeating: 0, count: 20).indices, id: \.self) { _ in
 						Text("Loading")
-//							.redacted(reason: .placeholder)
 					}
 				case .loaded(let weather):
 					Text(weather.currentWeather.displayTemperature)
@@ -49,11 +50,9 @@ struct CityView: View {
 				}
 				
 			}
-			.refreshControl { refreshControl in
-				viewModel.fetch {
-				   refreshControl.endRefreshing()
-			   }
-		   }
+			.refreshable {
+				await viewModel.fetch()
+			}
 		}
 		.frame(width: width)
 		.onAppear {

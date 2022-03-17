@@ -29,6 +29,16 @@ class CityViewModel: ObservableObject {
 		self.location = location
 	}
 	
+	func fetch() async {
+		await withCheckedContinuation { continuation in
+			fetch {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Some extra (fake) loading
+					continuation.resume()
+				}
+			}
+		}
+	}
+	
 	func fetch(completion: (() -> Void)? = nil) {
 		state = .loading
 		OpenWeather.API.get(at: location) { [weak self] result in

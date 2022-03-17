@@ -4,6 +4,16 @@
 
 	+ Design
 
+* 1.1.1
+
+	+ Added `Lato` font
+
+* 1.1.0
+
+	+ Updated `CityViewModel` with async `fetch`
+	+ Updated `CityView` to use `refreshable` modifier
+	+ Excluded deprecated files from build
+
 * 1.0.1
 
 	+ Update README.md

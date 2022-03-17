@@ -16,6 +16,15 @@
 		551C493B24CC69D4007C7C03 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 551C493924CC69D4007C7C03 /* README.md */; };
 		551C493C24CC69D4007C7C03 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 551C493A24CC69D4007C7C03 /* .swiftlint.yml */; };
 		5529E99326F64A3900CFA9C7 /* .editorconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5529E99226F64A3900CFA9C7 /* .editorconfig */; };
+		552AFE2B27E3DF4C002F18F2 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F2D60E24D1032500E3BDDF /* WeatherView.swift */; };
+		552AFE2C27E3DF4C002F18F2 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E82F2F26FA272E003E8B68 /* CityViewModel.swift */; };
+		552AFE2D27E3DF4C002F18F2 /* WeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E26426F800340077936F /* WeatherItemView.swift */; };
+		552AFE2E27E3DF4C002F18F2 /* CityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E82F2D26F9E32E003E8B68 /* CityView.swift */; };
+		552AFE3D27E3E6F4002F18F2 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552AFE3227E3E6F4002F18F2 /* Lato-Thin.ttf */; };
+		552AFE3E27E3E6F4002F18F2 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552AFE3327E3E6F4002F18F2 /* Lato-Bold.ttf */; };
+		552AFE3F27E3E6F4002F18F2 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552AFE3427E3E6F4002F18F2 /* Lato-Black.ttf */; };
+		552AFE4027E3E6F4002F18F2 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552AFE3527E3E6F4002F18F2 /* Lato-Regular.ttf */; };
+		552AFE4427E3E6F4002F18F2 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552AFE3927E3E6F4002F18F2 /* Lato-Light.ttf */; };
 		55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */; };
 		55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */; };
 		55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */; };
@@ -24,8 +33,6 @@
 		55679B4627DECAAD00A0800B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4527DECAAD00A0800B /* Network.swift */; };
 		55679B4827DECE6700A0800B /* RefreshModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4727DECE6700A0800B /* RefreshModifier.swift */; };
 		55679B4A27DECEB500A0800B /* RefreshModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4927DECEB500A0800B /* RefreshModifierView.swift */; };
-		5583A93927E0CBCC00DF9BDF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93727E0CBCC00DF9BDF /* RefreshControl.swift */; };
-		5583A93A27E0CBCC00DF9BDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93827E0CBCC00DF9BDF /* ContentView.swift */; };
 		5583A93C27E0D46400DF9BDF /* AsyncAwaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93B27E0D46400DF9BDF /* AsyncAwaitView.swift */; };
 		5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A95727E1175800DF9BDF /* RefreshableModifier.swift */; };
 		55A7E23526F7DFCE0077936F /* AlphaVantage.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A7E23326F7DFCE0077936F /* AlphaVantage.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,11 +47,8 @@
 		55A7E25D26F7ED0A0077936F /* HourlyForecast+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25C26F7ED0A0077936F /* HourlyForecast+Preview.swift */; };
 		55A7E25F26F7ED5B0077936F /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */; };
 		55A7E26126F7EF600077936F /* HourlyForecast.json in Resources */ = {isa = PBXBuildFile; fileRef = 55A7E25926F7E85C0077936F /* HourlyForecast.json */; };
-		55B81CBA27E37C4500025A4E /* Marquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B81CB927E37C4500025A4E /* Marquee.swift */; };
 		55D6299B27DD38B70043188D /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 55D6299A27DD38B70043188D /* Introspect */; };
 		55D6299D27DD39070043188D /* IntrospectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6299C27DD39070043188D /* IntrospectView.swift */; };
-		55E82F2226F905E7003E8B68 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E82F2126F905E7003E8B68 /* UIView+Extensions.swift */; };
-		55E82F2826F9DA59003E8B68 /* UIResponder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E82F2726F9DA59003E8B68 /* UIResponder+Extensions.swift */; };
 		55E82F3226FA336C003E8B68 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 55E82F3126FA336C003E8B68 /* CHANGELOG.md */; };
 		55FD8E6F24CE55260057D91E /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +103,12 @@
 		5529E99226F64A3900CFA9C7 /* .editorconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .editorconfig; sourceTree = "<group>"; };
 		5529E99526F682FA00CFA9C7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5529E99726F6866E00CFA9C7 /* IntradayTimeSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayTimeSeries.swift; sourceTree = "<group>"; };
+		552AFE3227E3E6F4002F18F2 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		552AFE3327E3E6F4002F18F2 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		552AFE3427E3E6F4002F18F2 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		552AFE3527E3E6F4002F18F2 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		552AFE3727E3E6F4002F18F2 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		552AFE3927E3E6F4002F18F2 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRefreshControlView.swift; sourceTree = "<group>"; };
 		55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlTargetView.swift; sourceTree = "<group>"; };
 		55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlClosureView.swift; sourceTree = "<group>"; };
@@ -204,12 +214,13 @@
 				551C490924CC690E007C7C03 /* AppDelegate.swift */,
 				551C490B24CC690E007C7C03 /* SceneDelegate.swift */,
 				55679B4D27DEDFD000A0800B /* RefreshModifier */,
-				55679B3C27DEB65800A0800B /* Prototypes */,
 				55F2D61024D1033B00E3BDDF /* Views */,
+				55679B3C27DEB65800A0800B /* Prototypes */,
 				55679B4E27DEE05600A0800B /* Deprecated */,
 				551C490F24CC6918007C7C03 /* Assets.xcassets */,
 				551C491424CC6918007C7C03 /* LaunchScreen.storyboard */,
 				551C491724CC6918007C7C03 /* Info.plist */,
+				552AFE2F27E3E6F4002F18F2 /* Lato */,
 				551C491124CC6918007C7C03 /* Preview Content */,
 			);
 			path = SwiftUI_Pull_to_Refresh;
@@ -233,10 +244,22 @@
 			path = SwiftUI_Pull_to_RefreshUITests;
 			sourceTree = "<group>";
 		};
+		552AFE2F27E3E6F4002F18F2 /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				552AFE3227E3E6F4002F18F2 /* Lato-Thin.ttf */,
+				552AFE3927E3E6F4002F18F2 /* Lato-Light.ttf */,
+				552AFE3527E3E6F4002F18F2 /* Lato-Regular.ttf */,
+				552AFE3327E3E6F4002F18F2 /* Lato-Bold.ttf */,
+				552AFE3427E3E6F4002F18F2 /* Lato-Black.ttf */,
+				552AFE3727E3E6F4002F18F2 /* OFL.txt */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
 		55679B3C27DEB65800A0800B /* Prototypes */ = {
 			isa = PBXGroup;
 			children = (
-				55B81CB927E37C4500025A4E /* Marquee.swift */,
 				55679B4527DECAAD00A0800B /* Network.swift */,
 				55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */,
 				55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */,
@@ -262,6 +285,7 @@
 		55679B4E27DEE05600A0800B /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				55B81CB927E37C4500025A4E /* Marquee.swift */,
 				55E82F2926F9DA64003E8B68 /* Extensions */,
 				5583A93227E0CB9C00DF9BDF /* ScrollViewResolver */,
 				55E82F2A26F9DA74003E8B68 /* ScrollViewMatcher */,
@@ -498,12 +522,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552AFE4427E3E6F4002F18F2 /* Lato-Light.ttf in Resources */,
+				552AFE3E27E3E6F4002F18F2 /* Lato-Bold.ttf in Resources */,
 				551C493C24CC69D4007C7C03 /* .swiftlint.yml in Resources */,
 				551C491624CC6918007C7C03 /* LaunchScreen.storyboard in Resources */,
 				5529E99326F64A3900CFA9C7 /* .editorconfig in Resources */,
+				552AFE3F27E3E6F4002F18F2 /* Lato-Black.ttf in Resources */,
 				551C491324CC6918007C7C03 /* Preview Assets.xcassets in Resources */,
 				551C493B24CC69D4007C7C03 /* README.md in Resources */,
 				55E82F3226FA336C003E8B68 /* CHANGELOG.md in Resources */,
+				552AFE3D27E3E6F4002F18F2 /* Lato-Thin.ttf in Resources */,
+				552AFE4027E3E6F4002F18F2 /* Lato-Regular.ttf in Resources */,
 				551C491024CC6918007C7C03 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,22 +586,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552AFE2B27E3DF4C002F18F2 /* WeatherView.swift in Sources */,
 				551C490A24CC690E007C7C03 /* AppDelegate.swift in Sources */,
+				552AFE2D27E3DF4C002F18F2 /* WeatherItemView.swift in Sources */,
 				55D6299D27DD39070043188D /* IntrospectView.swift in Sources */,
+				552AFE2C27E3DF4C002F18F2 /* CityViewModel.swift in Sources */,
 				55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */,
 				55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */,
+				552AFE2E27E3DF4C002F18F2 /* CityView.swift in Sources */,
 				55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */,
 				55679B4627DECAAD00A0800B /* Network.swift in Sources */,
 				5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */,
-				55B81CBA27E37C4500025A4E /* Marquee.swift in Sources */,
-				55E82F2226F905E7003E8B68 /* UIView+Extensions.swift in Sources */,
 				55679B4827DECE6700A0800B /* RefreshModifier.swift in Sources */,
 				55679B4A27DECEB500A0800B /* RefreshModifierView.swift in Sources */,
-				5583A93927E0CBCC00DF9BDF /* RefreshControl.swift in Sources */,
 				55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */,
-				5583A93A27E0CBCC00DF9BDF /* ContentView.swift in Sources */,
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
-				55E82F2826F9DA59003E8B68 /* UIResponder+Extensions.swift in Sources */,
 				5583A93C27E0D46400DF9BDF /* AsyncAwaitView.swift in Sources */,
 				55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */,
 			);
@@ -686,7 +714,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -741,7 +769,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -762,7 +790,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -785,7 +813,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

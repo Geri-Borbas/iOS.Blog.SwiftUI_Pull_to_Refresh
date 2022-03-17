@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Introspect
 import OpenWeather
 
 
@@ -80,10 +81,10 @@ struct WeatherView: View {
 					)
 				}
 			}
-			.paging()
-			.onScroll { scrollView in
-				print("scrollView.contentOffset: \(scrollView.contentOffset)")
+			.introspectScrollView {
+				$0.isPagingEnabled = true
 			}
+			
 		}
 		.edgesIgnoringSafeArea(.bottom)
 	}
