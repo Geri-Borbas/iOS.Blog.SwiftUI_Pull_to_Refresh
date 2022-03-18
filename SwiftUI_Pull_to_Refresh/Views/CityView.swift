@@ -19,6 +19,7 @@ struct CityView: View {
 	init(viewModel: CityViewModel, width: CGFloat) {
 		self.viewModel = viewModel
 		self.width = width
+		UITableView.appearance().showsVerticalScrollIndicator = false
 		UITableViewHeaderFooterView.appearance().backgroundView = UIView()
 	}
 	
@@ -99,26 +100,27 @@ struct CityView: View {
 						}
 						.padding(.vertical, 16)
 					}
-						.listRowInsets(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-						.listRowBackground(Color.clear),
+						.listRowInsets(EdgeInsets()),
 					
 					// Hourly forecast list.
 					content: {
 						ForEach(viewModel.display.items) { eachViewModel in
 							WeatherItemView(viewModel: eachViewModel)
 								.listRowBackground(Color.clear)
+								.listRowInsets(EdgeInsets())
 						}
 					}
+						
 				)
 			}
 			.listStyle(.plain)
 			.introspectTableView {
 				$0.separatorStyle = .none
-				$0.showsVerticalScrollIndicator = false
 			}
 			.refreshable {
 				await viewModel.fetch()
 			}
+			.padding(.horizontal, 16)
 		}
 		.frame(width: width)
 		.onAppear {
@@ -138,7 +140,7 @@ fileprivate struct AttributeView: View {
 	var body: some View {
 		HStack(spacing: 4) {
 			Image(systemName: image)
-				.attributeStyle()
+				.iconStyle()
 			VStack(alignment: .leading, spacing: 0) {
 				Text(name)
 					.attributeStyle()

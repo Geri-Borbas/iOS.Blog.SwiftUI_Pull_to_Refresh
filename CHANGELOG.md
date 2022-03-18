@@ -4,7 +4,7 @@
 
 	+ Design
 
-* 1.2.5
+* 1.2.5 - 1.2.6
 
 	+ Build attributes view (in weather header)
 

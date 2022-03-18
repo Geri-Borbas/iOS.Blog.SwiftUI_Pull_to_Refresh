@@ -29,23 +29,19 @@ extension Text {
 	func heroStyle(black: Bool = true) -> some View {
 		self
 			.font(Font.custom(black ? "Lato-Black" : "Lato-Regular", size: 68))
+			.foregroundColor(.white)
 			.frame(maxHeight: 64)
 	}
 	
 	func regularStyle() -> Self {
 		self
 			.font(Font.custom("Lato-Regular", size: 24))
-	}
-	
-	func secondaryStyle() -> some View {
-		self
-			.font(Font.custom("Lato-Light", size: 20))
-			.opacity(0.4)
+			.foregroundColor(.white)
 	}
 	
 	func attributeStyle() -> Self {
 		self
-			.font(Font.custom("Lato-Regular", size: 12))
+			.font(Font.custom("Lato-Regular", size: 14))
 			.foregroundColor(Color("Green"))
 	}
 	
@@ -60,6 +56,12 @@ extension Text {
 			.font(Font.custom("Lato-Thin", size: 10))
 			.frame(maxHeight: 12)
 	}
+	
+	func secondaryStyle() -> some View {
+		self
+			.font(Font.custom("Lato-Light", size: 20))
+			.opacity(0.4)
+	}
 }
 
 
@@ -71,7 +73,7 @@ extension Image {
 			.foregroundColor(Color("Green"))
 	}
 	
-	func attributeStyle() -> some View {
+	func iconStyle() -> some View {
 		self
 			.font(.system(size: 24))
 			.foregroundColor(Color("Green"))
