@@ -42,15 +42,38 @@ extension Text {
 			.font(Font.custom("Lato-Light", size: 20))
 			.opacity(0.4)
 	}
+	
+	func attributeStyle() -> Self {
+		self
+			.font(Font.custom("Lato-Regular", size: 12))
+			.foregroundColor(Color("Green"))
+	}
+	
+	func valueStyle() -> some View {
+		self
+			.font(Font.custom("Lato-Regular", size: 14))
+			.frame(maxHeight: 14)
+	}
+	
+	func unitStyle() -> some View {
+		self
+			.font(Font.custom("Lato-Thin", size: 10))
+			.frame(maxHeight: 12)
+	}
 }
 
 
 extension Image {
 	
-	
 	func heroStyle() -> some View {
 		self
 			.font(.system(size: 72))
+			.foregroundColor(Color("Green"))
+	}
+	
+	func attributeStyle() -> some View {
+		self
+			.font(.system(size: 24))
 			.foregroundColor(Color("Green"))
 	}
 }

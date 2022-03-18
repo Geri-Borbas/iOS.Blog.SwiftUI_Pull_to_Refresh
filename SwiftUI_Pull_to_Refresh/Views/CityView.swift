@@ -11,7 +11,6 @@ import Introspect
 import OpenWeather
 
 
-@MainActor
 struct CityView: View {
 	
 	@ObservedObject var viewModel: CityViewModel
@@ -35,12 +34,12 @@ struct CityView: View {
 			
 			// List.
 			List {
-				
-				
 				Section(
 					
 					// Weather header.
-					header: VStack {
+					header: VStack(spacing: 0) {
+						
+						// Weather.
 						HStack {
 							Image(systemName: "cloud.bolt.rain")
 								.heroStyle()
@@ -74,7 +73,31 @@ struct CityView: View {
 								)
 						)
 						.cornerRadius(32)
-						Spacer(minLength: 16)
+						
+						// Attributes.
+						HStack(spacing: 10) {
+							Spacer()
+							AttributeView(
+								image: "wind",
+								name: "Wind",
+								value: viewModel.display.wind,
+								unit: "Km/h"
+							)
+							AttributeView(
+								image: "drop",
+								name: "Humidity",
+								value: viewModel.display.humidity,
+								unit: "%"
+							)
+							AttributeView(
+								image: "sun.max",
+								name: "UV Index",
+								value: viewModel.display.uv,
+								unit: ""
+							)
+							Spacer()
+						}
+						.padding(.vertical, 16)
 					}
 						.listRowInsets(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 						.listRowBackground(Color.clear),
@@ -100,6 +123,32 @@ struct CityView: View {
 		.frame(width: width)
 		.onAppear {
 			viewModel.fetch()
+		}
+	}
+}
+
+
+fileprivate struct AttributeView: View {
+	
+	let image: String
+	let name: String
+	let value: String
+	let unit: String
+	
+	var body: some View {
+		HStack(spacing: 4) {
+			Image(systemName: image)
+				.attributeStyle()
+			VStack(alignment: .leading, spacing: 0) {
+				Text(name)
+					.attributeStyle()
+				HStack(alignment: .bottom, spacing: 2) {
+					Text(value)
+						.valueStyle()
+					Text(unit)
+						.unitStyle()
+				}
+			}
 		}
 	}
 }

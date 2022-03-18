@@ -18,7 +18,7 @@ class WeatherItemViewModel: ObservableObject {
 	init() {
 		self.time = Date()
 		self.icon = nil
-		self.temperature = 0
+		self.temperature = 273.15
 	}
 	
 	init(weather: OpenWeather.HourlyForecast.WeatherData) {

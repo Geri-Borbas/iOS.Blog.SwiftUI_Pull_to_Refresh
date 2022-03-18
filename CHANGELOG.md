@@ -4,6 +4,10 @@
 
 	+ Design
 
+* 1.2.5
+
+	+ Build attributes view (in weather header)
+
 * 1.2.0
 
 	+ Built city header, weather header

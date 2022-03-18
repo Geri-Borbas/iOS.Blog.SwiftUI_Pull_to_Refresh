@@ -18,6 +18,9 @@ class CityViewModel: ObservableObject {
 		
 		let time: Date
 		let celsius: String
+		let wind: String
+		let humidity: String
+		let uv: String
 		let items: [WeatherItemViewModel]
 	}
 	
@@ -71,6 +74,9 @@ extension CityViewModel.Display {
 		let weather = hourlyForecast.currentWeather
 		self.time = weather.time
 		self.celsius = String(format: "%.1f", weather.temperature - 273.15)
+		self.wind = String(format: "%.2f", weather.windSpeed)
+		self.humidity = String(format: "%.0f", weather.humidity)
+		self.uv = String(format: "%.1f", weather.uvIndex)
 		self.items = hourlyForecast.hourlyWeather.map { WeatherItemViewModel(weather: $0) }
 	}
 	
@@ -88,6 +94,9 @@ extension CityViewModel.Display {
 	static let empty = CityViewModel.Display(
 		time: Date(),
 		celsius: "0",
+		wind: "0.71",
+		humidity: "31",
+		uv: "1.2",
 		items: Array(repeating: WeatherItemViewModel(), count: 20)
 	)
 }
