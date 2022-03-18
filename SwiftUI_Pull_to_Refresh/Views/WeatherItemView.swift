@@ -7,14 +7,14 @@
 
 import Foundation
 import SwiftUI
-import OpenWeather
 
 
 struct WeatherItemView: View {
 	
-	let viewModel: OpenWeather.HourlyForecast.WeatherData
+	let viewModel: WeatherItemViewModel
 	
 	var body: some View {
-		Text("\(viewModel.time), \(viewModel.displayTemperature)")
+		Text(viewModel.displayString)
+			.secondaryStyle()
 	}
 }

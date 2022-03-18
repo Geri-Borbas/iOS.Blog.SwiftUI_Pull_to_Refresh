@@ -9,12 +9,13 @@ line_length:
   error: 1000
   
 type_name:
+  min_length: 2
   allowed_symbols: "_"
 
 identifier_name:
   min_length: 2
   allowed_symbols: "_"
-  
+ 
 nesting:
   type_level: 4
 

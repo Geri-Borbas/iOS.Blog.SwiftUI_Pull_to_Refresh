@@ -14,6 +14,15 @@ class CityViewModel: ObservableObject {
 	let name: String
 	let location: OpenWeather.Location
 	
+	struct Display {
+		
+		let time: Date
+		let celsius: String
+		let items: [WeatherItemViewModel]
+	}
+	
+	@Published var display: Display = .empty
+	
 	enum State {
 		
 		case idle
@@ -43,16 +52,45 @@ class CityViewModel: ObservableObject {
 		state = .loading
 		OpenWeather.API.get(at: location) { [weak self] result in
 			switch result {
-			case .success(let response):
-				self?.state = .loaded(weather: response)
+			case .success(let weather):
+				self?.state = .loaded(weather: weather)
+				self?.display = Display(from: weather)
 			case .failure(let error):
 				self?.state = .error(error: error)
+				self?.display = Display.empty
 			}
 			completion?()
 		}
 	}
 }
 
+
+extension CityViewModel.Display {
+	
+	init(from hourlyForecast: OpenWeather.HourlyForecast) {
+		let weather = hourlyForecast.currentWeather
+		self.time = weather.time
+		self.celsius = String(format: "%.1f", weather.temperature - 273.15)
+		self.items = hourlyForecast.hourlyWeather.map { WeatherItemViewModel(weather: $0) }
+	}
+	
+	var timeString: String {
+		DateFormatter().with {
+			$0.dateStyle = .medium
+			$0.timeStyle = .short
+		}.string(from: time)
+	}
+}
+
+
+extension CityViewModel.Display {
+	
+	static let empty = CityViewModel.Display(
+		time: Date(),
+		celsius: "0",
+		items: Array(repeating: WeatherItemViewModel(), count: 20)
+	)
+}
 
 extension CityViewModel.State {
 	
@@ -63,22 +101,5 @@ extension CityViewModel.State {
 		default:
 			return false
 		}
-	}
-		
-	var displayDate: String {
-		switch self {
-		case .loaded(let weather):
-			return DateFormatter().with { $0.dateStyle = .medium }.string(from: weather.currentWeather.time)
-		default:
-			return "-"
-		}
-	}
-}
-
-
-extension OpenWeather.HourlyForecast.WeatherData {
-	
-	var displayTemperature: String {
-		String(format: "%.2f °C", temperature - 273.15)
 	}
 }

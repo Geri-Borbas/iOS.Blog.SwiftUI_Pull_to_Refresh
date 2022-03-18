@@ -27,6 +27,7 @@
 		552AFE4427E3E6F4002F18F2 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 552AFE3927E3E6F4002F18F2 /* Lato-Light.ttf */; };
 		553EBF5A27E3F4FE00C1B40D /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5927E3F4FD00C1B40D /* Withable.swift */; };
 		553EBF5D27E3F5B900C1B40D /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5C27E3F5B900C1B40D /* UI.swift */; };
+		553EBF5F27E41A6100C1B40D /* WeatherItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5E27E41A6000C1B40D /* WeatherItemViewModel.swift */; };
 		55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */; };
 		55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */; };
 		55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */; };
@@ -37,6 +38,7 @@
 		55679B4A27DECEB500A0800B /* RefreshModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4927DECEB500A0800B /* RefreshModifierView.swift */; };
 		5583A93C27E0D46400DF9BDF /* AsyncAwaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93B27E0D46400DF9BDF /* AsyncAwaitView.swift */; };
 		5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A95727E1175800DF9BDF /* RefreshableModifier.swift */; };
+		558C556227E49AE00014D52B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C556127E49AE00014D52B /* HeaderView.swift */; };
 		55A7E23526F7DFCE0077936F /* AlphaVantage.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A7E23326F7DFCE0077936F /* AlphaVantage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55A7E23E26F7DFD70077936F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E99526F682FA00CFA9C7 /* API.swift */; };
 		55A7E23F26F7DFD70077936F /* IntradayTimeSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E99726F6866E00CFA9C7 /* IntradayTimeSeries.swift */; };
@@ -113,6 +115,7 @@
 		552AFE3927E3E6F4002F18F2 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		553EBF5927E3F4FD00C1B40D /* Withable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withable.swift; sourceTree = "<group>"; };
 		553EBF5C27E3F5B900C1B40D /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		553EBF5E27E41A6000C1B40D /* WeatherItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemViewModel.swift; sourceTree = "<group>"; };
 		55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRefreshControlView.swift; sourceTree = "<group>"; };
 		55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlTargetView.swift; sourceTree = "<group>"; };
 		55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlClosureView.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 		5583A93827E0CBCC00DF9BDF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5583A93B27E0D46400DF9BDF /* AsyncAwaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitView.swift; sourceTree = "<group>"; };
 		5583A95727E1175800DF9BDF /* RefreshableModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableModifier.swift; sourceTree = "<group>"; };
+		558C556127E49AE00014D52B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		55A7E23126F7DFCE0077936F /* AlphaVantage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlphaVantage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A7E23326F7DFCE0077936F /* AlphaVantage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaVantage.h; sourceTree = "<group>"; };
 		55A7E23426F7DFCE0077936F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 		55679B3C27DEB65800A0800B /* Prototypes */ = {
 			isa = PBXGroup;
 			children = (
+				558C556327E49AE90014D52B /* Header */,
 				55679B4527DECAAD00A0800B /* Network.swift */,
 				55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */,
 				55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */,
@@ -317,6 +322,14 @@
 				5583A93727E0CBCC00DF9BDF /* RefreshControl.swift */,
 			);
 			path = ScrollViewResolver;
+			sourceTree = "<group>";
+		};
+		558C556327E49AE90014D52B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				558C556127E49AE00014D52B /* HeaderView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		55A7E23226F7DFCE0077936F /* AlphaVantage */ = {
@@ -379,6 +392,7 @@
 				55E82F2D26F9E32E003E8B68 /* CityView.swift */,
 				55E82F2F26FA272E003E8B68 /* CityViewModel.swift */,
 				55A7E26426F800340077936F /* WeatherItemView.swift */,
+				553EBF5E27E41A6000C1B40D /* WeatherItemViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -604,6 +618,7 @@
 				551C490A24CC690E007C7C03 /* AppDelegate.swift in Sources */,
 				552AFE2D27E3DF4C002F18F2 /* WeatherItemView.swift in Sources */,
 				55D6299D27DD39070043188D /* IntrospectView.swift in Sources */,
+				553EBF5F27E41A6100C1B40D /* WeatherItemViewModel.swift in Sources */,
 				552AFE2C27E3DF4C002F18F2 /* CityViewModel.swift in Sources */,
 				55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */,
 				55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */,
@@ -612,6 +627,7 @@
 				55679B4627DECAAD00A0800B /* Network.swift in Sources */,
 				5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */,
 				553EBF5A27E3F4FE00C1B40D /* Withable.swift in Sources */,
+				558C556227E49AE00014D52B /* HeaderView.swift in Sources */,
 				55679B4827DECE6700A0800B /* RefreshModifier.swift in Sources */,
 				55679B4A27DECEB500A0800B /* RefreshModifierView.swift in Sources */,
 				55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */,

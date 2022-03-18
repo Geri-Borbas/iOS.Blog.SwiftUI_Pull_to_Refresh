@@ -4,6 +4,12 @@
 
 	+ Design
 
+* 1.2.0
+
+	+ Built city header, weather header
+	+ `OpenWeather` date decoding update
+	+ Added map asset(s)
+
 * 1.1.2
 
 	+ Added `Withable`

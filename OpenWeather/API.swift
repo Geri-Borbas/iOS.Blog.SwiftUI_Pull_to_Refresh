@@ -43,7 +43,6 @@ public struct API {
 		request.httpMethod = "GET"
 		
 		// Task.
-		// URLSession(configuration: URLSessionConfiguration.ephemeral)
 		URLSession.shared
 			.dataTask(
 				with: request,
@@ -54,9 +53,12 @@ public struct API {
 							completion(.failure(error))
 						} else if let data = data {
 							do {
-								let response = try JSONDecoder().decode(HourlyForecast.self, from: data)
+								let decoder = JSONDecoder()
+								decoder.dateDecodingStrategy = .secondsSince1970
+								let response = try decoder.decode(HourlyForecast.self, from: data)
 								completion(.success(response))
 							} catch {
+								print(String(decoding: data, as: UTF8.self))
 								print("error: \(error)")
 								completion(.failure(error))
 							}
