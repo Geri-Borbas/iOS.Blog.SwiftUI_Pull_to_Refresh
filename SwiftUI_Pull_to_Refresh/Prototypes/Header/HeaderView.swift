@@ -11,7 +11,7 @@ import SwiftUI
 struct HeaderView: View {
 	
 	init() {
-		UITableViewHeaderFooterView.appearance().backgroundView = UIView() // here
+		UITableViewHeaderFooterView.appearance().backgroundView = UIView()
 	}
 	
 	var body: some View {

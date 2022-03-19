@@ -79,3 +79,23 @@ extension Image {
 			.foregroundColor(Color("Green"))
 	}
 }
+
+
+extension View {
+	
+	func featuredBackgroundStyle() -> some View {
+		self
+			.background(
+				Color("Gray")
+					.overlay(
+						LinearGradient(
+							gradient: Gradient(
+								colors: [.clear, Color("Green").opacity(0.2)]),
+							startPoint: UnitPoint(x: 0, y: 0.7),
+							endPoint: UnitPoint(x: 0, y: 1.0)
+						)
+					)
+			)
+			.cornerRadius(32)
+	}
+}
