@@ -4,6 +4,12 @@
 
 	+ Design
 
+* 1.3.1
+
+	+ Extracted `AttributesView`
+	+ Removed extra header padding
+	+ Folder cleanup
+
 * 1.3.0
 
 	+ Secion header prototypes (padding, transparency)

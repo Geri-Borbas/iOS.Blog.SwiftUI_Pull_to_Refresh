@@ -19,6 +19,13 @@ struct CityView: View {
 	init(viewModel: CityViewModel, width: CGFloat) {
 		self.viewModel = viewModel
 		self.width = width
+		
+		// Hide extra padding above section header.
+		if #available(iOS 15.0, *) {
+			UITableView.appearance().sectionHeaderTopPadding = 0
+			
+		}
+		
 		UITableView.appearance().showsVerticalScrollIndicator = false
 		UITableViewHeaderFooterView.appearance().backgroundView = UIView()
 	}
@@ -35,6 +42,7 @@ struct CityView: View {
 			
 			// List.
 			List {
+				
 				Section(
 					
 					// Weather header.
@@ -62,43 +70,14 @@ struct CityView: View {
 						}
 						.padding(.vertical, 20)
 						.padding(.horizontal, 28)
-						.background(
-							Color("Gray")
-								.overlay(
-									LinearGradient(
-										gradient: Gradient(
-											colors: [.clear, Color("Green").opacity(0.2)]),
-										startPoint: UnitPoint(x: 0, y: 0.7),
-										endPoint: UnitPoint(x: 0, y: 1.0)
-									)
-								)
-						)
-						.cornerRadius(32)
+						.featuredBackgroundStyle()
 						
 						// Attributes.
-						HStack(spacing: 10) {
-							Spacer()
-							AttributeView(
-								image: "wind",
-								name: "Wind",
-								value: viewModel.display.wind,
-								unit: "Km/h"
-							)
-							AttributeView(
-								image: "drop",
-								name: "Humidity",
-								value: viewModel.display.humidity,
-								unit: "%"
-							)
-							AttributeView(
-								image: "sun.max",
-								name: "UV Index",
-								value: viewModel.display.uv,
-								unit: ""
-							)
-							Spacer()
-						}
-						.padding(.vertical, 16)
+						AttributesView(
+							wind: viewModel.display.wind,
+							humidity: viewModel.display.humidity,
+							uv: viewModel.display.uv
+						)
 					}
 						.listRowInsets(EdgeInsets()),
 					
@@ -130,6 +109,40 @@ struct CityView: View {
 }
 
 
+fileprivate struct AttributesView: View {
+	
+	let wind: String
+	let humidity: String
+	let uv: String
+	
+	var body: some View {
+		HStack(spacing: 10) {
+			Spacer()
+			AttributeView(
+				image: "wind",
+				name: "Wind",
+				value: wind,
+				unit: "Km/h"
+			)
+			AttributeView(
+				image: "drop",
+				name: "Humidity",
+				value: humidity,
+				unit: "%"
+			)
+			AttributeView(
+				image: "sun.max",
+				name: "UV Index",
+				value: uv,
+				unit: ""
+			)
+			Spacer()
+		}
+		.padding(.vertical, 16)
+	}
+}
+
+
 fileprivate struct AttributeView: View {
 	
 	let image: String
@@ -156,7 +169,7 @@ fileprivate struct AttributeView: View {
 }
 
 
-fileprivate struct Spacing: View {
+struct Spacing: View {
 	
 	let minLength: CGFloat?
 	

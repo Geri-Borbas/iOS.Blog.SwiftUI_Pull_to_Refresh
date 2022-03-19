@@ -40,6 +40,8 @@
 		5583A93C27E0D46400DF9BDF /* AsyncAwaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93B27E0D46400DF9BDF /* AsyncAwaitView.swift */; };
 		5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A95727E1175800DF9BDF /* RefreshableModifier.swift */; };
 		558C556227E49AE00014D52B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C556127E49AE00014D52B /* HeaderView.swift */; };
+		559BF2A627E62BCC0029B89E /* TransparentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559BF2A527E62BCC0029B89E /* TransparentTabView.swift */; };
+		559BF2A827E637BB0029B89E /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B81CB927E37C4500025A4E /* MarqueeView.swift */; };
 		55A7E23526F7DFCE0077936F /* AlphaVantage.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A7E23326F7DFCE0077936F /* AlphaVantage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55A7E23E26F7DFD70077936F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E99526F682FA00CFA9C7 /* API.swift */; };
 		55A7E23F26F7DFD70077936F /* IntradayTimeSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529E99726F6866E00CFA9C7 /* IntradayTimeSeries.swift */; };
@@ -132,6 +134,7 @@
 		5583A93B27E0D46400DF9BDF /* AsyncAwaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitView.swift; sourceTree = "<group>"; };
 		5583A95727E1175800DF9BDF /* RefreshableModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableModifier.swift; sourceTree = "<group>"; };
 		558C556127E49AE00014D52B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		559BF2A527E62BCC0029B89E /* TransparentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentTabView.swift; sourceTree = "<group>"; };
 		55A7E23126F7DFCE0077936F /* AlphaVantage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlphaVantage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A7E23326F7DFCE0077936F /* AlphaVantage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaVantage.h; sourceTree = "<group>"; };
 		55A7E23426F7DFCE0077936F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -146,7 +149,7 @@
 		55A7E25E26F7ED5B0077936F /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		55A7E26426F800340077936F /* WeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemView.swift; sourceTree = "<group>"; };
 		55B756BC27E5458C00FA7BA6 /* PaddingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingView.swift; sourceTree = "<group>"; usesTabs = 0; };
-		55B81CB927E37C4500025A4E /* Marquee.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = Marquee.swift; sourceTree = "<group>"; usesTabs = 0; };
+		55B81CB927E37C4500025A4E /* MarqueeView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		55D6299C27DD39070043188D /* IntrospectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrospectView.swift; sourceTree = "<group>"; };
 		55E82F2126F905E7003E8B68 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		55E82F2326F90A94003E8B68 /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
@@ -281,7 +284,7 @@
 		55679B3C27DEB65800A0800B /* Prototypes */ = {
 			isa = PBXGroup;
 			children = (
-				558C556327E49AE90014D52B /* Header */,
+				559BF2A727E637990029B89E /* Sketches */,
 				55679B4527DECAAD00A0800B /* Network.swift */,
 				55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */,
 				55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */,
@@ -307,7 +310,6 @@
 		55679B4E27DEE05600A0800B /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				55B81CB927E37C4500025A4E /* Marquee.swift */,
 				55E82F2926F9DA64003E8B68 /* Extensions */,
 				5583A93227E0CB9C00DF9BDF /* ScrollViewResolver */,
 				55E82F2A26F9DA74003E8B68 /* ScrollViewMatcher */,
@@ -328,14 +330,16 @@
 			path = ScrollViewResolver;
 			sourceTree = "<group>";
 		};
-		558C556327E49AE90014D52B /* Header */ = {
+		559BF2A727E637990029B89E /* Sketches */ = {
 			isa = PBXGroup;
 			children = (
 				558C556127E49AE00014D52B /* HeaderView.swift */,
 				55B756BC27E5458C00FA7BA6 /* PaddingView.swift */,
+				559BF2A527E62BCC0029B89E /* TransparentTabView.swift */,
+				55B81CB927E37C4500025A4E /* MarqueeView.swift */,
 				5576476527E515A7000D6402 /* CompositeView.swift */,
 			);
-			path = Header;
+			path = Sketches;
 			sourceTree = "<group>";
 		};
 		55A7E23226F7DFCE0077936F /* AlphaVantage */ = {
@@ -627,9 +631,11 @@
 				553EBF5F27E41A6100C1B40D /* WeatherItemViewModel.swift in Sources */,
 				552AFE2C27E3DF4C002F18F2 /* CityViewModel.swift in Sources */,
 				55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */,
+				559BF2A827E637BB0029B89E /* MarqueeView.swift in Sources */,
 				55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */,
 				5576476627E515A7000D6402 /* CompositeView.swift in Sources */,
 				552AFE2E27E3DF4C002F18F2 /* CityView.swift in Sources */,
+				559BF2A627E62BCC0029B89E /* TransparentTabView.swift in Sources */,
 				55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */,
 				55679B4627DECAAD00A0800B /* Network.swift in Sources */,
 				5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */,
@@ -754,7 +760,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -809,7 +815,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -830,7 +836,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -853,7 +859,7 @@
 				DEVELOPMENT_TEAM = NG36MJV4JP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_Pull_to_Refresh/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

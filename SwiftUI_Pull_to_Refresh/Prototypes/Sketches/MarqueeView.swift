@@ -1,5 +1,5 @@
 //
-//  Marquee.swift
+//  MarqueeView.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 2020. 07. 25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Marquee: View {
+struct MarqueeView: View {
     
     struct Metrics {
         

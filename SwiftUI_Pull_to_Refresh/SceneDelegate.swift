@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(
-				rootView: PaddingView()
+				rootView: WeatherView()
 					.preferredColorScheme(.dark)
 			)
             self.window = window
