@@ -9,8 +9,9 @@ import Foundation
 import OpenWeather
 
 
-class WeatherItemViewModel: ObservableObject {
+class WeatherItemViewModel: ObservableObject, Identifiable {
 		
+	let id: String = UUID().uuidString
 	let time: Date
 	let icon: String?
 	let temperature: Double
@@ -27,15 +28,6 @@ class WeatherItemViewModel: ObservableObject {
 		self.temperature = weather.temperature
 	}
 }
-
-
-extension WeatherItemViewModel: Identifiable {
-	
-	var id: Double {
-		time.timeIntervalSince1970
-	}
-}
-
 
 extension WeatherItemViewModel {
 	

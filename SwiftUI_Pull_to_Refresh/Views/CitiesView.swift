@@ -1,5 +1,5 @@
 //
-//  WeatherView.swift
+//  CitiesView.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 2020. 07. 29..
@@ -10,7 +10,7 @@ import Introspect
 import OpenWeather
 
 
-struct WeatherView: View {
+struct CitiesView: View {
 	
 	var body: some View {
 		ZStack {
@@ -96,5 +96,6 @@ struct WeatherView: View {
 			}
 		}
 		.edgesIgnoringSafeArea(.bottom)
+		.preferredColorScheme(.dark)
 	}
 }

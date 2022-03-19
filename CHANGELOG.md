@@ -4,6 +4,17 @@
 
 	+ Design
 
+* 1.3.5
+
+	+ `CityView`
+		+ Extracted `TitleView`
+		+ Extracted `SummaryView`
+		+ Extracted `WeatherView` (with background mask)
+		+ Extracted `AttributesView`
+		+ Extracted `AttributeView`
+	+ Hidden home indicator
+	+ Renamings
+
 * 1.3.1
 
 	+ Extracted `AttributesView`

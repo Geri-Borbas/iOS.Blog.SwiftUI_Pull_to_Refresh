@@ -11,6 +11,13 @@ import SwiftUI
 struct UI {
 	
 	static let padding = 5
+	
+	struct Spacing {
+		
+		static let screen = CGFloat(16)
+	}
+	
+	static let cornerRadius = CGFloat(32)
 }
 
 
@@ -90,12 +97,33 @@ extension View {
 					.overlay(
 						LinearGradient(
 							gradient: Gradient(
-								colors: [.clear, Color("Green").opacity(0.2)]),
+								colors: [
+									.clear,
+									Color("Green").opacity(0.2)
+								]
+							),
 							startPoint: UnitPoint(x: 0, y: 0.7),
 							endPoint: UnitPoint(x: 0, y: 1.0)
 						)
 					)
 			)
-			.cornerRadius(32)
+			.cornerRadius(UI.cornerRadius)
+	}
+	
+	func listBackgroundStyle() -> some View {
+		self
+			.background(
+				LinearGradient(
+					gradient: Gradient(
+						colors: [
+							Color("Dark Gray"),
+							Color("Medium Gray")
+						]
+					),
+					startPoint: .top,
+					endPoint: .bottom
+				)
+					.opacity(0.5)
+			)
 	}
 }

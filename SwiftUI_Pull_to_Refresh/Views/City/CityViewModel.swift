@@ -52,6 +52,16 @@ class CityViewModel: ObservableObject {
 	}
 	
 	func fetch(completion: (() -> Void)? = nil) {
+		
+		// Can spare API rate during UI development.
+		let spare = false
+		if spare {
+			self.state = .error(error: OpenWeather.APIError.noData)
+			self.display = Display.empty
+			completion?()
+			return
+		}
+		
 		state = .loading
 		OpenWeather.API.get(at: location) { [weak self] result in
 			switch result {
@@ -97,9 +107,10 @@ extension CityViewModel.Display {
 		wind: "0.71",
 		humidity: "31",
 		uv: "1.2",
-		items: Array(repeating: WeatherItemViewModel(), count: 20)
+		items: Array(repeating: 1, count: 20).map { _ in WeatherItemViewModel() }
 	)
 }
+
 
 extension CityViewModel.State {
 	
