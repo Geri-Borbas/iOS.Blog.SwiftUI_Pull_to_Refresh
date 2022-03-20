@@ -39,7 +39,7 @@ struct ContentView: View {
 
 ## Quick Start
 
-Find [`OnRefreshModifier`] and [`RefreshableModifier`] in [`Refreshable`] folder. Find the exmaples below in the [`Examples`] folder. 
+Find [`OnRefreshModifier.swift`] and [`RefreshableModifier.swift`] in [`Refreshable`] folder. Find the exmaples below in the [`Examples`] folder. 
 
 
 ## License

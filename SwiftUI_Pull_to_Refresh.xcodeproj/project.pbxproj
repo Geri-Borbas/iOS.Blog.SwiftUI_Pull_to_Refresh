@@ -135,10 +135,10 @@
 		55679B4327DEC88900A0800B /* ScrollViewExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExtensionView.swift; sourceTree = "<group>"; };
 		55679B4527DECAAD00A0800B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		55679B4727DECE6700A0800B /* OnRefreshModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnRefreshModifier.swift; sourceTree = "<group>"; };
-		55679B4927DECEB500A0800B /* ClosureBasedModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureBasedModifierView.swift; sourceTree = "<group>"; };
+		55679B4927DECEB500A0800B /* ClosureBasedModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ClosureBasedModifierView.swift; path = ../../Examples/ClosureBasedModifierView.swift; sourceTree = "<group>"; };
 		5583A93727E0CBCC00DF9BDF /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		5583A93827E0CBCC00DF9BDF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5583A93B27E0D46400DF9BDF /* AsyncAwaitModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitModifierView.swift; sourceTree = "<group>"; };
+		5583A93B27E0D46400DF9BDF /* AsyncAwaitModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AsyncAwaitModifierView.swift; path = ../../Examples/AsyncAwaitModifierView.swift; sourceTree = "<group>"; };
 		5583A95727E1175800DF9BDF /* RefreshableModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableModifier.swift; sourceTree = "<group>"; };
 		558C556127E49AE00014D52B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		559BF2A527E62BCC0029B89E /* TransparentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentTabView.swift; sourceTree = "<group>"; };
