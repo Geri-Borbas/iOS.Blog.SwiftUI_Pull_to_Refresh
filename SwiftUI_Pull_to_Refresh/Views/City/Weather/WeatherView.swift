@@ -28,11 +28,23 @@ struct WeatherView: View {
 				uv: uv
 			)
 		}
-			.background(
-				GeometryReader { geometry in
-					background(geometry: geometry)
-				}
-			)
+		.background(
+			GeometryReader { geometry in
+				background(geometry: geometry)
+					.mask(
+						LinearGradient(
+							gradient: Gradient(
+								colors: [
+									.white.opacity(1.0),
+									.white.opacity(0.4)
+								]
+							),
+							startPoint: UnitPoint(x: 0, y: 0.4),
+							endPoint: UnitPoint(x: 0, y: 1.0)
+						)
+					)
+			}
+		)
 	}
 	
 	private func background(geometry: GeometryProxy) -> some View {

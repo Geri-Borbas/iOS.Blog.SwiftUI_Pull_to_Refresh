@@ -41,18 +41,20 @@ struct CityView: View {
 						)
 						.listRowInsets(.zero),
 					content: {
-						ForEach(viewModel.display.items) { eachViewModel in
-							WeatherItemView(viewModel: eachViewModel)
-								.listRowBackground(UI.Color.darkGray.opacity(0.5))
-								.listRowInsets(.zero)
+						ForEach(
+							Array(viewModel.display.items.enumerated()),
+							id: \.offset
+						) { eachIndex, eachViewModel in
+							RowView(
+								isFirst: eachIndex == 0,
+								isLast: eachIndex == viewModel.display.items.count - 1,
+								viewModel: eachViewModel
+							)
 						}
 					}
 				)
 			}
 			.listStyle(.plain)
-			.introspectTableView {
-				$0.separatorStyle = .none
-			}
 			.refreshable {
 				await viewModel.fetch()
 			}
@@ -95,13 +97,14 @@ extension CityView {
 	
 	func setupAppearence() {
 		
-		// Tighten extra padding above section header.
+		// Tighten extra padding above section header (if any).
 		if #available(iOS 15.0, *) {
 			UITableView.appearance().sectionHeaderTopPadding = topPadding
 		}
 		
-		// Hide scroll indicators.
+		// Hide indicators, separators.
 		UITableView.appearance().showsVerticalScrollIndicator = false
+		UITableView.appearance().separatorColor = .clear
 		
 		// Transparent section header (iOS 14+).
 		UITableViewHeaderFooterView.appearance().backgroundView = UIView()

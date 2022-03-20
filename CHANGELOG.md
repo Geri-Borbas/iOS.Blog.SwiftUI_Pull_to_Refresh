@@ -4,6 +4,13 @@
 
 	+ Design
 
+* 1.5.2
+
+	+ Extracted `RowView`
+		+ Added row clip shapes, insets
+	+ Removed row separator
+	+ Added gradient mask to rows (beneath section header)
+
 * 1.5.0
 
 	+ Style cleanup

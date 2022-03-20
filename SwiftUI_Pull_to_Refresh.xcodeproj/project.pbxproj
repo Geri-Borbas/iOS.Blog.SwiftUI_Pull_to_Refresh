@@ -28,6 +28,7 @@
 		553EBF5A27E3F4FE00C1B40D /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5927E3F4FD00C1B40D /* Withable.swift */; };
 		553EBF5D27E3F5B900C1B40D /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5C27E3F5B900C1B40D /* UI.swift */; };
 		553EBF5F27E41A6100C1B40D /* WeatherItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5E27E41A6000C1B40D /* WeatherItemViewModel.swift */; };
+		554B9BFF27E7997D009F65BD /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B9BFE27E7997C009F65BD /* RowView.swift */; };
 		5550DC0327E7464600CC998B /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5550DC0227E7464600CC998B /* CitiesViewModel.swift */; };
 		55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */; };
 		55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */; };
@@ -127,6 +128,7 @@
 		553EBF5927E3F4FD00C1B40D /* Withable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withable.swift; sourceTree = "<group>"; };
 		553EBF5C27E3F5B900C1B40D /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		553EBF5E27E41A6000C1B40D /* WeatherItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemViewModel.swift; sourceTree = "<group>"; };
+		554B9BFE27E7997C009F65BD /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		5550DC0227E7464600CC998B /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
 		55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRefreshControlView.swift; sourceTree = "<group>"; };
 		55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlTargetView.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				55E82F2D26F9E32E003E8B68 /* CityView.swift */,
+				554B9BFE27E7997C009F65BD /* RowView.swift */,
 				55E82F2F26FA272E003E8B68 /* CityViewModel.swift */,
 				55A227CC27E6589600DBBBB3 /* TitleView.swift */,
 				55A227DB27E6749800DBBBB3 /* Weather */,
@@ -698,6 +701,7 @@
 				559BF2A827E637BB0029B89E /* MarqueeView.swift in Sources */,
 				55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */,
 				552AFE2E27E3DF4C002F18F2 /* CityView.swift in Sources */,
+				554B9BFF27E7997D009F65BD /* RowView.swift in Sources */,
 				55A227D827E663C600DBBBB3 /* AppHostingController.swift in Sources */,
 				559BF2A627E62BCC0029B89E /* TransparentTabView.swift in Sources */,
 				55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */,
