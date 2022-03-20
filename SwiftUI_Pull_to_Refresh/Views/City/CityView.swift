@@ -14,6 +14,7 @@ import OpenWeather
 struct CityView: View {
 	
 	@ObservedObject var viewModel: CityViewModel
+	@Environment(\.citiesFrame) var citiesFrame: CGRect
 	let width: CGFloat
 	
 	init(viewModel: CityViewModel, width: CGFloat) {
@@ -24,11 +25,11 @@ struct CityView: View {
 	
 	var body: some View {
 		VStack(spacing: 0) {
-			TitleView(
-				name: viewModel.name,
-				dateAndTimeString: viewModel.display.timeString
-			)
-			Spacing(UI.Spacing.screen - topPadding)
+//			TitleView(
+//				name: viewModel.name,
+//				dateAndTimeString: viewModel.display.timeString
+//			)
+//			Spacing(UI.Spacing.screen - topPadding)
 			List {
 				Section(
 					header:
@@ -56,9 +57,7 @@ struct CityView: View {
 			.refreshable {
 				await viewModel.fetch()
 			}
-			.clipShape(
-				RoundedRectangle(cornerRadius: UI.cornerRadius)
-			)
+			.clipShape(ListShape())
 			.padding(.horizontal, UI.Spacing.screen)
 			.padding(.bottom, UI.Spacing.screen)
 		}
@@ -66,6 +65,20 @@ struct CityView: View {
 		.onAppear {
 			viewModel.fetch()
 		}
+	}
+}
+
+
+struct ListShape: Shape {
+		
+	func path(in rect: CGRect) -> Path {
+		Path(
+			UIBezierPath(
+				roundedRect: rect,
+				byRoundingCorners: [.bottomLeft, .bottomRight],
+				cornerRadii: UI.cornerRadius.size
+			).cgPath
+		)
 	}
 }
 

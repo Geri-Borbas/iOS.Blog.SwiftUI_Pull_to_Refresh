@@ -15,6 +15,8 @@ struct WeatherView: View {
 	let humidity: String
 	let uv: String
 	
+	@Environment(\.citiesFrame) var citiesFrame: CGRect
+	
 	var body: some View {
 		VStack(spacing: 0) {
 			SummaryView(
@@ -28,17 +30,30 @@ struct WeatherView: View {
 		}
 			.background(
 				GeometryReader { geometry in
-					Color.red
-						.opacity(0.2)
-						.frame(height: MaskShape.shapeHeight(for: geometry.size.height))
-						.clipShape(MaskShape())
+					worldMap(geometry: geometry)
 				}
 			)
+	}
+	
+	private func worldMap(geometry: GeometryProxy) -> some View {
+		print("\(geometry.frame(in: .global))")
+		print("\(citiesFrame)")
+		return Color.yellow.opacity(0.8)
+			.overlay(
+				UI.Image.worldMap
+					.opacity(0.5)
+					.offset(
+						x: 0,
+						y: -geometry.frame(in: .global).origin.y + citiesFrame.origin.y
+					), alignment: .top
+			)
+			.frame(height: CoverShape.shapeHeight(for: geometry.size.height))
+			.clipShape(CoverShape())
 	}
 }
 
 
-struct MaskShape: Shape {
+struct CoverShape: Shape {
 	
 	static func shapeHeight(for height: CGFloat) -> CGFloat {
 		height + UI.cornerRadius * 2

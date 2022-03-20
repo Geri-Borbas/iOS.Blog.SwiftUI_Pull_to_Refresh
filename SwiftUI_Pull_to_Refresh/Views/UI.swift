@@ -11,6 +11,7 @@ import SwiftUI
 struct UI {
 	
 	static let padding = 5
+	static let background = "Background"
 	
 	struct Spacing {
 		
@@ -18,6 +19,17 @@ struct UI {
 	}
 	
 	static let cornerRadius = CGFloat(32)
+	
+	struct Image {
+		
+		static let worldMap = SwiftUI.Image("WorldMap")
+	}
+	
+	struct Color {
+		
+		static let green = SwiftUI.Color("Green")
+		static let background = SwiftUI.Color("Background")
+	}
 }
 
 

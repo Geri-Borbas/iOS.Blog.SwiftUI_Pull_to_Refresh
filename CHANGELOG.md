@@ -4,6 +4,13 @@
 
 	+ Design
 
+* 1.3.6
+
+	+ Created `CitiesViewModel`
+	+ Created `citiesFrame` enviroment value
+	+ Updated `List` mask
+	+ Added cover to `WeatherView` background
+
 * 1.3.5
 
 	+ `CityView`

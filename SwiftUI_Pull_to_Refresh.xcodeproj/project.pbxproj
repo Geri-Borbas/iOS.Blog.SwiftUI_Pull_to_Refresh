@@ -28,6 +28,7 @@
 		553EBF5A27E3F4FE00C1B40D /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5927E3F4FD00C1B40D /* Withable.swift */; };
 		553EBF5D27E3F5B900C1B40D /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5C27E3F5B900C1B40D /* UI.swift */; };
 		553EBF5F27E41A6100C1B40D /* WeatherItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5E27E41A6000C1B40D /* WeatherItemViewModel.swift */; };
+		5550DC0327E7464600CC998B /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5550DC0227E7464600CC998B /* CitiesViewModel.swift */; };
 		55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */; };
 		55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */; };
 		55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */; };
@@ -126,6 +127,7 @@
 		553EBF5927E3F4FD00C1B40D /* Withable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withable.swift; sourceTree = "<group>"; };
 		553EBF5C27E3F5B900C1B40D /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		553EBF5E27E41A6000C1B40D /* WeatherItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemViewModel.swift; sourceTree = "<group>"; };
+		5550DC0227E7464600CC998B /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
 		55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRefreshControlView.swift; sourceTree = "<group>"; };
 		55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlTargetView.swift; sourceTree = "<group>"; };
 		55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlClosureView.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 			children = (
 				553EBF5C27E3F5B900C1B40D /* UI.swift */,
 				55F2D60E24D1032500E3BDDF /* CitiesView.swift */,
+				5550DC0227E7464600CC998B /* CitiesViewModel.swift */,
 				55A227CE27E658A500DBBBB3 /* City */,
 			);
 			path = Views;
@@ -703,6 +706,7 @@
 				55B756BD27E5458C00FA7BA6 /* PaddingView.swift in Sources */,
 				5583A93C27E0D46400DF9BDF /* AsyncAwaitView.swift in Sources */,
 				55A227DA27E6739100DBBBB3 /* WeatherView.swift in Sources */,
+				5550DC0327E7464600CC998B /* CitiesViewModel.swift in Sources */,
 				553EBF5D27E3F5B900C1B40D /* UI.swift in Sources */,
 				55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */,
 			);
