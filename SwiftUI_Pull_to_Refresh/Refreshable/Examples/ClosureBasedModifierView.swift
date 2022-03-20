@@ -1,5 +1,5 @@
 //
-//  RefreshModifierView.swift
+//  ClosureBasedModifierView.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 14/03/2022.
@@ -9,7 +9,7 @@ import SwiftUI
 import Introspect
 
 
-struct RefreshModifierView: View {
+struct ClosureBasedModifierView: View {
 	
 	var body: some View {
 		List {

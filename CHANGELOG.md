@@ -4,6 +4,11 @@
 
 	+ Design
 
+* 1.4.1
+
+	+ Renamings
+	+ Update README.md
+
 * 1.4.0
 
 	+ Stable custom background blur composite
