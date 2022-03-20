@@ -30,13 +30,13 @@ struct CitiesView: View {
 		ZStack {
 			
 			// Background.
-			Color.orange.opacity(0.5)
+			UI.Color.background
 				.overlay(
 					VStack {
-						UI.Image.worldMap
-							.opacity(0.5)
+						UI.Image.background
+							.backgroundStyle()
 						Spacer()
-					}	
+					}
 				)
 			
 			// Cities.
@@ -54,7 +54,7 @@ struct CitiesView: View {
 								),
 								width: geometry.size.width
 							)
-								.environment(\.citiesFrame,  geometry.frame(in: .global))
+								.environment(\.citiesFrame, geometry.frame(in: .global))
 						}
 					}
 				}

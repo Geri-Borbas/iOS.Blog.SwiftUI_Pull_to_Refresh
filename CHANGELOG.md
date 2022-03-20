@@ -4,6 +4,12 @@
 
 	+ Design
 
+* 1.4.0
+
+	+ Stable custom background blur composite
+		+ Added `background(:)` to `SummaryView`
+	+ Renamings  
+
 * 1.3.6 - 1.3.7
 
 	+ Created `CitiesViewModel`
@@ -32,7 +38,7 @@
 * 1.3.0
 
 	+ Secion header prototypes (padding, transparency)
-		+ https://stackoverflow.com/questions/71526675/transparent-section-header/71538520#71538520
+		+ https://stackoverflow.com/questions/71526675/transparent-section-header
 		+ https://stackoverflow.com/questions/71534756/remove-extra-padding-above-section-header
 
 * 1.2.5 - 1.2.6

@@ -22,7 +22,8 @@ struct UI {
 	
 	struct Image {
 		
-		static let worldMap = SwiftUI.Image("WorldMap")
+		static let background = SwiftUI.Image("WorldMap")
+		static let blur = CGFloat(5)
 	}
 	
 	struct Color {
@@ -86,6 +87,11 @@ extension Text {
 
 extension Image {
 	
+	func backgroundStyle() -> some View {
+		self
+			.opacity(0.2)
+	}
+	
 	func heroStyle() -> some View {
 		self
 			.font(.system(size: 72))
@@ -119,7 +125,6 @@ extension View {
 						)
 					)
 			)
-			.cornerRadius(UI.cornerRadius)
 	}
 	
 	func listBackgroundStyle() -> some View {

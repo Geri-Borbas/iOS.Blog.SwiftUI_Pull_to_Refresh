@@ -14,7 +14,6 @@ struct WeatherView: View {
 	let wind: String
 	let humidity: String
 	let uv: String
-	
 	@Environment(\.citiesFrame) var citiesFrame: CGRect
 	
 	var body: some View {
@@ -22,6 +21,7 @@ struct WeatherView: View {
 			SummaryView(
 				celsius: celsius
 			)
+				.environment(\.citiesFrame, citiesFrame)
 			AttributesView(
 				wind: wind,
 				humidity: humidity,
@@ -30,16 +30,16 @@ struct WeatherView: View {
 		}
 			.background(
 				GeometryReader { geometry in
-					worldMap(geometry: geometry)
+					background(geometry: geometry)
 				}
 			)
 	}
 	
-	private func worldMap(geometry: GeometryProxy) -> some View {
+	private func background(geometry: GeometryProxy) -> some View {
 		UI.Color.background
 			.overlay(
-				UI.Image.worldMap
-					.opacity(0.5)
+				UI.Image.background
+					.backgroundStyle()
 					.offset(
 						x: -geometry.frame(in: .global).origin.x + citiesFrame.origin.x + UI.Spacing.screen,
 						y: -geometry.frame(in: .global).origin.y + citiesFrame.origin.y
