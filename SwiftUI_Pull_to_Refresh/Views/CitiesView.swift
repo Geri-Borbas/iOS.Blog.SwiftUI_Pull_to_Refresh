@@ -30,14 +30,13 @@ struct CitiesView: View {
 		ZStack {
 			
 			// Background.
-			Color.orange.opacity(0.2)
+			Color.orange.opacity(0.5)
 				.overlay(
 					VStack {
 						UI.Image.worldMap
 							.opacity(0.5)
 						Spacer()
-					}
-						
+					}	
 				)
 			
 			// Cities.

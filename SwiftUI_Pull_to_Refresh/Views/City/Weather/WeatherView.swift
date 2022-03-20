@@ -36,14 +36,12 @@ struct WeatherView: View {
 	}
 	
 	private func worldMap(geometry: GeometryProxy) -> some View {
-		print("\(geometry.frame(in: .global))")
-		print("\(citiesFrame)")
-		return Color.yellow.opacity(0.8)
+		UI.Color.background
 			.overlay(
 				UI.Image.worldMap
 					.opacity(0.5)
 					.offset(
-						x: 0,
+						x: -geometry.frame(in: .global).origin.x + citiesFrame.origin.x + UI.Spacing.screen,
 						y: -geometry.frame(in: .global).origin.y + citiesFrame.origin.y
 					), alignment: .top
 			)

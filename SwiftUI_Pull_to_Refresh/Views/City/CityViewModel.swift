@@ -54,7 +54,7 @@ class CityViewModel: ObservableObject {
 	func fetch(completion: (() -> Void)? = nil) {
 		
 		// Can spare API rate during UI development.
-		let spare = false
+		let spare = true
 		if spare {
 			self.state = .error(error: OpenWeather.APIError.noData)
 			self.display = Display.empty

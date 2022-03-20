@@ -25,11 +25,11 @@ struct CityView: View {
 	
 	var body: some View {
 		VStack(spacing: 0) {
-//			TitleView(
-//				name: viewModel.name,
-//				dateAndTimeString: viewModel.display.timeString
-//			)
-//			Spacing(UI.Spacing.screen - topPadding)
+			TitleView(
+				name: viewModel.name,
+				dateAndTimeString: viewModel.display.timeString
+			)
+			Spacing(UI.Spacing.screen - topPadding)
 			List {
 				Section(
 					header:

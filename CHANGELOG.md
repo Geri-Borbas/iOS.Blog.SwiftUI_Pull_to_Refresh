@@ -4,12 +4,13 @@
 
 	+ Design
 
-* 1.3.6
+* 1.3.6 - 1.3.7
 
 	+ Created `CitiesViewModel`
 	+ Created `citiesFrame` enviroment value
 	+ Updated `List` mask
 	+ Added cover to `WeatherView` background
+		+ With backround offset alignment 
 
 * 1.3.5
 
