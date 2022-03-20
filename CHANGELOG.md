@@ -5,10 +5,13 @@
 	+ Design
 		+ List
 			+ Blur background
-			+ Row horizontal alignment
-			+ Wind / Humidity / UV 
+			+ Wind / Humidity / UV
 		+ `SummaryView` celsius scaling
 		+ Update map attribution
+
+* 1.5.5
+
+	+ Row horizontal alignment
 
 * 1.5.4
 

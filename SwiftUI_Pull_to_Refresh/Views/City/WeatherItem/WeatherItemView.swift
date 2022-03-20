@@ -15,16 +15,38 @@ struct WeatherItemView: View {
 	
 	var body: some View {
 		HStack(spacing: 8) {
-			VStack(alignment: .leading, spacing: 0) {
-				Text(viewModel.timeString)
-					.regularStyle()
-				Text(viewModel.dateString)
-					.smallStyle()
+			
+			// Date and time.
+			HStack {
+				VStack(alignment: .leading, spacing: 0) {
+					Text(viewModel.timeString)
+						.regularStyle()
+						.fixedSize()
+					Text(viewModel.dateString)
+						.smallStyle()
+						.fixedSize()
+				}
+				Spacer()
 			}
-			Image(systemName: viewModel.imageName)
-				.iconStyle()
-			Text(viewModel.temperatureString)
-				.largeStyle()
+			.frame(width: 60)
+			
+			// Icon.
+			HStack {
+				Image(systemName: viewModel.imageName)
+					.iconStyle()
+				Spacer()
+			}
+			.frame(width: 34)
+			
+			// Temperature.
+			HStack {
+				Text(viewModel.temperatureString)
+					.largeStyle()
+				Spacer()
+			}
+			.frame(width: 76)
+			
+			Spacer()
 		}
 		.frame(height: UI.rowHeight)
 		.padding(.horizontal, UI.padding)
