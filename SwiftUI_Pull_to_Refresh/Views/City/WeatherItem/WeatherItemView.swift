@@ -14,7 +14,19 @@ struct WeatherItemView: View {
 	let viewModel: WeatherItemViewModel
 	
 	var body: some View {
-		Text(viewModel.displayString)
-			.secondaryStyle()
+		HStack(spacing: 8) {
+			VStack(alignment: .leading, spacing: 0) {
+				Text(viewModel.timeString)
+					.regularStyle()
+				Text(viewModel.dateString)
+					.smallStyle()
+			}
+			Image(systemName: "cloud.bolt.rain")
+				.iconStyle()
+			Text(viewModel.temperatureString)
+				.largeStyle()
+		}
+		.frame(height: UI.rowHeight)
+		.padding(.horizontal, UI.padding)
 	}
 }

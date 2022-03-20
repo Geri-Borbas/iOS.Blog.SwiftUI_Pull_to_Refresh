@@ -17,6 +17,6 @@ struct TitleView: View {
 		Text(name)
 			.titleStyle()
 		Text(dateAndTimeString)
-			.subtitleStyle()
+			.regularStyle()
 	}
 }

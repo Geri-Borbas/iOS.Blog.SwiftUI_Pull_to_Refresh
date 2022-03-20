@@ -4,6 +4,10 @@
 
 	+ Design
 
+* 1.5.0
+
+	+ Style cleanup
+
 * 1.4.1 - 1.4.4
 
 	+ Renamings

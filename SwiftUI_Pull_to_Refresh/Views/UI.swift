@@ -9,60 +9,77 @@ import SwiftUI
 
 
 struct UI {
-	
-	static let padding = 5
-	static let background = "Background"
-	
-	struct Spacing {
-		
-		static let screen = CGFloat(16)
-	}
-	
+			
+	static let padding = CGFloat(16)
 	static let cornerRadius = CGFloat(32)
+	static let rowHeight = CGFloat(40)
 	
 	struct Image {
 		
 		static let background = SwiftUI.Image("WorldMap")
-		static let blur = CGFloat(5)
+		static let blur = CGFloat(4)
 	}
 	
 	struct Color {
 		
-		static let green = SwiftUI.Color("Green")
+		static let foreground = SwiftUI.Color("Foreground")
+		static let gray = SwiftUI.Color("Gray")
+		static let mediumGray = SwiftUI.Color("Medium Gray")
+		static let darkGray = SwiftUI.Color("Dark Gray")
 		static let background = SwiftUI.Color("Background")
+		static let green = SwiftUI.Color("Green")
 	}
 }
 
 
 extension Text {
 	
+	func heroStyle(black: Bool = true) -> some View {
+		self
+			.font(Font.custom(black ? "Lato-Black" : "Lato-Regular", size: 68))
+			.foregroundColor(UI.Color.foreground)
+			.frame(maxHeight: 64)
+	}
+	
 	func titleStyle() -> Self {
-		self.font(Font.custom("Lato-Light", size: 40))
+		self
+			.font(Font.custom("Lato-Light", size: 40))
+			.foregroundColor(UI.Color.foreground)
 	}
 	
 	func subtitleStyle() -> Self {
 		self
-			.font(Font.custom("Lato-Regular", size: 14))
-			.foregroundColor(.gray)
+			.font(Font.custom("Lato-Regular", size: 24))
+			.foregroundColor(UI.Color.foreground)
 	}
 	
-	func heroStyle(black: Bool = true) -> some View {
+	func largeStyle() -> some View {
 		self
-			.font(Font.custom(black ? "Lato-Black" : "Lato-Regular", size: 68))
-			.foregroundColor(.white)
-			.frame(maxHeight: 64)
+			.font(Font.custom("Lato-Regular", size: 20))
+			.foregroundColor(UI.Color.foreground)
+			.opacity(0.4)
 	}
 	
 	func regularStyle() -> Self {
 		self
-			.font(Font.custom("Lato-Regular", size: 24))
-			.foregroundColor(.white)
+			.font(Font.custom("Lato-Regular", size: 14))
+			.foregroundColor(UI.Color.gray)
 	}
+	
+	func smallStyle() -> Self {
+		self
+			.font(Font.custom("Lato-Regular", size: 10))
+			.foregroundColor(UI.Color.gray)
+	}
+}
+
+
+extension Text {
 	
 	func attributeStyle() -> Self {
 		self
 			.font(Font.custom("Lato-Regular", size: 14))
-			.foregroundColor(Color("Green"))
+			.foregroundColor(UI.Color.green)
 	}
 	
 	func valueStyle() -> some View {
@@ -75,12 +92,6 @@ extension Text {
 		self
 			.font(Font.custom("Lato-Thin", size: 10))
 			.frame(maxHeight: 12)
-	}
-	
-	func secondaryStyle() -> some View {
-		self
-			.font(Font.custom("Lato-Light", size: 20))
-			.opacity(0.4)
 	}
 }
 
@@ -111,13 +122,13 @@ extension View {
 	func featuredBackgroundStyle() -> some View {
 		self
 			.background(
-				Color("Gray")
+				UI.Color.gray.opacity(0.5)
 					.overlay(
 						LinearGradient(
 							gradient: Gradient(
 								colors: [
 									.clear,
-									Color("Green").opacity(0.2)
+									UI.Color.green.opacity(0.2)
 								]
 							),
 							startPoint: UnitPoint(x: 0, y: 0.7),
@@ -127,14 +138,14 @@ extension View {
 			)
 	}
 	
-	func listBackgroundStyle() -> some View {
+	fileprivate func listBackgroundStyle() -> some View {
 		self
 			.background(
 				LinearGradient(
 					gradient: Gradient(
 						colors: [
-							Color("Dark Gray"),
-							Color("Medium Gray")
+							UI.Color.darkGray,
+							UI.Color.mediumGray
 						]
 					),
 					startPoint: .top,

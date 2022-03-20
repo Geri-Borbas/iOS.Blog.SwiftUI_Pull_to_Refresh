@@ -30,7 +30,7 @@ struct SummaryView: View {
 					Spacer()
 				}
 				Text("Few Clouds")
-					.regularStyle()
+					.subtitleStyle()
 			}
 		}
 		.padding(.vertical, 20)
@@ -52,7 +52,7 @@ struct SummaryView: View {
 					.background(UI.Color.background)
 					.blur(radius: UI.Image.blur)
 					.offset(
-						x: -geometry.frame(in: .global).origin.x + citiesFrame.origin.x + UI.Spacing.screen,
+						x: -geometry.frame(in: .global).origin.x + citiesFrame.origin.x + UI.padding,
 						y: -geometry.frame(in: .global).origin.y + citiesFrame.origin.y
 					), alignment: .top
 			)

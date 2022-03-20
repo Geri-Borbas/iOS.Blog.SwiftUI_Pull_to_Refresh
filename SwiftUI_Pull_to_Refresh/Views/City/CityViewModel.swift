@@ -54,7 +54,7 @@ class CityViewModel: ObservableObject {
 	func fetch(completion: (() -> Void)? = nil) {
 		
 		// Can spare API rate during UI development.
-		let spare = true
+		let spare = false
 		if spare {
 			self.state = .error(error: OpenWeather.APIError.noData)
 			self.display = Display.empty
@@ -90,10 +90,9 @@ extension CityViewModel.Display {
 		self.items = hourlyForecast.hourlyWeather.map { WeatherItemViewModel(weather: $0) }
 	}
 	
-	var timeString: String {
+	var dateAndTimeString: String {
 		DateFormatter().with {
-			$0.dateStyle = .medium
-			$0.timeStyle = .short
+			$0.dateFormat = "E MMM d 'at' HH:mm"
 		}.string(from: time)
 	}
 }

@@ -29,14 +29,22 @@ class WeatherItemViewModel: ObservableObject, Identifiable {
 	}
 }
 
+
 extension WeatherItemViewModel {
 	
-	var displayString: String {
-		let time = DateFormatter().with {
-			$0.dateStyle = .medium
-			$0.timeStyle = .short
+	var temperatureString: String {
+		String(format: "%.1f °C", temperature - 273.15)
+	}
+	
+	var dateString: String {
+		DateFormatter().with {
+			$0.dateFormat = "EEE MMM d"
 		}.string(from: time)
-		let temperature = String(format: "%.1f °C", temperature - 273.15)
-		return "\(time), \(temperature)"
+	}
+	
+	var timeString: String {
+		DateFormatter().with {
+			$0.dateFormat = "HH:mm"
+		}.string(from: time)
 	}
 }

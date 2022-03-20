@@ -27,9 +27,9 @@ struct CityView: View {
 		VStack(spacing: 0) {
 			TitleView(
 				name: viewModel.name,
-				dateAndTimeString: viewModel.display.timeString
+				dateAndTimeString: viewModel.display.dateAndTimeString
 			)
-			Spacing(UI.Spacing.screen - topPadding)
+			Spacing(UI.padding - topPadding)
 			List {
 				Section(
 					header:
@@ -39,13 +39,12 @@ struct CityView: View {
 							humidity: viewModel.display.humidity,
 							uv: viewModel.display.uv
 						)
-						.allowsHitTesting(false)
-						.listRowInsets(EdgeInsets()),
+						.listRowInsets(.zero),
 					content: {
 						ForEach(viewModel.display.items) { eachViewModel in
 							WeatherItemView(viewModel: eachViewModel)
-								.listRowBackground(Color("Dark Gray").opacity(0.5))
-								.listRowInsets(EdgeInsets())
+								.listRowBackground(UI.Color.darkGray.opacity(0.5))
+								.listRowInsets(.zero)
 						}
 					}
 				)
@@ -58,8 +57,9 @@ struct CityView: View {
 				await viewModel.fetch()
 			}
 			.clipShape(ListShape())
-			.padding(.horizontal, UI.Spacing.screen)
-			.padding(.bottom, UI.Spacing.screen)
+			.padding(.horizontal, UI.padding)
+			.padding(.bottom, UI.padding)
+			.environment(\.defaultMinListRowHeight, UI.rowHeight)
 		}
 		.frame(width: width)
 		.onAppear {
