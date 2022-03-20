@@ -34,7 +34,9 @@ struct CityView: View {
 				Section(
 					header:
 						WeatherView(
+							imageName: viewModel.display.imageName,
 							celsius: viewModel.display.celsius,
+							description: viewModel.display.description,
 							wind: viewModel.display.wind,
 							humidity: viewModel.display.humidity,
 							uv: viewModel.display.uv

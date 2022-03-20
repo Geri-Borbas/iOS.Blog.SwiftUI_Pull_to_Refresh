@@ -3,6 +3,17 @@
 * Doing
 
 	+ Design
+		+ List
+			+ Blur background
+			+ Row horizontal alignment
+			+ Wind / Humidity / UV 
+		+ `SummaryView` celsius scaling
+		+ Update map attribution
+
+* 1.5.4
+
+	+ Added `OpenWeather+Extensions` (description, icon)
+	+ Added dynamic `description` and `imageName` to views 
 
 * 1.5.2
 

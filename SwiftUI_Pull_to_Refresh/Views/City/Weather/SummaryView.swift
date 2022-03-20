@@ -10,12 +10,14 @@ import SwiftUI
 
 struct SummaryView: View {
 	
+	let imageName: String
 	let celsius: String
+	let description: String
 	@Environment(\.citiesFrame) var citiesFrame: CGRect
 	
 	var body: some View {
 		HStack {
-			Image(systemName: "cloud.bolt.rain")
+			Image(systemName: imageName)
 				.heroStyle()
 			Spacer(minLength: 30)
 			VStack(alignment: .leading, spacing: 0) {
@@ -29,7 +31,7 @@ struct SummaryView: View {
 						.minimumScaleFactor(0.6)
 					Spacer()
 				}
-				Text("Few Clouds")
+				Text(description)
 					.subtitleStyle()
 			}
 		}

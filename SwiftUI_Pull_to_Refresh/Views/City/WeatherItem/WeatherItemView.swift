@@ -21,7 +21,7 @@ struct WeatherItemView: View {
 				Text(viewModel.dateString)
 					.smallStyle()
 			}
-			Image(systemName: "cloud.bolt.rain")
+			Image(systemName: viewModel.imageName)
 				.iconStyle()
 			Text(viewModel.temperatureString)
 				.largeStyle()

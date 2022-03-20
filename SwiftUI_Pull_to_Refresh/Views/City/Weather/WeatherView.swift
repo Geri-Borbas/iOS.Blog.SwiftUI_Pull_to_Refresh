@@ -10,7 +10,9 @@ import SwiftUI
 
 struct WeatherView: View {
 	
+	let imageName: String
 	let celsius: String
+	let description: String
 	let wind: String
 	let humidity: String
 	let uv: String
@@ -19,7 +21,9 @@ struct WeatherView: View {
 	var body: some View {
 		VStack(spacing: 0) {
 			SummaryView(
-				celsius: celsius
+				imageName: imageName,
+				celsius: celsius,
+				description: description
 			)
 				.environment(\.citiesFrame, citiesFrame)
 			AttributesView(

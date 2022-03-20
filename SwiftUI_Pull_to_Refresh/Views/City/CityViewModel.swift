@@ -17,7 +17,9 @@ class CityViewModel: ObservableObject {
 	struct Display {
 		
 		let time: Date
+		let imageName: String
 		let celsius: String
+		let description: String
 		let wind: String
 		let humidity: String
 		let uv: String
@@ -83,7 +85,9 @@ extension CityViewModel.Display {
 	init(from hourlyForecast: OpenWeather.HourlyForecast) {
 		let weather = hourlyForecast.currentWeather
 		self.time = weather.time
+		self.imageName = weather.imageName
 		self.celsius = String(format: "%.1f", weather.temperature - 273.15)
+		self.description = weather.description
 		self.wind = String(format: "%.2f", weather.windSpeed)
 		self.humidity = String(format: "%.0f", weather.humidity)
 		self.uv = String(format: "%.1f", weather.uvIndex)
@@ -102,7 +106,9 @@ extension CityViewModel.Display {
 	
 	static let empty = CityViewModel.Display(
 		time: Date(),
+		imageName: "cloud.bolt.rain",
 		celsius: "0",
+		description: "Few clouds",
 		wind: "0.71",
 		humidity: "31",
 		uv: "1.2",

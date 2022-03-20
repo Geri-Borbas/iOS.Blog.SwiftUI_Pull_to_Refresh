@@ -66,6 +66,7 @@
 		55D6299B27DD38B70043188D /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 55D6299A27DD38B70043188D /* Introspect */; };
 		55D6299D27DD39070043188D /* IntrospectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6299C27DD39070043188D /* IntrospectView.swift */; };
 		55E82F3226FA336C003E8B68 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 55E82F3126FA336C003E8B68 /* CHANGELOG.md */; };
+		55EF270D27E7A2DD00705D1F /* OpenWeather+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF270C27E7A2DD00705D1F /* OpenWeather+Extensions.swift */; };
 		55FD8E6F24CE55260057D91E /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +176,7 @@
 		55E82F2F26FA272E003E8B68 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		55E82F3126FA336C003E8B68 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		55E82F3426FA35B0003E8B68 /* OnScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnScroll.swift; sourceTree = "<group>"; };
+		55EF270C27E7A2DD00705D1F /* OpenWeather+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenWeather+Extensions.swift"; sourceTree = "<group>"; };
 		55F2D60E24D1032500E3BDDF /* CitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesView.swift; sourceTree = "<group>"; };
 		55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -372,6 +374,7 @@
 				55E82F2D26F9E32E003E8B68 /* CityView.swift */,
 				554B9BFE27E7997C009F65BD /* RowView.swift */,
 				55E82F2F26FA272E003E8B68 /* CityViewModel.swift */,
+				55EF270C27E7A2DD00705D1F /* OpenWeather+Extensions.swift */,
 				55A227CC27E6589600DBBBB3 /* TitleView.swift */,
 				55A227DB27E6749800DBBBB3 /* Weather */,
 				55A227D627E65A4500DBBBB3 /* WeatherItem */,
@@ -702,6 +705,7 @@
 				55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */,
 				552AFE2E27E3DF4C002F18F2 /* CityView.swift in Sources */,
 				554B9BFF27E7997D009F65BD /* RowView.swift in Sources */,
+				55EF270D27E7A2DD00705D1F /* OpenWeather+Extensions.swift in Sources */,
 				55A227D827E663C600DBBBB3 /* AppHostingController.swift in Sources */,
 				559BF2A627E62BCC0029B89E /* TransparentTabView.swift in Sources */,
 				55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */,

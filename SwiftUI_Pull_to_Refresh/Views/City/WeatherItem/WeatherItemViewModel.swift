@@ -13,18 +13,18 @@ class WeatherItemViewModel: ObservableObject, Identifiable {
 		
 	let id: String = UUID().uuidString
 	let time: Date
-	let icon: String?
+	let imageName: String
 	let temperature: Double
 	
 	init() {
 		self.time = Date()
-		self.icon = nil
+		self.imageName = "questionmark.circle"
 		self.temperature = 273.15
 	}
 	
 	init(weather: OpenWeather.HourlyForecast.WeatherData) {
 		self.time = weather.time
-		self.icon = weather.weather.first?.icon
+		self.imageName = weather.imageName
 		self.temperature = weather.temperature
 	}
 }
