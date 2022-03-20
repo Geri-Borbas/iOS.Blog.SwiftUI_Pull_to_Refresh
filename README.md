@@ -39,15 +39,16 @@ struct ContentView: View {
 
 ## Quick Start
 
-Find [`OnRefreshModifier.swift`] and [`RefreshableModifier.swift`] in [`Refreshable`] folder. Find the exmaples below in the [`Examples`] folder. 
+Find [`OnRefreshModifier.swift`] and [`RefreshableModifier.swift`] in [`Refreshable`] folder (also add [Introspect] package). Find the exmaples above in the [`Examples`] folder. 
 
 
 ## License
 
 > Licensed under the [**MIT License**](https://en.wikipedia.org/wiki/MIT_License).
 
+[SwiftUI Pull to Refresh (for iOS 13 and iOS 14)]: https://blog.eppz.eu/swiftui-pull-to-refresh/
+[Introspect]: https://github.com/siteline/SwiftUI-Introspect
 [`OnRefreshModifier.swift`]: SwiftUI_Pull_to_Refresh/Refreshable/OnRefreshModifier.swift
 [`RefreshableModifier.swift`]: SwiftUI_Pull_to_Refresh/Refreshable/RefreshableModifier.swift
 [`Refreshable`]: SwiftUI_Pull_to_Refresh/Refreshable
 [`Examples`]: SwiftUI_Pull_to_Refresh/Examples
-[SwiftUI Pull to Refresh (for iOS 13 and iOS 14)]: https://blog.eppz.eu/swiftui-pull-to-refresh/
