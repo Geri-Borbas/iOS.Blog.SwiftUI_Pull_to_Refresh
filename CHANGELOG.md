@@ -4,7 +4,7 @@
 
 	+ Design
 
-* 1.4.1 - 1.4.3
+* 1.4.1 - 1.4.4
 
 	+ Renamings
 	+ Update README.md
