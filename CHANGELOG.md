@@ -7,7 +7,7 @@
 		+ List
 			+ Wind / Humidity / UV
 		
-* 1.5.8
+* 1.5.8 - 1.5.10
 
 	+ Added `FitTextView` prototype
 		

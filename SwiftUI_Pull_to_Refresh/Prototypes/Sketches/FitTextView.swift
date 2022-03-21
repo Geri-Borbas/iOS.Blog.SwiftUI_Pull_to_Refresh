@@ -8,9 +8,25 @@
 import SwiftUI
 
 
+extension View {
+
+	func heroStyle(black: Bool = true) -> some View {
+		self
+			.font(Font.custom(black ? "Lato-Black" : "Lato-Regular", size: 68))
+			.foregroundColor(UI.Color.foreground)
+			.frame(maxHeight: 64)
+	}
+}
+
+
 struct FitTextView: View {
-	
-	@State var minimumScaleFactor: CGFloat = 0.01
+		
+	static let screenFrame = CGRect(
+		x: 0,
+		y: 44,
+		width: 375,
+		height: 812 - 44
+	)S
 	
 	var body: some View {
 		ZStack {
@@ -18,28 +34,22 @@ struct FitTextView: View {
 				.fill(ImagePaint(image: Image("10pt")))
 				.opacity(0.2)
 			VStack {
-				HStack(spacing: 30) {
-					Image(systemName: "text.book.closed.fill")
-						.heroStyle()
-						.redLine()
-					VStack(alignment: .leading, spacing: 0) {
-						Text("-65.4 °C")
-							.heroStyle()
-							.lineLimit(1)
-							.minimumScaleFactor(minimumScaleFactor)
-							.redLine()
-						Text("Dolor sit amet")
-							.subtitleStyle()
-							.lineLimit(1)
-							.redLine()
-					}
-					.redLine(opacity: 0.5)
+				VStack(spacing: 0) {
+					SummaryView(
+						imageName: "text.book.closed.fill",
+						celsius: "-65.4",
+						description: "Few Clouds"
+					)
+						.environment(\.screenFrame, FitTextView.screenFrame)
+					AttributesView(
+						wind: "0.71",
+						humidity: "85",
+						uv: "1.2"
+					)
 				}
-				.padding(30)
-				.redLine(opacity: 0.5)
-				Spacing()
-				Slider(value: $minimumScaleFactor, in: 0...1)
+				Spacer()
 			}
+			.padding(.horizontal, UI.padding)
 			.redLine(opacity: 0.5)
 		}
 		.preferredColorScheme(.dark)

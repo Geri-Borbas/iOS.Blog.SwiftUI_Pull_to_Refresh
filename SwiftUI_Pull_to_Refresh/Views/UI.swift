@@ -34,13 +34,6 @@ struct UI {
 
 extension Text {
 	
-	func heroStyle(black: Bool = true) -> some View {
-		self
-			.font(Font.custom(black ? "Lato-Black" : "Lato-Regular", size: 68))
-			.foregroundColor(UI.Color.foreground)
-			.frame(maxHeight: 64)
-	}
-	
 	func titleStyle() -> Self {
 		self
 			.font(Font.custom("Lato-Light", size: 40))
