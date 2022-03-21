@@ -13,7 +13,7 @@ struct SummaryView: View {
 	let imageName: String
 	let celsius: String
 	let description: String
-	@Environment(\.citiesFrame) var citiesFrame: CGRect
+	@Environment(\.screenFrame) var screenFrame: CGRect
 	
 	var body: some View {
 		HStack {
@@ -38,25 +38,7 @@ struct SummaryView: View {
 		.padding(.vertical, 20)
 		.padding(.horizontal, 28)
 		.featuredBackgroundStyle()
-		.background(
-			GeometryReader { geometry in
-				background(geometry: geometry)
-			}
-		)
+		.backgroundBlur(in: screenFrame)
 		.cornerRadius(UI.cornerRadius)
-	}
-	
-	private func background(geometry: GeometryProxy) -> some View {
-		UI.Color.background
-			.overlay(
-				UI.Image.background
-					.backgroundStyle()
-					.background(UI.Color.background)
-					.blur(radius: UI.Image.blur)
-					.offset(
-						x: -geometry.frame(in: .global).origin.x + citiesFrame.origin.x + UI.padding,
-						y: -geometry.frame(in: .global).origin.y + citiesFrame.origin.y
-					), alignment: .top
-			)
 	}
 }

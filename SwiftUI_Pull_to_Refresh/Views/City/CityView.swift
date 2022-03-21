@@ -14,7 +14,7 @@ import OpenWeather
 struct CityView: View {
 	
 	@ObservedObject var viewModel: CityViewModel
-	@Environment(\.citiesFrame) var citiesFrame: CGRect
+	@Environment(\.screenFrame) var screenFrame: CGRect
 	let width: CGFloat
 	
 	init(viewModel: CityViewModel, width: CGFloat) {

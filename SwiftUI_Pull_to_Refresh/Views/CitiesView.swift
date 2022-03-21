@@ -10,14 +10,14 @@ import Introspect
 import OpenWeather
 
 
-private struct CitiesFrameEnvironmentKey: EnvironmentKey {
+private struct ScreenFrameEnvironmentKey: EnvironmentKey {
 	static let defaultValue: CGRect = .zero
 }
 
 extension EnvironmentValues {
-	var citiesFrame: CGRect {
-		get { self[CitiesFrameEnvironmentKey.self] }
-		set { self[CitiesFrameEnvironmentKey.self] = newValue }
+	var screenFrame: CGRect {
+		get { self[ScreenFrameEnvironmentKey.self] }
+		set { self[ScreenFrameEnvironmentKey.self] = newValue }
 	}
 }
 
@@ -54,7 +54,7 @@ struct CitiesView: View {
 								),
 								width: geometry.size.width
 							)
-								.environment(\.citiesFrame, geometry.frame(in: .global))
+								.environment(\.screenFrame, geometry.frame(in: .global))
 						}
 					}
 				}

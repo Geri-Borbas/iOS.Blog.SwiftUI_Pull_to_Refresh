@@ -16,7 +16,7 @@ struct WeatherView: View {
 	let wind: String
 	let humidity: String
 	let uv: String
-	@Environment(\.citiesFrame) var citiesFrame: CGRect
+	@Environment(\.screenFrame) var screenFrame: CGRect
 	
 	var body: some View {
 		VStack(spacing: 0) {
@@ -25,7 +25,7 @@ struct WeatherView: View {
 				celsius: celsius,
 				description: description
 			)
-				.environment(\.citiesFrame, citiesFrame)
+				.environment(\.screenFrame, screenFrame)
 			AttributesView(
 				wind: wind,
 				humidity: humidity,
@@ -57,8 +57,8 @@ struct WeatherView: View {
 				UI.Image.background
 					.backgroundStyle()
 					.offset(
-						x: -geometry.frame(in: .global).origin.x + citiesFrame.origin.x + UI.padding,
-						y: -geometry.frame(in: .global).origin.y + citiesFrame.origin.y
+						x: -geometry.frame(in: .global).origin.x + screenFrame.origin.x + UI.padding,
+						y: -geometry.frame(in: .global).origin.y + screenFrame.origin.y
 					), alignment: .top
 			)
 			.frame(height: CoverShape.shapeHeight(for: geometry.size.height))

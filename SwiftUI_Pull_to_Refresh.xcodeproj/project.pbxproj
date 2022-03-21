@@ -38,6 +38,7 @@
 		55679B4627DECAAD00A0800B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4527DECAAD00A0800B /* Network.swift */; };
 		55679B4827DECE6700A0800B /* OnRefreshModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4727DECE6700A0800B /* OnRefreshModifier.swift */; };
 		55679B4A27DECEB500A0800B /* ClosureBasedModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4927DECEB500A0800B /* ClosureBasedModifierView.swift */; };
+		557CD31427E7F98D00608335 /* View+BackgroundBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD31327E7F98D00608335 /* View+BackgroundBlur.swift */; };
 		5583A93C27E0D46400DF9BDF /* AsyncAwaitModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93B27E0D46400DF9BDF /* AsyncAwaitModifierView.swift */; };
 		5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A95727E1175800DF9BDF /* RefreshableModifier.swift */; };
 		558C556227E49AE00014D52B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C556127E49AE00014D52B /* HeaderView.swift */; };
@@ -139,6 +140,7 @@
 		55679B4527DECAAD00A0800B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		55679B4727DECE6700A0800B /* OnRefreshModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnRefreshModifier.swift; sourceTree = "<group>"; };
 		55679B4927DECEB500A0800B /* ClosureBasedModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureBasedModifierView.swift; sourceTree = "<group>"; };
+		557CD31327E7F98D00608335 /* View+BackgroundBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+BackgroundBlur.swift"; sourceTree = "<group>"; };
 		5583A93727E0CBCC00DF9BDF /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		5583A93827E0CBCC00DF9BDF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5583A93B27E0D46400DF9BDF /* AsyncAwaitModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitModifierView.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			children = (
 				55E82F2D26F9E32E003E8B68 /* CityView.swift */,
 				554B9BFE27E7997C009F65BD /* RowView.swift */,
+				557CD31327E7F98D00608335 /* View+BackgroundBlur.swift */,
 				55E82F2F26FA272E003E8B68 /* CityViewModel.swift */,
 				55EF270C27E7A2DD00705D1F /* OpenWeather+Extensions.swift */,
 				55A227CC27E6589600DBBBB3 /* TitleView.swift */,
@@ -717,6 +720,7 @@
 				558C556227E49AE00014D52B /* HeaderView.swift in Sources */,
 				55679B4827DECE6700A0800B /* OnRefreshModifier.swift in Sources */,
 				55679B4A27DECEB500A0800B /* ClosureBasedModifierView.swift in Sources */,
+				557CD31427E7F98D00608335 /* View+BackgroundBlur.swift in Sources */,
 				55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */,
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
 				55B756BD27E5458C00FA7BA6 /* PaddingView.swift in Sources */,
