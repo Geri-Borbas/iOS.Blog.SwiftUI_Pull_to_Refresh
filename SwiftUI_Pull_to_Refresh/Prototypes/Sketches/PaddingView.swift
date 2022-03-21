@@ -80,7 +80,7 @@ struct Grid: View {
     var body: some View {
         Rectangle()
             .fill(
-                ImagePaint(image: Image("Square"))
+                ImagePaint(image: Image("10pt"))
             )
     }
 }

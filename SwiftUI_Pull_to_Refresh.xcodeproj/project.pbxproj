@@ -68,6 +68,7 @@
 		55D6299D27DD39070043188D /* IntrospectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6299C27DD39070043188D /* IntrospectView.swift */; };
 		55E82F3226FA336C003E8B68 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 55E82F3126FA336C003E8B68 /* CHANGELOG.md */; };
 		55EF270D27E7A2DD00705D1F /* OpenWeather+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF270C27E7A2DD00705D1F /* OpenWeather+Extensions.swift */; };
+		55F542C827E88ACF003733E5 /* FitTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F542C727E88ACF003733E5 /* FitTextView.swift */; };
 		55FD8E6F24CE55260057D91E /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,7 @@
 		55E82F3426FA35B0003E8B68 /* OnScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnScroll.swift; sourceTree = "<group>"; };
 		55EF270C27E7A2DD00705D1F /* OpenWeather+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenWeather+Extensions.swift"; sourceTree = "<group>"; };
 		55F2D60E24D1032500E3BDDF /* CitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesView.swift; sourceTree = "<group>"; };
+		55F542C727E88ACF003733E5 /* FitTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitTextView.swift; sourceTree = "<group>"; };
 		55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -362,6 +364,7 @@
 		559BF2A727E637990029B89E /* Sketches */ = {
 			isa = PBXGroup;
 			children = (
+				55F542C727E88ACF003733E5 /* FitTextView.swift */,
 				558C556127E49AE00014D52B /* HeaderView.swift */,
 				55B756BC27E5458C00FA7BA6 /* PaddingView.swift */,
 				559BF2A527E62BCC0029B89E /* TransparentTabView.swift */,
@@ -705,6 +708,7 @@
 				552AFE2C27E3DF4C002F18F2 /* CityViewModel.swift in Sources */,
 				55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */,
 				559BF2A827E637BB0029B89E /* MarqueeView.swift in Sources */,
+				55F542C827E88ACF003733E5 /* FitTextView.swift in Sources */,
 				55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */,
 				552AFE2E27E3DF4C002F18F2 /* CityView.swift in Sources */,
 				554B9BFF27E7997D009F65BD /* RowView.swift in Sources */,

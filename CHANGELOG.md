@@ -3,9 +3,13 @@
 * Doing
 
 	+ Design
+		+ `SummaryView` celsius scaling
 		+ List
 			+ Wind / Humidity / UV
-		+ `SummaryView` celsius scaling
+		
+* 1.5.8
+
+	+ Added `FitTextView` prototype
 		
 * 1.5.5 - 1.5.7
 	
