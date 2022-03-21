@@ -34,16 +34,25 @@ struct FitTextView: View {
 				.fill(ImagePaint(image: Image("10pt")))
 				.opacity(0.2)
 			VStack {
-				WeatherView(
-					imageName: "text.book.closed.fill",
-					celsius: "-65.4",
-					description: "Few Clouds",
-					wind: "0.71",
-					humidity: "85",
-					uv: "1.2"
-				)
-					.redLine(opacity: 0.5)
-				Spacer()
+				TitleView.mock
+				List {
+					Section(
+						header:
+							DashboardView.mock
+							.listRowInsets(.zero),
+						content: {
+							ForEach(1...20, id: \.self) { eachRowIndex in
+								Text("Row \(eachRowIndex)")
+									.listRowBackground(
+										Color.clear
+											.redLine(opacity: 0.5)
+									)
+							}
+						}
+					)
+				}
+				.listStyle(.plain)
+				.redLine(opacity: 0.5)
 			}
 			.padding(.horizontal, UI.padding)
 			.redLine(opacity: 0.5)

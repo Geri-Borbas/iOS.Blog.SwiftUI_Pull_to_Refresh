@@ -10,6 +10,12 @@
 		+ List Rows
 			+ Temperature bar
 			+ Wind / Humidity / UV values
+		+ Empty state
+		
+* 1.5.15
+
+	+ Added mock views
+	+ Renamings
 		
 * 1.5.8 - 1.5.14
 

@@ -26,14 +26,14 @@ struct CityView: View {
 	var body: some View {
 		VStack(spacing: 0) {
 			TitleView(
-				name: viewModel.name,
+				name: viewModel.display.name,
 				dateAndTimeString: viewModel.display.dateAndTimeString
 			)
 			Spacing(UI.padding - topPadding)
 			List {
 				Section(
 					header:
-						WeatherView(
+						DashboardView(
 							imageName: viewModel.display.imageName,
 							celsius: viewModel.display.celsius,
 							description: viewModel.display.description,
@@ -57,13 +57,13 @@ struct CityView: View {
 				)
 			}
 			.listStyle(.plain)
-			.refreshable {
-				await viewModel.fetch()
-			}
 			.clipShape(ListShape())
 			.padding(.horizontal, UI.padding)
 			.padding(.bottom, UI.padding)
 			.environment(\.defaultMinListRowHeight, UI.rowHeight)
+			.refreshable {
+				await viewModel.fetch()
+			}
 		}
 		.frame(width: width)
 		.onAppear {

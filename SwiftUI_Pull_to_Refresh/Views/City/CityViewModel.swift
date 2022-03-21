@@ -11,11 +11,12 @@ import OpenWeather
 
 class CityViewModel: ObservableObject {
 	
-	let name: String
+	private let name: String
 	let location: OpenWeather.Location
 	
 	struct Display {
 		
+		let name: String
 		let time: Date
 		let imageName: String
 		let celsius: String
@@ -66,13 +67,14 @@ class CityViewModel: ObservableObject {
 		
 		state = .loading
 		OpenWeather.API.get(at: location) { [weak self] result in
+			guard let self = self else { return }
 			switch result {
 			case .success(let weather):
-				self?.state = .loaded(weather: weather)
-				self?.display = Display(from: weather)
+				self.state = .loaded(weather: weather)
+				self.display = Display(from: weather, name: self.name)
 			case .failure(let error):
-				self?.state = .error(error: error)
-				self?.display = Display.empty
+				self.state = .error(error: error)
+				self.display = Display.empty
 			}
 			completion?()
 		}
@@ -82,8 +84,9 @@ class CityViewModel: ObservableObject {
 
 extension CityViewModel.Display {
 	
-	init(from hourlyForecast: OpenWeather.HourlyForecast) {
+	init(from hourlyForecast: OpenWeather.HourlyForecast, name: String) {
 		let weather = hourlyForecast.currentWeather
+		self.name = name
 		self.time = weather.time
 		self.imageName = weather.imageName
 		self.celsius = String(format: "%.1f", weather.temperature - 273.15)
@@ -105,6 +108,7 @@ extension CityViewModel.Display {
 extension CityViewModel.Display {
 	
 	static let empty = CityViewModel.Display(
+		name: "San Jose",
 		time: Date(),
 		imageName: "cloud.bolt.rain",
 		celsius: "0",

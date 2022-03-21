@@ -20,3 +20,12 @@ struct TitleView: View {
 			.regularStyle()
 	}
 }
+
+
+extension TitleView {
+	
+	static let mock = TitleView(
+		name: "San Jose",
+		dateAndTimeString: "Tue Sept 22 at 13:15"
+	)
+}

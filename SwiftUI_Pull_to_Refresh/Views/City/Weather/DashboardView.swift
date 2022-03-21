@@ -1,5 +1,5 @@
 //
-//  WeatherView.swift
+//  DashboardView.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 19/03/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct WeatherView: View {
+struct DashboardView: View {
 	
 	let imageName: String
 	let celsius: String
@@ -20,7 +20,7 @@ struct WeatherView: View {
 	
 	var body: some View {
 		VStack(spacing: 0) {
-			SummaryView(
+			TemperatureView(
 				imageName: imageName,
 				celsius: celsius,
 				description: description
@@ -88,6 +88,19 @@ struct CoverShape: Shape {
 		path.append(hole.reversing())
 		return Path(path.cgPath)
 	}
+}
+
+
+extension DashboardView {
+	
+	static let mock = DashboardView(
+		imageName: "text.book.closed.fill",
+		celsius: "-65.4",
+		description: "Few Clouds",
+		wind: "0.71",
+		humidity: "85",
+		uv: "1.2"
+	)
 }
 
 

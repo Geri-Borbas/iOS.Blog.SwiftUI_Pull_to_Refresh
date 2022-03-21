@@ -1,5 +1,5 @@
 //
-//  SummaryView.swift
+//  TemperatureView.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 19/03/2022.
@@ -8,10 +8,10 @@
 import SwiftUI
 
 
-struct SummaryView: View {
+struct TemperatureView: View {
 	
 	let imageName: String
-	let celsius: String
+	let celsius: StrinSog
 	let description: String
 	@Environment(\.screenFrame) var screenFrame: CGRect
 	
