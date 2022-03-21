@@ -11,7 +11,7 @@ import SwiftUI
 struct TemperatureView: View {
 	
 	let imageName: String
-	let celsius: StrinSog
+	@State var celsius: String
 	let description: String
 	@Environment(\.screenFrame) var screenFrame: CGRect
 	
@@ -25,13 +25,16 @@ struct TemperatureView: View {
 					.heroStyle()
 					.lineLimit(1)
 					.minimumScaleFactor(0.2)
+					.layoutPriority(1)
 					.redLine()
 					.offset(x: 0, y: 2)
+					// TODO: Crop line height to `64`
 				Text(description)
 					.subtitleStyle()
 					.redLine()
 					.offset(x: 0, y: -2)
 			}
+			.frame(maxWidth: .infinity, alignment: .leading)
 			.redLine(opacity: 0.5)
 		}
 		.padding(.vertical, 20)
@@ -40,5 +43,8 @@ struct TemperatureView: View {
 		.backgroundBlur(in: screenFrame)
 		.cornerRadius(UI.cornerRadius)
 		.redLine(opacity: 0.5)
+		.onTapGesture {
+			celsius = "4"
+		}
 	}
 }

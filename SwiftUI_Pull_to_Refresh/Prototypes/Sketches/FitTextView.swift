@@ -14,7 +14,6 @@ extension View {
 		self
 			.font(Font.custom(black ? "Lato-Black" : "Lato-Regular", size: 68))
 			.foregroundColor(UI.Color.foreground)
-			.frame(maxHeight: 64)
 	}
 }
 
@@ -37,8 +36,7 @@ struct FitTextView: View {
 				TitleView.mock
 				List {
 					Section(
-						header:
-							DashboardView.mock
+						header: DashboardView.mock
 							.listRowInsets(.zero),
 						content: {
 							ForEach(1...20, id: \.self) { eachRowIndex in

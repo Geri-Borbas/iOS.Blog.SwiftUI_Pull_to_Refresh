@@ -25,6 +25,7 @@ struct DashboardView: View {
 				celsius: celsius,
 				description: description
 			)
+				.frame(maxWidth: .infinity) // Occupy the entire `Section.header`
 				.environment(\.screenFrame, screenFrame)
 			AttributesView(
 				wind: wind,
@@ -94,9 +95,9 @@ struct CoverShape: Shape {
 extension DashboardView {
 	
 	static let mock = DashboardView(
-		imageName: "text.book.closed.fill",
-		celsius: "-65.4",
-		description: "Few Clouds",
+		imageName: "cloud.bolt.rain",
+		celsius: "-165.4",
+		description: "Few clouds",
 		wind: "0.71",
 		humidity: "85",
 		uv: "1.2"

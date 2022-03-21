@@ -4,13 +4,16 @@
 
 	+ Design
 		+ `SummaryView` celsius scaling
-			+ For some reason `minimumScaleFactor` applied in full (`0.2`) if `celsius` text overflows
-			+ `WeatherView` works fine in isolation (see `FitTextView`)
-			+ Something about section header (?), or the outermost layout (?)
 		+ List Rows
 			+ Temperature bar
 			+ Wind / Humidity / UV values
 		+ Empty state
+
+* 1.5.16
+
+	+ `TemperatureView` 
+		+ `.infinite` width (and the text stack)
+		+ Temporary xelsius value provisioning
 		
 * 1.5.15
 
