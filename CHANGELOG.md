@@ -6,13 +6,13 @@
 		+ List
 			+ Wind / Humidity / UV
 		+ `SummaryView` celsius scaling
-		+ Update map attribution
-
-* 1.5.5 - 1.5.6
+		
+* 1.5.5 - 1.5.7
 	
 	+ List
 		+ Row horizontal alignment
 		+ Blur background
+	+ Updated map attribution placement
 	+ Renamings
 
 * 1.5.4
