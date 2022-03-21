@@ -4,10 +4,14 @@
 
 	+ Design
 		+ `SummaryView` celsius scaling
-		+ List
-			+ Wind / Humidity / UV
+			+ For some reason `minimumScaleFactor` applied in full (`0.2`) if `celsius` text overflows
+			+ `WeatherView` works fine in isolation (see `FitTextView`)
+			+ Something about section header (?), or the outermost layout (?)
+		+ List Rows
+			+ Temperature bar
+			+ Wind / Humidity / UV values
 		
-* 1.5.8 - 1.5.13
+* 1.5.8 - 1.5.14
 
 	+ Added `FitTextView` prototype
 		
