@@ -16,29 +16,29 @@ struct SummaryView: View {
 	@Environment(\.screenFrame) var screenFrame: CGRect
 	
 	var body: some View {
-		HStack {
+		HStack(spacing: 30) {
 			Image(systemName: imageName)
 				.heroStyle()
-			Spacer(minLength: 30)
+				.redLine()
 			VStack(alignment: .leading, spacing: 0) {
-				HStack {
-					Text(celsius)
-						.heroStyle()
-						.layoutPriority(1)
-						.minimumScaleFactor(0.6)
-					Text("°C")
-						.heroStyle(black: false)
-						.minimumScaleFactor(0.6)
-					Spacer()
-				}
+				Text("\(celsius) °C")
+					.heroStyle()
+					.lineLimit(1)
+					.minimumScaleFactor(0.1)
+					.redLine()
 				Text(description)
 					.subtitleStyle()
+					.redLine()
 			}
+			.redLine(opacity: 0.5)
 		}
-		.padding(.vertical, 20)
-		.padding(.horizontal, 28)
-		.featuredBackgroundStyle()
-		.backgroundBlur(in: screenFrame)
-		.cornerRadius(UI.cornerRadius)
+//		.padding(.vertical, 20)
+//		.padding(.horizontal, 28)
+//		.featuredBackgroundStyle()
+//		.backgroundBlur(in: screenFrame)
+//		.cornerRadius(UI.cornerRadius)
+//		.frame(width: 375 - 2 * UI.padding)
+//		.fixedSize(horizontal: true, vertical: false)
+		.redLine(opacity: 0.5)
 	}
 }
