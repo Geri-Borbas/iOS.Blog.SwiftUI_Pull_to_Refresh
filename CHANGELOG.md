@@ -7,6 +7,10 @@
 			+ Temperature bar
 		+ Empty state
 
+* 1.5.21
+
+	+ Added configuration files
+
 * 1.5.16 - 1.5.20
 
 	+ `TemperatureView` (celsius scaling) 
