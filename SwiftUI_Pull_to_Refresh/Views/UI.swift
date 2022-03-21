@@ -36,13 +36,13 @@ extension Text {
 	
 	func heroStyle(black: Bool = true) -> some View {
 		self
-			.font(Font.custom(black ? "Lato-Black" : "Lato-Regular", size: 64))
+			.font(Font.custom(black ? "Lato-Black" : "Lato-Regular", size: 60))
 			.foregroundColor(UI.Color.foreground)
 	}
 	
-	func titleStyle() -> Self {
+	func titleStyle() -> some View {
 		self
-			.font(Font.custom("Lato-Light", size: 40))
+			.font(Font.custom("Lato-Light", size: 36))
 			.foregroundColor(UI.Color.foreground)
 	}
 	

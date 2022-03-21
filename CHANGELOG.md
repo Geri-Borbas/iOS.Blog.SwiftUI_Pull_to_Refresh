@@ -3,17 +3,15 @@
 * Doing
 
 	+ Design
-		+ `SummaryView` celsius scaling
 		+ List Rows
 			+ Temperature bar
-			+ Wind / Humidity / UV values
 		+ Empty state
 
-* 1.5.16 - 1.5.17
+* 1.5.16 - 1.5.20
 
-	+ `TemperatureView` 
+	+ `TemperatureView` (celsius scaling) 
 		+ `.infinite` width (and the text stack)
-		+ Temporary xelsius value provisioning
+		+ Temporary celsius value provisioning
 		
 * 1.5.15
 

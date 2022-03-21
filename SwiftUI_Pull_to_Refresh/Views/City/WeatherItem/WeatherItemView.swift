@@ -44,7 +44,7 @@ struct WeatherItemView: View {
 					.largeStyle()
 				Spacer()
 			}
-			.frame(width: 76)
+			.frame(width: 80)
 			
 			Spacer()
 		}

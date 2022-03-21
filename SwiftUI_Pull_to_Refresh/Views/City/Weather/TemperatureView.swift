@@ -11,24 +11,9 @@ import SwiftUI
 struct TemperatureView: View {
 	
 	let imageName: String
-	@State var celsius: String
+	let celsius: String
 	let description: String
 	@Environment(\.screenFrame) var screenFrame: CGRect
-	
-	@State private var testStrings = [
-		"",
-		"-38.0",
-		"-12.0",
-		"24.0",
-		"12.0",
-		"1.0",
-		"2.0",
-		"4.0",
-		"12.0",
-		"-45.0",
-		"-165.4",
-		"-237.15"
-	]
 	
 	var body: some View {
 		HStack(spacing: 30) {
@@ -36,24 +21,15 @@ struct TemperatureView: View {
 				.heroStyle()
 				.redLine()
 			VStack(alignment: .leading, spacing: 0) {
-				Color.clear
-					.frame(height: 64, alignment: .bottom)
-					.overlay(
-						Group {
-							Text("\(celsius) °C")
-								.heroStyle()
-								.lineLimit(1)
-								.fixedSize(horizontal: false, vertical: true)
-								.minimumScaleFactor(0.2)
-								.redLine()
-							}
-							.frame(maxWidth: .infinity, alignment: .bottomLeading)
-							.offset(x: 0, y: -4)
-							.redLine()
-					)
+				Text("\(celsius) °C")
+					.heroStyle()
+					.lineLimit(1)
+					.fixedSize(horizontal: false, vertical: true)
+					.minimumScaleFactor(0.2)
 					.redLine()
 				Text(description)
 					.subtitleStyle()
+					.offset(x: 0, y: -6)
 					.redLine()
 			}
 			.frame(maxWidth: .infinity, alignment: .leading)
@@ -65,8 +41,5 @@ struct TemperatureView: View {
 		.backgroundBlur(in: screenFrame)
 		.cornerRadius(UI.cornerRadius)
 		.redLine(opacity: 0.5)
-		.onTapGesture {
-			celsius = testStrings.popLast() ?? "0"
-		}
 	}
 }
