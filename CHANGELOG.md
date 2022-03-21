@@ -9,7 +9,7 @@
 			+ Wind / Humidity / UV values
 		+ Empty state
 
-* 1.5.16
+* 1.5.16 - 1.5.17
 
 	+ `TemperatureView` 
 		+ `.infinite` width (and the text stack)

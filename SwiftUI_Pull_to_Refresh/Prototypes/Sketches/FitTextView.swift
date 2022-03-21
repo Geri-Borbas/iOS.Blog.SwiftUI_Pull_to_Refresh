@@ -8,24 +8,7 @@
 import SwiftUI
 
 
-extension View {
-	
-	func heroStyle(black: Bool = true) -> some View {
-		self
-			.font(Font.custom(black ? "Lato-Black" : "Lato-Regular", size: 68))
-			.foregroundColor(UI.Color.foreground)
-	}
-}
-
-
 struct FitTextView: View {
-	
-	static let screenFrame = CGRect(
-		x: 0,
-		y: 44,
-		width: 375,
-		height: 812 - 44
-	)
 	
 	var body: some View {
 		ZStack {
@@ -64,7 +47,7 @@ extension View {
 	
 	func redLine(opacity: CGFloat = 1.0) -> some View {
 		self
-			.background(Color.red.opacity(0.2 * opacity))
-			.border(Color.red.opacity(opacity), width: 1)
+//			.background(Color.red.opacity(0.2 * opacity))
+//			.border(Color.red.opacity(opacity), width: 1)
 	}
 }

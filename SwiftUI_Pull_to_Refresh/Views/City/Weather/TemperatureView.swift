@@ -15,24 +15,46 @@ struct TemperatureView: View {
 	let description: String
 	@Environment(\.screenFrame) var screenFrame: CGRect
 	
+	@State private var testStrings = [
+		"",
+		"-38.0",
+		"-12.0",
+		"24.0",
+		"12.0",
+		"1.0",
+		"2.0",
+		"4.0",
+		"12.0",
+		"-45.0",
+		"-165.4",
+		"-237.15"
+	]
+	
 	var body: some View {
 		HStack(spacing: 30) {
 			Image(systemName: imageName)
 				.heroStyle()
 				.redLine()
 			VStack(alignment: .leading, spacing: 0) {
-				Text("\(celsius) °C")
-					.heroStyle()
-					.lineLimit(1)
-					.minimumScaleFactor(0.2)
-					.layoutPriority(1)
+				Color.clear
+					.frame(height: 64, alignment: .bottom)
+					.overlay(
+						Group {
+							Text("\(celsius) °C")
+								.heroStyle()
+								.lineLimit(1)
+								.fixedSize(horizontal: false, vertical: true)
+								.minimumScaleFactor(0.2)
+								.redLine()
+							}
+							.frame(maxWidth: .infinity, alignment: .bottomLeading)
+							.offset(x: 0, y: -4)
+							.redLine()
+					)
 					.redLine()
-					.offset(x: 0, y: 2)
-					// TODO: Crop line height to `64`
 				Text(description)
 					.subtitleStyle()
 					.redLine()
-					.offset(x: 0, y: -2)
 			}
 			.frame(maxWidth: .infinity, alignment: .leading)
 			.redLine(opacity: 0.5)
@@ -44,7 +66,7 @@ struct TemperatureView: View {
 		.cornerRadius(UI.cornerRadius)
 		.redLine(opacity: 0.5)
 		.onTapGesture {
-			celsius = "4"
+			celsius = testStrings.popLast() ?? "0"
 		}
 	}
 }
