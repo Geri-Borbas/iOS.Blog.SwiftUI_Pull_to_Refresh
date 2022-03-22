@@ -3,13 +3,11 @@
 * Doing
 
 	+ Design
-		+ iOS 13
-			+ `WeatherView` background offset
 		+ List Rows
 			+ Temperature bar
 		+ Empty state
 
-* 1.5.21 - 1.5.24
+* 1.5.21 - 1.5.25
 
 	+ Added configuration files
 	+ Manual layout tests
@@ -22,6 +20,7 @@
 			+ Added `removeTextCase` (only on iOS 14)
 			+ Set entire app to dark mode (correct `UIHostingController` style)
 			+ Ignore bottom safe area on list as well
+			+ List transparency compatibility
 
 * 1.5.16 - 1.5.20
 

@@ -41,7 +41,10 @@ struct CityView: View {
 							humidity: viewModel.display.humidity,
 							uv: viewModel.display.uv
 						)
-						.listRowInsets(.zero),
+						.listRowInsets(.zero)
+						.introspectTableViewHeaderFooterView {
+							$0.backgroundView = UIView() // iOS 13
+						},
 					content: {
 						ForEach(
 							Array(viewModel.display.items.enumerated()),
@@ -58,6 +61,9 @@ struct CityView: View {
 			}
 			.listStyle(.plain)
 			.clipShape(ListShape())
+			.introspectTableView {
+				$0.separatorStyle = .none // iOS 13
+			}
 			.padding(.horizontal, UI.padding)
 			.padding(.bottom, UI.padding)
 			.edgesIgnoringSafeArea(.bottom) // iOS 13
@@ -108,9 +114,12 @@ extension CityView {
 		// Hide indicators, separators.
 		UITableView.appearance().showsVerticalScrollIndicator = false
 		UITableView.appearance().separatorColor = .clear
-		UITableView.appearance().backgroundColor = .clear // iOS 13
 		
-		// Transparent section header (iOS 14+).
+		// iOS 13
+		UITableView.appearance().backgroundColor = .clear
+		UITableViewCell.appearance().backgroundColor = .clear
+		
+		// Transparent section header.
 		UITableViewHeaderFooterView.appearance().backgroundView = UIView()
 	}
 }

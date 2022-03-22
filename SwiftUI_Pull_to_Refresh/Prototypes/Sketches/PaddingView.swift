@@ -84,11 +84,3 @@ struct Grid: View {
             )
     }
 }
-
-
-extension View {
-    
-    public func introspectTableViewHeaderFooterView(customize: @escaping (UITableViewHeaderFooterView) -> Void) -> some View {
-        introspect(selector: TargetViewSelector.ancestorOrSiblingContaining, customize: customize)
-    }
-}
