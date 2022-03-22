@@ -7,6 +7,10 @@
 			+ Temperature bar
 		+ Empty state
 
+* 1.7.1
+
+	+ More mock data
+
 * 1.7.0
 
 	+ Renamings, refactor, grouping

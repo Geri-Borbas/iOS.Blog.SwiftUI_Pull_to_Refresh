@@ -147,6 +147,11 @@
 		55573BE127EA4E4500B130CC /* OpenWeather+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenWeather+Mocks.swift"; sourceTree = "<group>"; };
 		55573BE527EA536F00B130CC /* WeatherList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherList.swift; sourceTree = "<group>"; };
 		55573BE727EA53D500B130CC /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
+		55573BEA27EA581A00B130CC /* Moscow.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Moscow.json; sourceTree = "<group>"; };
+		55573BEB27EA584C00B130CC /* New Delhi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "New Delhi.json"; sourceTree = "<group>"; };
+		55573BEC27EA588200B130CC /* Tokyo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tokyo.json; sourceTree = "<group>"; };
+		55573BED27EA58C400B130CC /* Sidney.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sidney.json; sourceTree = "<group>"; };
+		55573BEE27EA58FB00B130CC /* Honolulu.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Honolulu.json; sourceTree = "<group>"; };
 		55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRefreshControlView.swift; sourceTree = "<group>"; };
 		55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlTargetView.swift; sourceTree = "<group>"; };
 		55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlClosureView.swift; sourceTree = "<group>"; };
@@ -349,6 +354,11 @@
 				55573BD927EA4A1A00B130CC /* New York.json */,
 				55573BDB27EA4ADE00B130CC /* Paris.json */,
 				55573BDC27EA4CA900B130CC /* London.json */,
+				55573BEA27EA581A00B130CC /* Moscow.json */,
+				55573BEB27EA584C00B130CC /* New Delhi.json */,
+				55573BEC27EA588200B130CC /* Tokyo.json */,
+				55573BED27EA58C400B130CC /* Sidney.json */,
+				55573BEE27EA58FB00B130CC /* Honolulu.json */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
