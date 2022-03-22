@@ -60,12 +60,12 @@ struct CityView: View {
 				)
 			}
 			.listStyle(.plain)
-			.clipShape(ListShape())
 			.introspectTableView {
 				$0.separatorStyle = .none // iOS 13
 			}
 			.padding(.horizontal, UI.padding)
 			.padding(.bottom, UI.padding)
+			.clipShape(RoundedRectangle(cornerRadius: UI.cornerRadius))
 			.edgesIgnoringSafeArea(.bottom) // iOS 13
 			.environment(\.defaultMinListRowHeight, UI.rowHeight)
 			.refreshable {
@@ -76,20 +76,6 @@ struct CityView: View {
 		.onAppear {
 			viewModel.fetch()
 		}
-	}
-}
-
-
-struct ListShape: Shape {
-		
-	func path(in rect: CGRect) -> Path {
-		Path(
-			UIBezierPath(
-				roundedRect: rect,
-				byRoundingCorners: [.bottomLeft, .bottomRight],
-				cornerRadii: UI.cornerRadius.size
-			).cgPath
-		)
 	}
 }
 

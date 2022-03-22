@@ -7,6 +7,10 @@
 			+ Temperature bar
 		+ Empty state
 
+* 1.6.0
+
+	+ Simplified section header background mask
+
 * 1.5.21 - 1.5.25
 
 	+ Added configuration files

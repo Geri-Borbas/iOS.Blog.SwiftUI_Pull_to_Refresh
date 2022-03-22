@@ -88,6 +88,14 @@ struct RowShape: Shape {
 }
 
 
+extension CGFloat {
+	
+	var size: CGSize {
+		.init(width: self, height: self)
+	}
+}
+
+
 extension CGRect {
 	
 	func with(minHeight: CGFloat) -> CGRect {

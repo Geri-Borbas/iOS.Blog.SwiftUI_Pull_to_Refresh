@@ -41,7 +41,7 @@ struct DashboardView: View {
 							gradient: Gradient(
 								colors: [
 									.white.opacity(1.0),
-									.white.opacity(0.4)
+									.white.opacity(0.0)
 								]
 							),
 							startPoint: UnitPoint(x: 0, y: 0.4),
@@ -62,32 +62,7 @@ struct DashboardView: View {
 						y: -geometry.frame(in: .global).origin.y + screenFrame.origin.y
 					), alignment: .top
 			)
-			.frame(height: CoverShape.shapeHeight(for: geometry.size.height))
-			.clipShape(CoverShape())
-	}
-}
-
-
-struct CoverShape: Shape {
-	
-	static func shapeHeight(for height: CGFloat) -> CGFloat {
-		height + UI.cornerRadius * 2
-	}
-	
-	func path(in rect: CGRect) -> Path {
-		let path = UIBezierPath(rect: rect)
-		let hole = UIBezierPath(
-			roundedRect: .init(
-				x: rect.origin.x,
-				y: rect.maxY - UI.cornerRadius * 2,
-				width: rect.width,
-				height: UI.cornerRadius * 2
-			),
-			byRoundingCorners: [.topLeft, .topRight],
-			cornerRadii: UI.cornerRadius.size
-		)
-		path.append(hole.reversing())
-		return Path(path.cgPath)
+			.redLine()
 	}
 }
 
@@ -102,12 +77,4 @@ extension DashboardView {
 		humidity: "85",
 		uv: "1.2"
 	)
-}
-
-
-extension CGFloat {
-	
-	var size: CGSize {
-		.init(width: self, height: self)
-	}
 }
