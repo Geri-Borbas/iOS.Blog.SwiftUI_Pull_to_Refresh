@@ -60,7 +60,7 @@ struct CityView: View {
 			.clipShape(ListShape())
 			.padding(.horizontal, UI.padding)
 			.padding(.bottom, UI.padding)
-			.edgesIgnoringSafeArea(.bottom)
+			.edgesIgnoringSafeArea(.bottom) // iOS 13
 			.environment(\.defaultMinListRowHeight, UI.rowHeight)
 			.refreshable {
 				await viewModel.fetch()
@@ -108,6 +108,7 @@ extension CityView {
 		// Hide indicators, separators.
 		UITableView.appearance().showsVerticalScrollIndicator = false
 		UITableView.appearance().separatorColor = .clear
+		UITableView.appearance().backgroundColor = .clear // iOS 13
 		
 		// Transparent section header (iOS 14+).
 		UITableViewHeaderFooterView.appearance().backgroundView = UIView()

@@ -9,7 +9,7 @@
 			+ Temperature bar
 		+ Empty state
 
-* 1.5.21 - 1.5.23
+* 1.5.21 - 1.5.24
 
 	+ Added configuration files
 	+ Manual layout tests
