@@ -12,11 +12,11 @@ struct RowView: View {
 	
 	let isFirst: Bool
 	let isLast: Bool
-	let viewModel: WeatherItemViewModel
+	let viewModel: ForecastViewModel
 	@Environment(\.screenFrame) var screenFrame: CGRect
 	
 	var body: some View {
-		return WeatherItemView(viewModel: viewModel)
+		return ForecastView(viewModel: viewModel)
 			.listRowBackground(
 				UI.Color.darkGray.opacity(0.5)
 					.backgroundBlur(in: screenFrame)

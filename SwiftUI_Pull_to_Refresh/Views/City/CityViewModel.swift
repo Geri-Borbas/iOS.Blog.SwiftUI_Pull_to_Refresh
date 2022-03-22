@@ -25,7 +25,7 @@ class CityViewModel: ObservableObject {
 		let wind: String
 		let humidity: String
 		let uv: String
-		let items: [WeatherItemViewModel]
+		let items: [ForecastViewModel]
 	}
 	
 	@Published var display: Display = .empty
@@ -95,7 +95,7 @@ extension CityViewModel.Display {
 		self.wind = String(format: "%.2f", weather.windSpeed)
 		self.humidity = String(format: "%.0f", weather.humidity)
 		self.uv = String(format: "%.1f", weather.uvIndex)
-		self.items = hourlyForecast.hourlyWeather.map { WeatherItemViewModel(weather: $0) }
+		self.items = hourlyForecast.hourlyWeather.map { ForecastViewModel(weather: $0) }
 	}
 	
 	var dateAndTimeString: String {
@@ -117,7 +117,7 @@ extension CityViewModel.Display {
 		wind: "0.71",
 		humidity: "31",
 		uv: "1.2",
-		items: Array(repeating: 1, count: 20).map { _ in WeatherItemViewModel() }
+		items: Array(repeating: 1, count: 20).map { _ in ForecastViewModel() }
 	)
 }
 

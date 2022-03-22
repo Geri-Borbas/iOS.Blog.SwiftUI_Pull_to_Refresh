@@ -29,7 +29,7 @@ struct CityView: View {
 				name: viewModel.display.name,
 				dateAndTimeString: viewModel.display.dateAndTimeString
 			)
-			Spacing(UI.padding - topPadding)
+			Spacer(minLength: UI.padding - topPadding)
 			List {
 				Section(
 					header:
