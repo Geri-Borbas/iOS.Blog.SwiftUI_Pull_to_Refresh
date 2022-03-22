@@ -1,5 +1,5 @@
 //
-//  RowView.swift
+//  WeatherListRowView.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 20/03/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct RowView: View {
+struct WeatherListRowView: View {
 	
 	let isFirst: Bool
 	let isLast: Bool

@@ -33,7 +33,7 @@ struct WeatherList: View {
 						Array(viewModel.items.enumerated()),
 						id: \.offset
 					) { eachIndex, eachViewModel in
-						RowView(
+						WeatherListRowView(
 							isFirst: eachIndex == 0,
 							isLast: eachIndex == viewModel.items.count - 1,
 							viewModel: eachViewModel
