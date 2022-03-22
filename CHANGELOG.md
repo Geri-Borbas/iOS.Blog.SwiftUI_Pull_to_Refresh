@@ -2,10 +2,11 @@
 
 * Doing
 
-	+ Design
-		+ List Rows
-			+ Temperature bar
-		+ Empty state
+	+ Design empty state
+
+* Feature/Temperature_bar/0.0.1
+
+	+ Added temperature bar view
 
 * 1.7.1
 
