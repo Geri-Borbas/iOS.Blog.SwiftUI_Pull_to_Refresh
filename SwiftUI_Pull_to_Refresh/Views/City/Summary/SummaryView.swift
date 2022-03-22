@@ -26,7 +26,6 @@ struct SummaryView: View {
 				description: description
 			)
 				.frame(maxWidth: .infinity) // Occupy the entire `Section.header`
-				.environment(\.screenFrame, screenFrame)
 			AttributesView(
 				wind: wind,
 				humidity: humidity,
