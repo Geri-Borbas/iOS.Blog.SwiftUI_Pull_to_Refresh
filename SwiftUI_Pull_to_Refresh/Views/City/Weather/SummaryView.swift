@@ -1,5 +1,5 @@
 //
-//  DashboardView.swift
+//  SummaryView.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 19/03/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct DashboardView: View {
+struct SummaryView: View {
 	
 	let imageName: String
 	let celsius: String
@@ -69,9 +69,9 @@ struct DashboardView: View {
 }
 
 
-extension DashboardView {
+extension SummaryView {
 	
-	static let mock = DashboardView(
+	static let mock = SummaryView(
 		imageName: "cloud.bolt.rain",
 		celsius: "-165.4",
 		description: "Few clouds",

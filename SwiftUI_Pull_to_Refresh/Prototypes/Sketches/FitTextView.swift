@@ -19,7 +19,7 @@ struct FitTextView: View {
 				TitleView.mock
 				List {
 					Section(
-						header: DashboardView.mock
+						header: SummaryView.mock
 							.listRowInsets(.zero),
 						content: {
 							ForEach(1...20, id: \.self) { eachRowIndex in

@@ -33,7 +33,7 @@ struct CityView: View {
 			List {
 				Section(
 					header:
-						DashboardView(
+						SummaryView(
 							imageName: viewModel.display.imageName,
 							celsius: viewModel.display.celsius,
 							description: viewModel.display.description,
