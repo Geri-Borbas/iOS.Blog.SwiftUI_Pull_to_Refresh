@@ -7,6 +7,12 @@
 			+ Temperature bar
 		+ Empty state
 
+* 1.7.0
+
+	+ Renamings, refactor, grouping
+	+ Removed redundant environment modifiers
+	+ Removed unused `state` variable
+
 * 1.6.5
 
 	+ Added `OpenWeather.HourlyForecast.mock` to spare API

@@ -1,5 +1,5 @@
 //
-//  RowView.swift
+//  WeatherListRowView.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 20/03/2022.
@@ -8,15 +8,15 @@
 import SwiftUI
 
 
-struct RowView: View {
+struct WeatherListRowView: View {
 	
 	let isFirst: Bool
 	let isLast: Bool
-	let viewModel: WeatherItemViewModel
+	let viewModel: ForecastViewModel
 	@Environment(\.screenFrame) var screenFrame: CGRect
 	
 	var body: some View {
-		return WeatherItemView(viewModel: viewModel)
+		return ForecastView(viewModel: viewModel)
 			.listRowBackground(
 				UI.Color.darkGray.opacity(0.5)
 					.backgroundBlur(in: screenFrame)

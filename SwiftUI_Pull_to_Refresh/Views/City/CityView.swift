@@ -14,7 +14,6 @@ import OpenWeather
 struct CityView: View {
 	
 	@ObservedObject var viewModel: CityViewModel
-	@Environment(\.screenFrame) var screenFrame: CGRect
 	let width: CGFloat
 	
 	init(viewModel: CityViewModel, width: CGFloat) {
@@ -26,51 +25,14 @@ struct CityView: View {
 	var body: some View {
 		VStack(spacing: 0) {
 			TitleView(
-				name: viewModel.display.name,
-				dateAndTimeString: viewModel.display.dateAndTimeString
+				name: viewModel.name,
+				dateAndTimeString: viewModel.weatherListViewModel.dateAndTimeString
 			)
-			Spacing(UI.padding - topPadding)
-			List {
-				Section(
-					header:
-						DashboardView(
-							imageName: viewModel.display.imageName,
-							celsius: viewModel.display.celsius,
-							description: viewModel.display.description,
-							wind: viewModel.display.wind,
-							humidity: viewModel.display.humidity,
-							uv: viewModel.display.uv
-						)
-						.listRowInsets(.zero)
-						.introspectTableViewHeaderFooterView {
-							$0.backgroundView = UIView() // iOS 13
-						},
-					content: {
-						ForEach(
-							Array(viewModel.display.items.enumerated()),
-							id: \.offset
-						) { eachIndex, eachViewModel in
-							RowView(
-								isFirst: eachIndex == 0,
-								isLast: eachIndex == viewModel.display.items.count - 1,
-								viewModel: eachViewModel
-							)
-						}
-					}
-				)
-			}
-			.listStyle(.plain)
-			.clipShape(RoundedRectangle(cornerRadius: UI.cornerRadius))
-			.padding(.horizontal, UI.padding)
-			.padding(.bottom, UI.padding)
-			.edgesIgnoringSafeArea(.bottom) // iOS 13
-			.environment(\.defaultMinListRowHeight, UI.rowHeight)
-			.introspectTableView {
-				$0.separatorStyle = .none // iOS 13
-			}
-			.refreshable {
-				await viewModel.fetch()
-			}
+			Spacer(minLength: UI.padding - UI.topPadding)
+			WeatherList(viewModel: viewModel.weatherListViewModel)
+				.refreshable {
+					await viewModel.fetch()
+				}
 		}
 		.frame(width: width)
 		.onAppear {
@@ -82,19 +44,11 @@ struct CityView: View {
 
 extension CityView {
 	
-	var topPadding: CGFloat {
-		if #available(iOS 15.0, *) {
-			return 8
-		} else {
-			return 0
-		}
-	}
-	
 	func setupAppearence() {
 		
 		// Tighten extra padding above section header (if any).
 		if #available(iOS 15.0, *) {
-			UITableView.appearance().sectionHeaderTopPadding = topPadding
+			UITableView.appearance().sectionHeaderTopPadding = UI.topPadding
 		}
 		
 		// Hide indicators, separators.

@@ -1,5 +1,5 @@
 //
-//  WeatherItemView.swift
+//  ForecastView.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 20/09/2021.
@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 
-struct WeatherItemView: View {
+struct ForecastView: View {
 	
-	let viewModel: WeatherItemViewModel
+	let viewModel: ForecastViewModel
 	
 	var body: some View {
 		HStack(spacing: 8) {

@@ -1,5 +1,5 @@
 //
-//  WeatherItemViewModel.swift
+//  ForecastViewModel.swift
 //  SwiftUI_Pull_to_Refresh
 //
 //  Created by Geri Borbás on 18/03/2022.
@@ -9,7 +9,7 @@ import Foundation
 import OpenWeather
 
 
-class WeatherItemViewModel: ObservableObject, Identifiable {
+class ForecastViewModel: ObservableObject, Identifiable {
 		
 	let id: String = UUID().uuidString
 	let time: Date
@@ -30,7 +30,7 @@ class WeatherItemViewModel: ObservableObject, Identifiable {
 }
 
 
-extension WeatherItemViewModel {
+extension ForecastViewModel {
 	
 	var temperatureString: String {
 		String(format: "%.1f °C", temperature - 273.15)
