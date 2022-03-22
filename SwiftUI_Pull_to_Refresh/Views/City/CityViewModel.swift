@@ -11,24 +11,11 @@ import OpenWeather
 
 class CityViewModel: ObservableObject {
 	
-	private let name: String
+	let name: String
 	let location: OpenWeather.Location
 	static let useMockData = true
 	
-	struct Display {
-		
-		let name: String
-		let time: Date
-		let imageName: String
-		let celsius: String
-		let description: String
-		let wind: String
-		let humidity: String
-		let uv: String
-		let items: [ForecastViewModel]
-	}
-	
-	@Published var display: Display = .empty
+	@Published var weatherListViewModel: WeatherListViewModel = .empty
 	
 	enum State {
 		
@@ -61,7 +48,7 @@ class CityViewModel: ObservableObject {
 		if Self.useMockData {
 			let mock = OpenWeather.HourlyForecast.mock(for: name)
 			self.state = .loaded(weather: mock)
-			self.display = Display(from: mock, name: self.name)
+			self.weatherListViewModel = .init(from: mock, name: self.name)
 			completion?()
 			return
 		}
@@ -72,10 +59,10 @@ class CityViewModel: ObservableObject {
 			switch result {
 			case .success(let weather):
 				self.state = .loaded(weather: weather)
-				self.display = Display(from: weather, name: self.name)
+				self.weatherListViewModel = .init(from: weather, name: self.name)
 			case .failure(let error):
 				self.state = .error(error: error)
-				self.display = Display.empty
+				self.weatherListViewModel = .empty
 			}
 			completion?()
 		}
@@ -83,53 +70,14 @@ class CityViewModel: ObservableObject {
 }
 
 
-extension CityViewModel.Display {
-	
-	init(from hourlyForecast: OpenWeather.HourlyForecast, name: String) {
-		let weather = hourlyForecast.currentWeather
-		self.name = name
-		self.time = weather.time
-		self.imageName = weather.imageName
-		self.celsius = String(format: "%.1f", weather.temperature - 273.15)
-		self.description = weather.description
-		self.wind = String(format: "%.2f", weather.windSpeed)
-		self.humidity = String(format: "%.0f", weather.humidity)
-		self.uv = String(format: "%.1f", weather.uvIndex)
-		self.items = hourlyForecast.hourlyWeather.map { ForecastViewModel(weather: $0) }
-	}
-	
-	var dateAndTimeString: String {
-		DateFormatter().with {
-			$0.dateFormat = "E MMM d 'at' HH:mm"
-		}.string(from: time)
-	}
-}
-
-
-extension CityViewModel.Display {
-	
-	static let empty = CityViewModel.Display(
-		name: "San Jose",
-		time: Date(),
-		imageName: "cloud.bolt.rain",
-		celsius: "0",
-		description: "Few clouds",
-		wind: "0.71",
-		humidity: "31",
-		uv: "1.2",
-		items: Array(repeating: 1, count: 20).map { _ in ForecastViewModel() }
-	)
-}
-
-
 extension CityViewModel.State {
 	
-	var isLoading: Bool {
-		switch self {
-		case .loading:
-			return true
-		default:
-			return false
-		}
-	}
+//	var isLoading: Bool {
+//		switch self {
+//		case .loading:
+//			return true
+//		default:
+//			return false
+//		}
+//	}
 }

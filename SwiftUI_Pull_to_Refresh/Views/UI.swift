@@ -11,6 +11,14 @@ import SwiftUI
 struct UI {
 			
 	static let padding = CGFloat(16)
+	static var topPadding: CGFloat {
+		if #available(iOS 15.0, *) {
+			return 8
+		} else {
+			return 0
+		}
+	}
+	
 	static let cornerRadius = CGFloat(32)
 	static let rowHeight = CGFloat(40)
 	
