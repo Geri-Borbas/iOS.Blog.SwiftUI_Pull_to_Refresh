@@ -4,9 +4,10 @@
 
 	+ Design empty state
 
-* Feature/Temperature_bar/0.0.1
+* Feature/Temperature_bar/0.0.1 - 0.0.3
 
-	+ Added temperature bar view
+	+ Added `TemperatureBarView`
+		+ Dynamic scale
 
 * 1.7.1
 

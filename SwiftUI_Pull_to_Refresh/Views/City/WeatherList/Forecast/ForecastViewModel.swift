@@ -15,25 +15,39 @@ class ForecastViewModel: ObservableObject, Identifiable {
 	let time: Date
 	let imageName: String
 	let temperature: Double
+	let smallestTemperature: Double
+	let greatestTemperature: Double
 	
 	init() {
 		self.time = Date()
 		self.imageName = "questionmark.circle"
 		self.temperature = 273.15
+		self.smallestTemperature = 273.15
+		self.greatestTemperature = 273.15
 	}
 	
-	init(weather: OpenWeather.HourlyForecast.WeatherData) {
+	init(
+		weather: OpenWeather.HourlyForecast.WeatherData,
+		smallestTemperature: Double,
+		greatestTemperature: Double
+	) {
 		self.time = weather.time
 		self.imageName = weather.imageName
 		self.temperature = weather.temperature
+		self.smallestTemperature = smallestTemperature
+		self.greatestTemperature = greatestTemperature
 	}
 }
 
 
 extension ForecastViewModel {
 	
-	var temperatureString: String {
-		String(format: "%.1f °C", temperature - 273.15)
+	var celsius: Double {
+		temperature - 273.15
+	}
+	
+	var celsiusString: String {
+		String(format: "%.1f °C", celsius)
 	}
 	
 	var dateString: String {

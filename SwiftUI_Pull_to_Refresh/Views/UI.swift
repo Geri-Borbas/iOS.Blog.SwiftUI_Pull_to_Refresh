@@ -21,6 +21,7 @@ struct UI {
 	
 	static let cornerRadius = CGFloat(32)
 	static let rowHeight = CGFloat(40)
+	static let lineWidth = CGFloat(4)
 	
 	struct Image {
 		

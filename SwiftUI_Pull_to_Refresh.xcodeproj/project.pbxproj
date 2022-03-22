@@ -37,6 +37,7 @@
 		55573BE227EA4E4500B130CC /* OpenWeather+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55573BE127EA4E4500B130CC /* OpenWeather+Mocks.swift */; };
 		55573BE627EA536F00B130CC /* WeatherList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55573BE527EA536F00B130CC /* WeatherList.swift */; };
 		55573BE827EA53D500B130CC /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55573BE727EA53D500B130CC /* WeatherListViewModel.swift */; };
+		55573BF027EA72EE00B130CC /* TemperatureBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55573BEF27EA72ED00B130CC /* TemperatureBarView.swift */; };
 		55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */; };
 		55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */; };
 		55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */; };
@@ -152,6 +153,7 @@
 		55573BEC27EA588200B130CC /* Tokyo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tokyo.json; sourceTree = "<group>"; };
 		55573BED27EA58C400B130CC /* Sidney.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Sidney.json; sourceTree = "<group>"; };
 		55573BEE27EA58FB00B130CC /* Honolulu.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Honolulu.json; sourceTree = "<group>"; };
+		55573BEF27EA72ED00B130CC /* TemperatureBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureBarView.swift; sourceTree = "<group>"; };
 		55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRefreshControlView.swift; sourceTree = "<group>"; };
 		55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlTargetView.swift; sourceTree = "<group>"; };
 		55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlClosureView.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 			children = (
 				55A7E26426F800340077936F /* ForecastView.swift */,
 				553EBF5E27E41A6000C1B40D /* ForecastViewModel.swift */,
+				55573BEF27EA72ED00B130CC /* TemperatureBarView.swift */,
 			);
 			path = Forecast;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 				557CD31427E7F98D00608335 /* View+BackgroundBlur.swift in Sources */,
 				55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */,
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
+				55573BF027EA72EE00B130CC /* TemperatureBarView.swift in Sources */,
 				55B756BD27E5458C00FA7BA6 /* PaddingView.swift in Sources */,
 				5583A93C27E0D46400DF9BDF /* AsyncAwaitModifierView.swift in Sources */,
 				55A227DA27E6739100DBBBB3 /* SummaryView.swift in Sources */,
