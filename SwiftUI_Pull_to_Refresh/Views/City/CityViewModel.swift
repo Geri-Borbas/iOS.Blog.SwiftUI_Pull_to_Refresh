@@ -13,6 +13,7 @@ class CityViewModel: ObservableObject {
 	
 	private let name: String
 	let location: OpenWeather.Location
+	static let useMockData = true
 	
 	struct Display {
 		
@@ -57,10 +58,10 @@ class CityViewModel: ObservableObject {
 	func fetch(completion: (() -> Void)? = nil) {
 		
 		// Can spare API rate during UI development.
-		let spare = false
-		if spare {
-			self.state = .error(error: OpenWeather.APIError.noData)
-			self.display = Display.empty
+		if Self.useMockData {
+			let mock = OpenWeather.HourlyForecast.mock(for: name)
+			self.state = .loaded(weather: mock)
+			self.display = Display(from: mock, name: self.name)
 			completion?()
 			return
 		}

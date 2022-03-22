@@ -7,11 +7,15 @@
 			+ Temperature bar
 		+ Empty state
 
+* 1.6.5
+
+	+ Added `OpenWeather.HourlyForecast.mock` to spare API
+
 * 1.6.0 - 1.6.2
 
 	+ Simplified section header background mask
 	+ iOS 13
-		+ Row `bottomPadding` 
+		+ Row `bottomPadding`
 
 * 1.5.21 - 1.5.25
 

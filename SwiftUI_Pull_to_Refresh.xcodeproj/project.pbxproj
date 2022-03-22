@@ -30,6 +30,11 @@
 		553EBF5F27E41A6100C1B40D /* WeatherItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553EBF5E27E41A6000C1B40D /* WeatherItemViewModel.swift */; };
 		554B9BFF27E7997D009F65BD /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B9BFE27E7997C009F65BD /* RowView.swift */; };
 		5550DC0327E7464600CC998B /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5550DC0227E7464600CC998B /* CitiesViewModel.swift */; };
+		55573BDD27EA4D5700B130CC /* San Francisco.json in Resources */ = {isa = PBXBuildFile; fileRef = 55573BD827EA46EE00B130CC /* San Francisco.json */; };
+		55573BDE27EA4D5700B130CC /* Paris.json in Resources */ = {isa = PBXBuildFile; fileRef = 55573BDB27EA4ADE00B130CC /* Paris.json */; };
+		55573BDF27EA4D5700B130CC /* London.json in Resources */ = {isa = PBXBuildFile; fileRef = 55573BDC27EA4CA900B130CC /* London.json */; };
+		55573BE027EA4D5700B130CC /* New York.json in Resources */ = {isa = PBXBuildFile; fileRef = 55573BD927EA4A1A00B130CC /* New York.json */; };
+		55573BE227EA4E4500B130CC /* OpenWeather+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55573BE127EA4E4500B130CC /* OpenWeather+Mocks.swift */; };
 		55679B3B27DEB65000A0800B /* StaticRefreshControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */; };
 		55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */; };
 		55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */; };
@@ -134,6 +139,11 @@
 		553EBF5E27E41A6000C1B40D /* WeatherItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemViewModel.swift; sourceTree = "<group>"; };
 		554B9BFE27E7997C009F65BD /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		5550DC0227E7464600CC998B /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
+		55573BD827EA46EE00B130CC /* San Francisco.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "San Francisco.json"; sourceTree = "<group>"; };
+		55573BD927EA4A1A00B130CC /* New York.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "New York.json"; sourceTree = "<group>"; };
+		55573BDB27EA4ADE00B130CC /* Paris.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Paris.json; sourceTree = "<group>"; };
+		55573BDC27EA4CA900B130CC /* London.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = London.json; sourceTree = "<group>"; };
+		55573BE127EA4E4500B130CC /* OpenWeather+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenWeather+Mocks.swift"; sourceTree = "<group>"; };
 		55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRefreshControlView.swift; sourceTree = "<group>"; };
 		55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlTargetView.swift; sourceTree = "<group>"; };
 		55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlClosureView.swift; sourceTree = "<group>"; };
@@ -320,6 +330,27 @@
 			path = Examples;
 			sourceTree = "<group>";
 		};
+		55573BD727EA46CA00B130CC /* OpenWeather */ = {
+			isa = PBXGroup;
+			children = (
+				55573BE127EA4E4500B130CC /* OpenWeather+Mocks.swift */,
+				55EF270C27E7A2DD00705D1F /* OpenWeather+Extensions.swift */,
+				55573BDA27EA4A3600B130CC /* Mocks */,
+			);
+			path = OpenWeather;
+			sourceTree = "<group>";
+		};
+		55573BDA27EA4A3600B130CC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				55573BD827EA46EE00B130CC /* San Francisco.json */,
+				55573BD927EA4A1A00B130CC /* New York.json */,
+				55573BDB27EA4ADE00B130CC /* Paris.json */,
+				55573BDC27EA4CA900B130CC /* London.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		55679B3C27DEB65800A0800B /* Prototypes */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,8 +418,8 @@
 				557CD31327E7F98D00608335 /* View+BackgroundBlur.swift */,
 				55837E2B27E9F4D0009AC069 /* View+Introspect.swift */,
 				55E82F2F26FA272E003E8B68 /* CityViewModel.swift */,
-				55EF270C27E7A2DD00705D1F /* OpenWeather+Extensions.swift */,
 				55A227CC27E6589600DBBBB3 /* TitleView.swift */,
+				55573BD727EA46CA00B130CC /* OpenWeather */,
 				55A227DB27E6749800DBBBB3 /* Weather */,
 				55A227D627E65A4500DBBBB3 /* WeatherItem */,
 				55A227D327E6597900DBBBB3 /* Spacing.swift */,
@@ -654,12 +685,16 @@
 				552AFE3E27E3E6F4002F18F2 /* Lato-Bold.ttf in Resources */,
 				551C493C24CC69D4007C7C03 /* .swiftlint.yml in Resources */,
 				551C491624CC6918007C7C03 /* LaunchScreen.storyboard in Resources */,
+				55573BE027EA4D5700B130CC /* New York.json in Resources */,
 				5529E99326F64A3900CFA9C7 /* .editorconfig in Resources */,
 				552AFE3F27E3E6F4002F18F2 /* Lato-Black.ttf in Resources */,
+				55573BDD27EA4D5700B130CC /* San Francisco.json in Resources */,
+				55573BDE27EA4D5700B130CC /* Paris.json in Resources */,
 				551C491324CC6918007C7C03 /* Preview Assets.xcassets in Resources */,
 				551C493B24CC69D4007C7C03 /* README.md in Resources */,
 				55E82F3226FA336C003E8B68 /* CHANGELOG.md in Resources */,
 				552AFE3D27E3E6F4002F18F2 /* Lato-Thin.ttf in Resources */,
+				55573BDF27EA4D5700B130CC /* London.json in Resources */,
 				552AFE4027E3E6F4002F18F2 /* Lato-Regular.ttf in Resources */,
 				551C491024CC6918007C7C03 /* Assets.xcassets in Resources */,
 			);
@@ -724,6 +759,7 @@
 				55A227CB27E6584900DBBBB3 /* TemperatureView.swift in Sources */,
 				552AFE2C27E3DF4C002F18F2 /* CityViewModel.swift in Sources */,
 				55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */,
+				55573BE227EA4E4500B130CC /* OpenWeather+Mocks.swift in Sources */,
 				559BF2A827E637BB0029B89E /* MarqueeView.swift in Sources */,
 				55F542C827E88ACF003733E5 /* FitTextView.swift in Sources */,
 				55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */,

@@ -101,7 +101,7 @@ extension CityView {
 		UITableView.appearance().showsVerticalScrollIndicator = false
 		UITableView.appearance().separatorColor = .clear
 		
-		// iOS 13
+		// iOS 13.
 		UITableView.appearance().backgroundColor = .clear
 		UITableViewCell.appearance().backgroundColor = .clear
 		
