@@ -23,6 +23,7 @@ struct RowView: View {
 					.clipShape(
 						RowShape(isFirst: isFirst, isLast: isLast)
 					)
+					.padding(.bottom, bottomPadding)
 			)
 			.listRowInsets(insets)
 	}
@@ -31,9 +32,17 @@ struct RowView: View {
 		if isFirst {
 			return EdgeInsets(top: UI.padding / 2, leading: 0, bottom: 0, trailing: 0)
 		} else if isLast {
-			return EdgeInsets(top: 0, leading: 0, bottom: UI.padding / 2, trailing: 0)
+			return EdgeInsets(top: 0, leading: 0, bottom: UI.padding / 2 + bottomPadding, trailing: 0)
 		} else {
 			return .zero
+		}
+	}
+	
+	var bottomPadding: CGFloat {
+		if #available(iOS 14, *) {
+			return 0
+		} else {
+			return isLast ? 16 : 0
 		}
 	}
 }

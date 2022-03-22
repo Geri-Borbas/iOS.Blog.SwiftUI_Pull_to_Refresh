@@ -60,9 +60,9 @@ struct CityView: View {
 				)
 			}
 			.listStyle(.plain)
+			.clipShape(RoundedRectangle(cornerRadius: UI.cornerRadius))
 			.padding(.horizontal, UI.padding)
 			.padding(.bottom, UI.padding)
-			.clipShape(RoundedRectangle(cornerRadius: UI.cornerRadius))
 			.edgesIgnoringSafeArea(.bottom) // iOS 13
 			.environment(\.defaultMinListRowHeight, UI.rowHeight)
 			.introspectTableView {
