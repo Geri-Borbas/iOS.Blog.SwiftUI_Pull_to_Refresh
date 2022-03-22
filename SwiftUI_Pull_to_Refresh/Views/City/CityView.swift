@@ -60,14 +60,14 @@ struct CityView: View {
 				)
 			}
 			.listStyle(.plain)
-			.introspectTableView {
-				$0.separatorStyle = .none // iOS 13
-			}
 			.padding(.horizontal, UI.padding)
 			.padding(.bottom, UI.padding)
 			.clipShape(RoundedRectangle(cornerRadius: UI.cornerRadius))
 			.edgesIgnoringSafeArea(.bottom) // iOS 13
 			.environment(\.defaultMinListRowHeight, UI.rowHeight)
+			.introspectTableView {
+				$0.separatorStyle = .none // iOS 13
+			}
 			.refreshable {
 				await viewModel.fetch()
 			}

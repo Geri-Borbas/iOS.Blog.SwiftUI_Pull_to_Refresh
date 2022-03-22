@@ -38,13 +38,15 @@ struct DashboardView: View {
 				background(geometry: geometry)
 					.mask(
 						LinearGradient(
-							gradient: Gradient(
-								colors: [
-									.white.opacity(1.0),
-									.white.opacity(0.0)
-								]
-							),
-							startPoint: UnitPoint(x: 0, y: 0.4),
+							gradient:
+								Gradient(
+									stops: [
+										.init(color: .white.opacity(1.0), location: 0.0),
+										.init(color: .white.opacity(0.6), location: 0.5),
+										.init(color: .white.opacity(0.0), location: 1.0)
+									]
+								),
+							startPoint: UnitPoint(x: 0, y: 0.65),
 							endPoint: UnitPoint(x: 0, y: 1.0)
 						)
 					)

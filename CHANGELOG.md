@@ -7,7 +7,7 @@
 			+ Temperature bar
 		+ Empty state
 
-* 1.6.0
+* 1.6.0 - 1.6.1
 
 	+ Simplified section header background mask
 
