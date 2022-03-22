@@ -22,11 +22,14 @@ struct AttributeView: View {
 			VStack(alignment: .leading, spacing: 0) {
 				Text(name)
 					.attributeStyle()
+					.removeTextCase()
 				HStack(alignment: .bottom, spacing: 2) {
 					Text(value)
 						.valueStyle()
+						.removeTextCase()
 					Text(unit)
 						.unitStyle()
+						.removeTextCase()
 				}
 			}
 		}

@@ -229,9 +229,7 @@
 				5529E99226F64A3900CFA9C7 /* .editorconfig */,
 				551C493924CC69D4007C7C03 /* README.md */,
 				55E82F3126FA336C003E8B68 /* CHANGELOG.md */,
-				55A2403127E9002F001B9AC0 /* Default.xcconfig */,
-				55A2402F27E8FF23001B9AC0 /* Debug.xcconfig */,
-				55A2403027E90022001B9AC0 /* Release.xcconfig */,
+				55A2403327E9064B001B9AC0 /* Configuration */,
 				551C490824CC690E007C7C03 /* SwiftUI_Pull_to_Refresh */,
 				551C492A24CC691A007C7C03 /* SwiftUI_Pull_to_RefreshUITests */,
 				55A7E23226F7DFCE0077936F /* AlphaVantage */,
@@ -421,6 +419,16 @@
 				55A227D527E65A3A00DBBBB3 /* Attributes */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		55A2403327E9064B001B9AC0 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				55A2403127E9002F001B9AC0 /* Default.xcconfig */,
+				55A2402F27E8FF23001B9AC0 /* Debug.xcconfig */,
+				55A2403027E90022001B9AC0 /* Release.xcconfig */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		55A7E23226F7DFCE0077936F /* AlphaVantage */ = {
@@ -851,6 +859,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -906,6 +915,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

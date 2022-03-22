@@ -24,7 +24,7 @@ struct AttributesView: View {
 				unit: "Km/h"
 			)
 			AttributeView(
-				image: "drop",
+				image: humidityImageName,
 				name: "Humidity",
 				value: humidity,
 				unit: "%"
@@ -38,5 +38,13 @@ struct AttributesView: View {
 			Spacer()
 		}
 		.padding(.vertical, 16)
+	}
+	
+	var humidityImageName: String {
+		if #available(iOS 14.0, *) {
+			return "drop"
+		} else {
+			return "cloud.fog"
+		}
 	}
 }

@@ -11,7 +11,7 @@ struct MarqueeView: View {
     
     struct Metrics {
         
-        static let iconCount = CGFloat(10)
+        static let iconCount = CGFloat(9)
         static let marqueeIconCount = CGFloat(3)
         
         static let iconSize = CGFloat(95)
@@ -48,9 +48,6 @@ struct MarqueeView: View {
                     .fill(.green)
                     .frame(width: Metrics.iconSize, height: Metrics.iconSize)
                 RoundedRectangle(cornerRadius: Metrics.cornerRadius)
-                    .fill(.cyan)
-                    .frame(width: Metrics.iconSize, height: Metrics.iconSize)
-                RoundedRectangle(cornerRadius: Metrics.cornerRadius)
                     .fill(.blue)
                     .frame(width: Metrics.iconSize, height: Metrics.iconSize)
                 RoundedRectangle(cornerRadius: Metrics.cornerRadius)
@@ -75,7 +72,7 @@ struct MarqueeView: View {
             }
         }
         .frame(width: Metrics.marqueeWidth)
-        .background(.gray)
+        .background(Color.gray)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }

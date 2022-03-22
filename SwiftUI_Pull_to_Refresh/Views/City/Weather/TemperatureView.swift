@@ -29,6 +29,7 @@ struct TemperatureView: View {
 					.redLine()
 				Text(description)
 					.subtitleStyle()
+					.removeTextCase()
 					.offset(x: 0, y: -6)
 					.redLine()
 			}
@@ -41,5 +42,24 @@ struct TemperatureView: View {
 		.backgroundBlur(in: screenFrame)
 		.cornerRadius(UI.cornerRadius)
 		.redLine(opacity: 0.5)
+	}
+}
+
+
+extension View {
+	
+	func eraseToAnyView() -> AnyView {
+			AnyView(self)
+		}
+	
+	func removeTextCase() -> some View {
+		if #available(iOS 14.0, *) {
+			return self
+				.textCase(.none)
+				.eraseToAnyView()
+		} else {
+			return self
+				.eraseToAnyView()
+		}
 	}
 }

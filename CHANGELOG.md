@@ -3,13 +3,25 @@
 * Doing
 
 	+ Design
+		+ iOS 13
+			+ `WeatherView` background offset
 		+ List Rows
 			+ Temperature bar
 		+ Empty state
 
-* 1.5.21
+* 1.5.21 - 1.5.23
 
 	+ Added configuration files
+	+ Manual layout tests
+		+ iOS 14 (14.4)
+			+ Snowflake symbol compatibility
+			+ Transparent list background
+			+ Removed text capitalization from section header
+		+ iOS 13 (13.5)
+			+ Drop symbol compatibility
+			+ Added `removeTextCase` (only on iOS 14)
+			+ Set entire app to dark mode (correct `UIHostingController` style)
+			+ Ignore bottom safe area on list as well
 
 * 1.5.16 - 1.5.20
 

@@ -66,5 +66,7 @@
 		<string>Lato-Bold.ttf</string>
 		<string>Lato-Black.ttf</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 </dict>
 </plist>

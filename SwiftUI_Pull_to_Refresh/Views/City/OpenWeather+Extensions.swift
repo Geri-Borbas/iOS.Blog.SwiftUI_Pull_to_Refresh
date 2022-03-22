@@ -52,8 +52,8 @@ extension OpenWeather.HourlyForecast.WeatherData {
 		case "11d": return "cloud.bolt.rain"
 		case "11n": return "cloud.bolt.rain"
 		// snow
-		case "13d": return "snowflake"
-		case "13n": return "snowflake"
+		case "13d": return "snow"
+		case "13n": return "snow"
 		// mist
 		case "50d": return "cloud.fog"
 		case "50n": return "cloud.fog"

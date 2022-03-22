@@ -60,6 +60,7 @@ struct CityView: View {
 			.clipShape(ListShape())
 			.padding(.horizontal, UI.padding)
 			.padding(.bottom, UI.padding)
+			.edgesIgnoringSafeArea(.bottom)
 			.environment(\.defaultMinListRowHeight, UI.rowHeight)
 			.refreshable {
 				await viewModel.fetch()
