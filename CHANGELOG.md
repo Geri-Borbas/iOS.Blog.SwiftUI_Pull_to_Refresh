@@ -2,7 +2,7 @@
 
 * Doing
 
-	+ Blur effect performace (?)
+	+ `UIScrollView` bounce speed
 
 * Feature/Blur/0.1.1
   
