@@ -39,7 +39,7 @@ struct TemperatureView: View {
 		.padding(.vertical, 20)
 		.padding(.horizontal, 28)
 		.featuredBackgroundStyle()
-		.backgroundBlur(in: screenFrame)
+		.background(AlignedBackgroundView(blur: true, screenFrame: screenFrame))
 		.overlay(
 			RoundedRectangle(cornerRadius: UI.cornerRadius)
 				.strokeBorder(UI.Color.foreground.opacity(0.1), lineWidth: 1)

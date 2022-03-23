@@ -30,14 +30,7 @@ struct CitiesView: View {
 		ZStack {
 			
 			// Background.
-			UI.Color.background
-				.overlay(
-					VStack {
-						UI.Image.background
-							.backgroundStyle()
-						Spacer()
-					}
-				)
+			BackgroundView()
 			
 			// Cities.
 			GeometryReader { geometry in

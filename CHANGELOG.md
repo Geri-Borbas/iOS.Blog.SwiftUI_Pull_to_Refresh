@@ -4,6 +4,12 @@
 
 	+ Blur effect performace (?)
 
+* Feature/Blur/0.1.0
+
+	+ Scroll performance optimization
+		+ Added `BackgroundView` and `AlignedBackgroundView`
+			+ Extracted background (and blur) views to pre-baked assets
+
 * 1.8.0
 
 	+ Updated empty state values/images

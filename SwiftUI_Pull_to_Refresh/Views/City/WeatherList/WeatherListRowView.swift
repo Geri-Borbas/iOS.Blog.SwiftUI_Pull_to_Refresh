@@ -19,7 +19,7 @@ struct WeatherListRowView: View {
 		return ForecastView(viewModel: viewModel)
 			.listRowBackground(
 				UI.Color.darkGray.opacity(0.5)
-					.backgroundBlur(in: screenFrame)
+					.background(AlignedBackgroundView(blur: true, screenFrame: screenFrame))
 					.clipShape(
 						RowShape(isFirst: isFirst, isLast: isLast)
 					)
