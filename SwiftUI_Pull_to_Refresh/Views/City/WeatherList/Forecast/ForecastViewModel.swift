@@ -21,7 +21,7 @@ class ForecastViewModel: ObservableObject, Identifiable {
 	
 	init() {
 		self.time = Date()
-		self.imageName = "questionmark.circle"
+		self.imageName = "minus"
 		self.temperature = 273.15
 		self.smallestTemperature = 273.15
 		self.greatestTemperature = 273.15

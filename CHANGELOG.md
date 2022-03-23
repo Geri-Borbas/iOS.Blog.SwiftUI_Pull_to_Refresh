@@ -2,14 +2,18 @@
 
 * Doing
 
-	+ Design empty state
+	+ Blur effect performace (?)
 
-* Feature/Temperature_bar/0.1.0
+* 1.8.0
+
+	+ Updated empty state values/images
+
+* Feature/Forecast_view/0.1.0
 
 	+ Added `WindBarView`
 	+ `ForecastView` updates
 
-* Feature/Temperature_bar/0.0.1 - 0.0.3
+* Feature/Forecast_view/0.0.1 - 0.0.3
 
 	+ Added `TemperatureBarView`
 		+ Dynamic scale

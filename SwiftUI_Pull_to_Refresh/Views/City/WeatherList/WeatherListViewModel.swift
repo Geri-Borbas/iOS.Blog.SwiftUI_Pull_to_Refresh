@@ -57,12 +57,12 @@ extension WeatherListViewModel {
 	
 	static let empty = WeatherListViewModel(
 		time: Date(),
-		imageName: "cloud.bolt.rain",
+		imageName: "circle",
 		celsius: "0",
-		description: "Few clouds",
-		wind: "0.71",
-		humidity: "31",
-		uv: "1.2",
+		description: "-",
+		wind: "0.00",
+		humidity: "0",
+		uv: "0.0",
 		items: Array(repeating: 1, count: 20).map { _ in ForecastViewModel() }
 	)
 	
