@@ -4,6 +4,15 @@
 
 	+ Blur effect performace (?)
 
+* Feature/Blur/0.1.1
+  
+	+ Slow animations
+		+ Added `UI.Speed`
+		+ Set `window.layer.speed` at start
+		+ Added `UIScrollView` speed extensions
+			+ `set(decelerationRate:)`
+			+ `set(pagingFriction:)`
+
 * Feature/Blur/0.1.0
 
 	+ Scroll performance optimization

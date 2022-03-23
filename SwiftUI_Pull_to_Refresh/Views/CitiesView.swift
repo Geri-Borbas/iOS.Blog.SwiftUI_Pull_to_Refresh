@@ -53,6 +53,7 @@ struct CitiesView: View {
 				}
 				.introspectScrollView {
 					$0.isPagingEnabled = true
+					$0.set(pagingFriction: 0.9422507685)
 				}
 			}
 		}
