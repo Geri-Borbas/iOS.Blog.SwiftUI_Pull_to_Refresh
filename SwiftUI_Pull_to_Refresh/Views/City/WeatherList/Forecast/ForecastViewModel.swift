@@ -17,6 +17,7 @@ class ForecastViewModel: ObservableObject, Identifiable {
 	let temperature: Double
 	let smallestTemperature: Double
 	let greatestTemperature: Double
+	let wind: Double
 	
 	init() {
 		self.time = Date()
@@ -24,6 +25,7 @@ class ForecastViewModel: ObservableObject, Identifiable {
 		self.temperature = 273.15
 		self.smallestTemperature = 273.15
 		self.greatestTemperature = 273.15
+		self.wind = 0
 	}
 	
 	init(
@@ -36,6 +38,7 @@ class ForecastViewModel: ObservableObject, Identifiable {
 		self.temperature = weather.temperature
 		self.smallestTemperature = smallestTemperature
 		self.greatestTemperature = greatestTemperature
+		self.wind = weather.windSpeed
 	}
 }
 

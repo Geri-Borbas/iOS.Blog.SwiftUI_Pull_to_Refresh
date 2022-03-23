@@ -68,7 +68,7 @@ struct TermperatureBarView: View {
 					GeometryReader { geometry in
 						HStack {
 							RoundedRectangle(cornerRadius: UI.lineWidth)
-								.foregroundColor(UI.Color.green.opacity(0.6))
+								.foregroundColor(UI.Color.green.opacity(0.5))
 								.frame(
 									width: geometry.size.width * positivePercentage,
 									height: UI.lineWidth
