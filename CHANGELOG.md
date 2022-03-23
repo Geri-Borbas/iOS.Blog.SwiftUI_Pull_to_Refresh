@@ -2,10 +2,17 @@
 
 * Doing
 
-	+ Design
-		+ List Rows
-			+ Temperature bar
-		+ Empty state
+	+ Design empty state
+
+* Feature/Temperature_bar/0.1.0
+
+	+ Added `WindBarView`
+	+ `ForecastView` updates
+
+* Feature/Temperature_bar/0.0.1 - 0.0.3
+
+	+ Added `TemperatureBarView`
+		+ Dynamic scale
 
 * 1.7.1
 

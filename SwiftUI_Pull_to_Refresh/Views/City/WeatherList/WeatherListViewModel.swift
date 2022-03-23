@@ -33,7 +33,26 @@ extension WeatherListViewModel {
 		self.wind = String(format: "%.2f", weather.windSpeed)
 		self.humidity = String(format: "%.0f", weather.humidity)
 		self.uv = String(format: "%.1f", weather.uvIndex)
-		self.items = hourlyForecast.hourlyWeather.map { ForecastViewModel(weather: $0) }
+		
+		// Temperature range.
+		let smallestTemperature = hourlyForecast.hourlyWeather
+			.reduce(Double.greatestFiniteMagnitude) {
+			min($0, $1.temperature)
+		}
+		let greatestTemperature = hourlyForecast.hourlyWeather
+			.reduce(-Double.greatestFiniteMagnitude) {
+				max($0, $1.temperature)
+			}
+		
+		// Forecast items.
+		self.items = hourlyForecast.hourlyWeather.map {
+			ForecastViewModel(
+				weather: $0,
+				smallestTemperature: smallestTemperature,
+				greatestTemperature: greatestTemperature
+			)
+			
+		}
 	}
 	
 	static let empty = WeatherListViewModel(

@@ -17,18 +17,15 @@ struct ForecastView: View {
 		HStack(spacing: 8) {
 			
 			// Date and time.
-			HStack {
-				VStack(alignment: .leading, spacing: 0) {
-					Text(viewModel.timeString)
-						.regularStyle()
-						.fixedSize()
-					Text(viewModel.dateString)
-						.smallStyle()
-						.fixedSize()
-				}
-				Spacer()
+			VStack(alignment: .leading, spacing: 0) {
+				Text(viewModel.timeString)
+					.regularStyle()
+				Text(viewModel.dateString)
+					.smallStyle()
+					.frame(width: 60, alignment: .leading)
 			}
 			.frame(width: 60)
+			.redLine(opacity: 0.2)
 			
 			// Icon.
 			HStack {
@@ -36,17 +33,25 @@ struct ForecastView: View {
 					.iconStyle()
 				Spacer()
 			}
-			.frame(width: 34)
-			
+			.frame(width: 38)
+			.redLine(opacity: 0.2)
+						
 			// Temperature.
-			HStack {
-				Text(viewModel.temperatureString)
-					.largeStyle()
-				Spacer()
+			VStack(alignment: .leading, spacing: 2) {
+				Text(viewModel.celsiusString)
+					.regularStyle()
+				TermperatureBarView(
+					temperature: viewModel.temperature,
+					smallestTemperature: viewModel.smallestTemperature,
+					greatestTemperature: viewModel.greatestTemperature
+				)
 			}
-			.frame(width: 80)
+			.redLine(opacity: 0.2)
 			
-			Spacer()
+			// Wind.
+			WindBarView(wind: viewModel.wind)
+			.redLine(opacity: 0.2)
+			
 		}
 		.frame(height: UI.rowHeight)
 		.padding(.horizontal, UI.padding)

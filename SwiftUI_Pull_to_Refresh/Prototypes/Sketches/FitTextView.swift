@@ -41,13 +41,3 @@ struct FitTextView: View {
 		.preferredColorScheme(.dark)
 	}
 }
-
-
-extension View {
-	
-	func redLine(opacity: CGFloat = 1.0) -> some View {
-		self
-//			.background(Color.red.opacity(0.2 * opacity))
-//			.border(Color.red.opacity(opacity), width: 1)
-	}
-}
