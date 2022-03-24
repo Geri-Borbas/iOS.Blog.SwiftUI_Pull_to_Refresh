@@ -1,6 +1,8 @@
 # Changelog
 
-* Doing
+* 1.9.0
+
+	+ Use live OpenWeather API
 
 * Feature/Blur/0.1.1 - 0.1.3
   

@@ -13,7 +13,7 @@ class CityViewModel: ObservableObject {
 	
 	let name: String
 	let location: OpenWeather.Location
-	static let useMockData = true // false
+	static let useMockData = false
 	
 	@Published var weatherListViewModel: WeatherListViewModel = .empty
 	
