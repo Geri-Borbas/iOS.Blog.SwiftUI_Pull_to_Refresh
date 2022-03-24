@@ -22,11 +22,14 @@ struct UI {
 	static let cornerRadius = CGFloat(32)
 	static let rowHeight = CGFloat(40)
 	static let lineWidth = CGFloat(4)
+	static let speed = CGFloat(1.0) // For screen capture
 	
 	struct Image {
 		
-		static let background = SwiftUI.Image("WorldMap")
 		static let blur = CGFloat(4)
+		static let background = SwiftUI.Image("WorldMap")
+		static let opaqueBackground = SwiftUI.Image("Opaque World Map")
+		static let opaqueBackgroundWithBlur = SwiftUI.Image("Opaque World Map with Blur")
 	}
 	
 	struct Color {

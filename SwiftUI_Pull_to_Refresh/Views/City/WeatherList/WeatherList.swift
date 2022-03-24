@@ -50,6 +50,7 @@ struct WeatherList: View {
 		.environment(\.defaultMinListRowHeight, UI.rowHeight)
 		.introspectTableView {
 			$0.separatorStyle = .none // iOS 13
+			$0.set(speed: UI.speed)
 		}
 	}
 }

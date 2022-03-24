@@ -33,37 +33,22 @@ struct SummaryView: View {
 			)
 		}
 		.background(
-			GeometryReader { geometry in
-				background(geometry: geometry)
-					.mask(
-						LinearGradient(
-							gradient:
-								Gradient(
-									stops: [
-										.init(color: .white.opacity(1.0), location: 0.0),
-										.init(color: .white.opacity(0.6), location: 0.5),
-										.init(color: .white.opacity(0.0), location: 1.0)
-									]
-								),
-							startPoint: UnitPoint(x: 0, y: 0.65),
-							endPoint: UnitPoint(x: 0, y: 1.0)
-						)
+			AlignedBackgroundView(blur: false, screenFrame: screenFrame)
+				.mask(
+					LinearGradient(
+						gradient:
+							Gradient(
+								stops: [
+									.init(color: .white.opacity(1.0), location: 0.0),
+									.init(color: .white.opacity(0.6), location: 0.5),
+									.init(color: .white.opacity(0.0), location: 1.0)
+								]
+							),
+						startPoint: UnitPoint(x: 0, y: 0.65),
+						endPoint: UnitPoint(x: 0, y: 1.0)
 					)
-			}
+				)
 		)
-	}
-	
-	private func background(geometry: GeometryProxy) -> some View {
-		UI.Color.background
-			.overlay(
-				UI.Image.background
-					.backgroundStyle()
-					.offset(
-						x: -geometry.frame(in: .global).origin.x + screenFrame.origin.x + UI.padding,
-						y: -geometry.frame(in: .global).origin.y + screenFrame.origin.y
-					), alignment: .top
-			)
-			.redLine()
 	}
 }
 

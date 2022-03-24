@@ -30,14 +30,7 @@ struct CitiesView: View {
 		ZStack {
 			
 			// Background.
-			UI.Color.background
-				.overlay(
-					VStack {
-						UI.Image.background
-							.backgroundStyle()
-						Spacer()
-					}
-				)
+			BackgroundView()
 			
 			// Cities.
 			GeometryReader { geometry in
@@ -60,6 +53,7 @@ struct CitiesView: View {
 				}
 				.introspectScrollView {
 					$0.isPagingEnabled = true
+					$0.set(speed: UI.speed)
 				}
 			}
 		}
