@@ -22,7 +22,7 @@ struct UI {
 	static let cornerRadius = CGFloat(32)
 	static let rowHeight = CGFloat(40)
 	static let lineWidth = CGFloat(4)
-	static let speed = Float(0.5) // 1.0
+	static let speed = CGFloat(1.0) // For screen capture
 	
 	struct Image {
 		

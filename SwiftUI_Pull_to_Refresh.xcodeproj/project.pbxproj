@@ -165,6 +165,7 @@
 		55679B4527DECAAD00A0800B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		55679B4727DECE6700A0800B /* OnRefreshModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnRefreshModifier.swift; sourceTree = "<group>"; };
 		55679B4927DECEB500A0800B /* ClosureBasedModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureBasedModifierView.swift; sourceTree = "<group>"; };
+		558251D427EC8478003A5060 /* UIScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIScrollView.m; sourceTree = "<group>"; };
 		55837E2B27E9F4D0009AC069 /* View+Introspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Introspect.swift"; sourceTree = "<group>"; };
 		5583A93727E0CBCC00DF9BDF /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		5583A93827E0CBCC00DF9BDF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -333,6 +334,7 @@
 			children = (
 				553EBF5927E3F4FD00C1B40D /* Withable.swift */,
 				55AB863827EBC1200049514E /* UIScrollView+Extensions.swift */,
+				558251D427EC8478003A5060 /* UIScrollView.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

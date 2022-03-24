@@ -49,8 +49,8 @@ struct WeatherList: View {
 		.edgesIgnoringSafeArea(.bottom) // iOS 13
 		.environment(\.defaultMinListRowHeight, UI.rowHeight)
 		.introspectTableView {
-			$0.set(decelerationRate: 0.996004)
 			$0.separatorStyle = .none // iOS 13
+			$0.set(speed: UI.speed)
 		}
 	}
 }

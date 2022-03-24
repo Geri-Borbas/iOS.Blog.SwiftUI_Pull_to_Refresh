@@ -2,9 +2,7 @@
 
 * Doing
 
-	+ `UIScrollView` bounce speed
-
-* Feature/Blur/0.1.1
+* Feature/Blur/0.1.1 - 0.1.3
   
 	+ Slow animations
 		+ Added `UI.Speed`
@@ -12,6 +10,7 @@
 		+ Added `UIScrollView` speed extensions
 			+ `set(decelerationRate:)`
 			+ `set(pagingFriction:)`
+			+ Bouncing deceleration rate is unchanged
 
 * Feature/Blur/0.1.0
 
