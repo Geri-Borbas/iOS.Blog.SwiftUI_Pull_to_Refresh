@@ -43,7 +43,7 @@
 		55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */; };
 		55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4127DEC21A00A0800B /* RefreshControlExtensionView.swift */; };
 		55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4327DEC88900A0800B /* ScrollViewExtensionView.swift */; };
-		55679B4627DECAAD00A0800B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4527DECAAD00A0800B /* Network.swift */; };
+		55679B4627DECAAD00A0800B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4527DECAAD00A0800B /* ViewModel.swift */; };
 		55679B4827DECE6700A0800B /* OnRefreshModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4727DECE6700A0800B /* OnRefreshModifier.swift */; };
 		55679B4A27DECEB500A0800B /* ClosureBasedModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4927DECEB500A0800B /* ClosureBasedModifierView.swift */; };
 		55837E2C27E9F4D0009AC069 /* View+Introspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55837E2B27E9F4D0009AC069 /* View+Introspect.swift */; };
@@ -162,7 +162,7 @@
 		55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlClosureView.swift; sourceTree = "<group>"; };
 		55679B4127DEC21A00A0800B /* RefreshControlExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlExtensionView.swift; sourceTree = "<group>"; };
 		55679B4327DEC88900A0800B /* ScrollViewExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExtensionView.swift; sourceTree = "<group>"; };
-		55679B4527DECAAD00A0800B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		55679B4527DECAAD00A0800B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		55679B4727DECE6700A0800B /* OnRefreshModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnRefreshModifier.swift; sourceTree = "<group>"; };
 		55679B4927DECEB500A0800B /* ClosureBasedModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureBasedModifierView.swift; sourceTree = "<group>"; };
 		558251D427EC8478003A5060 /* UIScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIScrollView.m; sourceTree = "<group>"; };
@@ -211,6 +211,7 @@
 		55E82F3126FA336C003E8B68 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		55E82F3426FA35B0003E8B68 /* OnScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnScroll.swift; sourceTree = "<group>"; };
 		55EF270C27E7A2DD00705D1F /* OpenWeather+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenWeather+Extensions.swift"; sourceTree = "<group>"; };
+		55F292FB27EDCCAE00640F99 /* SwiftUI_Pull_to Refresh_iOS_13_iOS_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SwiftUI_Pull_to Refresh_iOS_13_iOS_14.png"; sourceTree = "<group>"; };
 		55F2D60E24D1032500E3BDDF /* CitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesView.swift; sourceTree = "<group>"; };
 		55F542C727E88ACF003733E5 /* FitTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitTextView.swift; sourceTree = "<group>"; };
 		55FD8E6E24CE55260057D91E /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
@@ -257,6 +258,7 @@
 				5529E99226F64A3900CFA9C7 /* .editorconfig */,
 				551C493924CC69D4007C7C03 /* README.md */,
 				55E82F3126FA336C003E8B68 /* CHANGELOG.md */,
+				55F292FA27EDCC9C00640F99 /* Documentation */,
 				55A2403327E9064B001B9AC0 /* Configuration */,
 				551C490824CC690E007C7C03 /* SwiftUI_Pull_to_Refresh */,
 				551C492A24CC691A007C7C03 /* SwiftUI_Pull_to_RefreshUITests */,
@@ -397,7 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				559BF2A727E637990029B89E /* Sketches */,
-				55679B4527DECAAD00A0800B /* Network.swift */,
+				55679B4527DECAAD00A0800B /* ViewModel.swift */,
 				55679B3A27DEB65000A0800B /* StaticRefreshControlView.swift */,
 				55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */,
 				55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */,
@@ -565,6 +567,14 @@
 				5529E98426F4FBCE00CFA9C7 /* ScrollViewMatcher.swift */,
 			);
 			path = ScrollViewMatcher;
+			sourceTree = "<group>";
+		};
+		55F292FA27EDCC9C00640F99 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				55F292FB27EDCCAE00640F99 /* SwiftUI_Pull_to Refresh_iOS_13_iOS_14.png */,
+			);
+			path = Documentation;
 			sourceTree = "<group>";
 		};
 		55F2D61024D1033B00E3BDDF /* Views */ = {
@@ -826,7 +836,7 @@
 				55A227D227E6590200DBBBB3 /* AttributeView.swift in Sources */,
 				55837E2C27E9F4D0009AC069 /* View+Introspect.swift in Sources */,
 				55AB863727EB9DF60049514E /* BackgroundView.swift in Sources */,
-				55679B4627DECAAD00A0800B /* Network.swift in Sources */,
+				55679B4627DECAAD00A0800B /* ViewModel.swift in Sources */,
 				55573BE827EA53D500B130CC /* WeatherListViewModel.swift in Sources */,
 				5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */,
 				553EBF5A27E3F4FE00C1B40D /* Withable.swift in Sources */,
@@ -955,7 +965,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1011,7 +1021,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

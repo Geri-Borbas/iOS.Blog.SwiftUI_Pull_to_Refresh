@@ -1,5 +1,9 @@
 # Changelog
 
+* 1.9.1
+
+	+ Renamed `Network` to `ViewModel`
+
 * 1.9.0
 
 	+ Use live OpenWeather API

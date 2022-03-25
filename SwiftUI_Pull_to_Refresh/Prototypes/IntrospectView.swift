@@ -11,6 +11,8 @@ import Introspect
 
 struct IntrospectView: View {
 	
+	@ObservedObject var viewModel = ViewModel()
+	
 	let size = CGSize(width: 375, height: 800)
 	let colors: [UIColor] = [
 		.red,
@@ -51,7 +53,7 @@ struct IntrospectView: View {
 						.padding(.vertical)
 						.onRefresh { refreshControl in
 							refreshControl.attributedTitle = NSAttributedString(string: "List \(horizontalIndex + 1)")
-							Network.load {
+							viewModel.fetch {
 								refreshControl.endRefreshing()
 							}
 						}
