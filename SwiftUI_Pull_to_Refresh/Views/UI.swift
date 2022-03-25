@@ -22,7 +22,32 @@ struct UI {
 	static let cornerRadius = CGFloat(32)
 	static let rowHeight = CGFloat(40)
 	static let lineWidth = CGFloat(4)
-	static let speed = CGFloat(1.0) // For screen capture
+	
+	struct Speed {
+		
+		let layerSpeed: Float
+		let decelerationRate: CGFloat
+		let pagingFriction: CGFloat
+		
+		init(
+			layerSpeed: Float = 1.0,
+			decelerationRate: CGFloat = 0.998,
+			pagingFriction: CGFloat = 0.9702286931818183
+		) {
+			self.layerSpeed = layerSpeed
+			self.decelerationRate = decelerationRate
+			self.pagingFriction = pagingFriction
+		}
+		
+		static var half = Speed(
+			layerSpeed: 0.5,
+			decelerationRate: 0.998,
+			pagingFriction: 0.9413437171
+		)
+	}
+	
+	static let speed = Speed()
+//	static let speed = Speed.half
 	
 	struct Image {
 		
