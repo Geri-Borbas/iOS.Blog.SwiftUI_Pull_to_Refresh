@@ -13,7 +13,7 @@ class CityViewModel: ObservableObject {
 	
 	let name: String
 	let location: OpenWeather.Location
-	static let useMockData = true
+	static let useMockData = false
 	
 	@Published var weatherListViewModel: WeatherListViewModel = .empty
 	
@@ -25,7 +25,7 @@ class CityViewModel: ObservableObject {
 	func fetch() async {
 		await withCheckedContinuation { continuation in
 			fetch {
-				DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Some extra (fake) loading
+				DispatchQueue.main.asyncAfter(deadline: .now() + 1.0 / Double(UI.speed.layerSpeed)) { // Some extra (fake) loading
 					continuation.resume()
 				}
 			}
