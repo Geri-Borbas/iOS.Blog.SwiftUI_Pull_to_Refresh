@@ -27,27 +27,30 @@ struct UI {
 		
 		let layerSpeed: Float
 		let decelerationRate: CGFloat
+		let contentOffsetAnimationDuration: CGFloat
 		let pagingFriction: CGFloat
 		
 		init(
 			layerSpeed: Float = 1.0,
 			decelerationRate: CGFloat = 0.998,
+			contentOffsetAnimationDuration: CGFloat = 0.3,
 			pagingFriction: CGFloat = 0.9702286931818183
 		) {
 			self.layerSpeed = layerSpeed
 			self.decelerationRate = decelerationRate
+			self.contentOffsetAnimationDuration = contentOffsetAnimationDuration
 			self.pagingFriction = pagingFriction
 		}
 		
 		static var half = Speed(
 			layerSpeed: 0.5,
 			decelerationRate: 0.998,
+			contentOffsetAnimationDuration: 0.6,
 			pagingFriction: 0.9413437171
 		)
 	}
 	
-	static let speed = Speed()
-//	static let speed = Speed.half
+	static let speed = Speed() // Speed.half
 	
 	struct Image {
 		
