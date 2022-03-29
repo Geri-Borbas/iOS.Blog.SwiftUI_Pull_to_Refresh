@@ -1,9 +1,9 @@
 # SwiftUI Pull to Refresh
 ⬇️🔄 SwiftUI Pull to Refresh (for iOS 13 and iOS 14) condensed into a single modifier.
 
-<p align="center"><img src="Documentation/SwiftUI_Pull_to Refresh_iOS_13_iOS_14.png" width="1012"></p>
-
 Complementary repository for article [SwiftUI Pull to Refresh (for iOS 13 and iOS 14)]. With this extension you can **backport the iOS 15 refreshable modifier to iOS 13 and iOS 14**, and use the exact same code across the board.
+
+https://user-images.githubusercontent.com/1779614/160678139-6f16e4e5-2ec6-4dd6-8f79-87fcdcb05df6.mp4
 
 ```Swift
 struct ContentView: View {
