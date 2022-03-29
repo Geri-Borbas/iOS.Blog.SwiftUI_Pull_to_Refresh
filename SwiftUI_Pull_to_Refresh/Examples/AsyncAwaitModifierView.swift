@@ -10,6 +10,8 @@ import SwiftUI
 
 struct AsyncAwaitModifierView: View {
 	
+	@ObservedObject var viewModel = ViewModel()
+	
 	var body: some View {
 		List {
 			ForEach(1...100, id: \.self) { eachRowIndex in
@@ -17,7 +19,7 @@ struct AsyncAwaitModifierView: View {
 			}
 		}
 		.refreshable {
-			await Network.load()
+			await viewModel.fetch()
 		}
 	}
 }

@@ -96,7 +96,7 @@ extension UIScrollView {
 	) -> Bool {
 		return originalGetBouncingDecelerationOffset(
 			bouncingDecelerationOffset,
-			forTimeInterval: timeInterval * CGFloat(Self.speed.layerSpeed),
+			forTimeInterval: timeInterval * CGFloat(Self.speed.layerSpeed), // ✨
 			lastUpdateOffset: lastUpdateOffset,
 			min: min,
 			max: max,

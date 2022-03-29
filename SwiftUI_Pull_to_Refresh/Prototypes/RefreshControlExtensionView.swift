@@ -49,6 +49,8 @@ fileprivate extension UIScrollView {
 
 struct RefreshControlExtensionView: View {
 	
+	@ObservedObject var viewModel = ViewModel()
+	
 	var body: some View {
 		List {
 			ForEach(1...100, id: \.self) { eachRowIndex in
@@ -58,7 +60,7 @@ struct RefreshControlExtensionView: View {
 		.introspectTableView { tableView in
 			tableView.target = RefreshControlTarget()
 			tableView.target?.use(for: tableView) { refreshControl in
-				DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+				viewModel.fetch {
 					refreshControl.endRefreshing()
 				}
 			}

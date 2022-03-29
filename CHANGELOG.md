@@ -1,5 +1,14 @@
 # Changelog
 
+* Feature/iPhone_13/0.0.1 - 0.0.2
+
+	+ Updated UI to iPhone 13 dimensions (390pt)
+	+ Updated city coordinates for precise weather info
+
+* 1.9.1
+
+	+ Renamed `Network` to `ViewModel`
+
 * 1.9.0
 
 	+ Use live OpenWeather API

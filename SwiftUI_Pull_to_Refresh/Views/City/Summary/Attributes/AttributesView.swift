@@ -15,7 +15,7 @@ struct AttributesView: View {
 	let uv: String
 	
 	var body: some View {
-		HStack(spacing: 10) {
+		HStack(spacing: 20) {
 			Spacer()
 			AttributeView(
 				image: "wind",

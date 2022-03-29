@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
 			window.layer.speed = UI.speed.layerSpeed
             window.rootViewController =
-//				UIHostingController(rootView: FitTextView())
+//				UIHostingController(rootView: RefreshControlTargetView())
 				AppHostingController(rootView: CitiesView())
             self.window = window
             window.makeKeyAndVisible()

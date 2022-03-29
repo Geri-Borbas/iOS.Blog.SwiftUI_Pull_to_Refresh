@@ -29,39 +29,39 @@ class CitiesViewModel {
 	let cities: [City] = [
 		.init(
 			name: "San Francisco",
-			location: .init(latitude: 37.7749, longitude: 122.4194)
+			location: .init(latitude: 37.773972, longitude: -122.431297)
 		),
 		.init(
 			name: "New York",
-			location: .init(latitude: 40.7128, longitude: 74.0060)
+			location: .init(latitude: 40.730610, longitude: -73.935242)
 		),
 		.init(
 			name: "Paris",
-			location: .init(latitude: 48.8566, longitude: 2.3522)
+			location: .init(latitude: 48.864716, longitude: 2.349014)
 		),
 		.init(
 			name: "London",
-			location: .init(latitude: 51.5074, longitude: 0.1278)
+			location: .init(latitude: 51.509865, longitude: -0.118092)
 		),
 		.init(
 			name: "Moscow",
-			location: .init(latitude: 55.7558, longitude: 37.6173)
+			location: .init(latitude: 55.751244, longitude: 37.618423)
 		),
 		.init(
 			name: "New Delhi",
-			location: .init(latitude: 28.6139, longitude: 77.2090)
+			location: .init(latitude: 28.644800, longitude: 77.216721)
 		),
 		.init(
 			name: "Tokyo",
-			location: .init(latitude: 35.6762, longitude: 139.6503)
+			location: .init(latitude: 35.652832, longitude: 139.839478)
 		),
 		.init(
 			name: "Sidney",
-			location: .init(latitude: 33.8688, longitude: 151.2093)
+			location: .init(latitude: -33.865143, longitude: 151.209900)
 		),
 		.init(
 			name: "Honolulu",
-			location: .init(latitude: 21.3069, longitude: 157.8583)
+			location: .init(latitude: 21.315603, longitude: -157.858093)
 		)
 	]
 }
