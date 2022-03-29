@@ -1,5 +1,11 @@
 # Changelog
 
+* Feature/Scroll_speed/0.0.3
+
+	+ `UIScrollView+Extensions`
+		+ Added deceleration offset method swizzling
+		+ Added `contentOffsetAnimationDuration` customization
+
 * Feature/iPhone_13/0.0.1 - 0.0.2
 
 	+ Updated UI to iPhone 13 dimensions (390pt)
