@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Introspect
+import Refreshable
 
 
 struct ClosureBasedModifierView: View {

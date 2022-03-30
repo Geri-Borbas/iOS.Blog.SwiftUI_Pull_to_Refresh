@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Refreshable",
+        "repositoryURL": "https://github.com/Geri-Borbas/iOS.Package.Refreshable",
+        "state": {
+          "branch": "main",
+          "revision": "17676f97e8158098c5a777b65fa5b07a3695a206",
+          "version": null
+        }
+      },
+      {
         "package": "Introspect",
         "repositoryURL": "https://github.com/siteline/SwiftUI-Introspect.git",
         "state": {

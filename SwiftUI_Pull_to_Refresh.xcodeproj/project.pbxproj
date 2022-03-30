@@ -42,16 +42,15 @@
 		55679B3E27DEB6A900A0800B /* RefreshControlTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3D27DEB6A900A0800B /* RefreshControlTargetView.swift */; };
 		55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B3F27DEBBA900A0800B /* RefreshControlClosureView.swift */; };
 		55679B4227DEC21A00A0800B /* RefreshControlExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4127DEC21A00A0800B /* RefreshControlExtensionView.swift */; };
-		55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4327DEC88900A0800B /* ScrollViewExtensionView.swift */; };
 		55679B4627DECAAD00A0800B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4527DECAAD00A0800B /* ViewModel.swift */; };
-		55679B4827DECE6700A0800B /* OnRefreshModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4727DECE6700A0800B /* OnRefreshModifier.swift */; };
 		55679B4A27DECEB500A0800B /* ClosureBasedModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4927DECEB500A0800B /* ClosureBasedModifierView.swift */; };
 		55837E2C27E9F4D0009AC069 /* View+Introspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55837E2B27E9F4D0009AC069 /* View+Introspect.swift */; };
 		5583A93C27E0D46400DF9BDF /* AsyncAwaitModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A93B27E0D46400DF9BDF /* AsyncAwaitModifierView.swift */; };
-		5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583A95727E1175800DF9BDF /* RefreshableModifier.swift */; };
 		558C556227E49AE00014D52B /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C556127E49AE00014D52B /* HeaderView.swift */; };
 		559BF2A627E62BCC0029B89E /* TransparentTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559BF2A527E62BCC0029B89E /* TransparentTabView.swift */; };
 		559BF2A827E637BB0029B89E /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B81CB927E37C4500025A4E /* MarqueeView.swift */; };
+		559C800A27F3DC5000F1F426 /* Refreshable in Frameworks */ = {isa = PBXBuildFile; productRef = 559C800927F3DC5000F1F426 /* Refreshable */; };
+		559C800B27F3DD9000F1F426 /* ScrollViewExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55679B4327DEC88900A0800B /* ScrollViewExtensionView.swift */; };
 		55A227CB27E6584900DBBBB3 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A227CA27E6584900DBBBB3 /* TemperatureView.swift */; };
 		55A227CD27E6589600DBBBB3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A227CC27E6589600DBBBB3 /* TitleView.swift */; };
 		55A227D027E658D200DBBBB3 /* AttributesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A227CF27E658D200DBBBB3 /* AttributesView.swift */; };
@@ -163,14 +162,12 @@
 		55679B4127DEC21A00A0800B /* RefreshControlExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControlExtensionView.swift; sourceTree = "<group>"; };
 		55679B4327DEC88900A0800B /* ScrollViewExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExtensionView.swift; sourceTree = "<group>"; };
 		55679B4527DECAAD00A0800B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		55679B4727DECE6700A0800B /* OnRefreshModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnRefreshModifier.swift; sourceTree = "<group>"; };
 		55679B4927DECEB500A0800B /* ClosureBasedModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureBasedModifierView.swift; sourceTree = "<group>"; };
 		558251D427EC8478003A5060 /* UIScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIScrollView.m; sourceTree = "<group>"; };
 		55837E2B27E9F4D0009AC069 /* View+Introspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Introspect.swift"; sourceTree = "<group>"; };
 		5583A93727E0CBCC00DF9BDF /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		5583A93827E0CBCC00DF9BDF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5583A93B27E0D46400DF9BDF /* AsyncAwaitModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitModifierView.swift; sourceTree = "<group>"; };
-		5583A95727E1175800DF9BDF /* RefreshableModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableModifier.swift; sourceTree = "<group>"; };
 		558C556127E49AE00014D52B /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		559BF2A527E62BCC0029B89E /* TransparentTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentTabView.swift; sourceTree = "<group>"; };
 		55A227CA27E6584900DBBBB3 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
@@ -222,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559C800A27F3DC5000F1F426 /* Refreshable in Frameworks */,
 				55A7E24F26F7E1710077936F /* OpenWeather.framework in Frameworks */,
 				55D6299B27DD38B70043188D /* Introspect in Frameworks */,
 			);
@@ -285,7 +283,6 @@
 				551C490924CC690E007C7C03 /* AppDelegate.swift */,
 				551C490B24CC690E007C7C03 /* SceneDelegate.swift */,
 				55A227D727E663C600DBBBB3 /* AppHostingController.swift */,
-				55679B4D27DEDFD000A0800B /* Refreshable */,
 				5550DC0427E754A000CC998B /* Examples */,
 				55F2D61024D1033B00E3BDDF /* Views */,
 				553EBF5B27E3F51800C1B40D /* Extensions */,
@@ -408,15 +405,6 @@
 				55D6299C27DD39070043188D /* IntrospectView.swift */,
 			);
 			path = Prototypes;
-			sourceTree = "<group>";
-		};
-		55679B4D27DEDFD000A0800B /* Refreshable */ = {
-			isa = PBXGroup;
-			children = (
-				55679B4727DECE6700A0800B /* OnRefreshModifier.swift */,
-				5583A95727E1175800DF9BDF /* RefreshableModifier.swift */,
-			);
-			path = Refreshable;
 			sourceTree = "<group>";
 		};
 		55679B4E27DEE05600A0800B /* Deprecated */ = {
@@ -629,6 +617,7 @@
 			name = SwiftUI_Pull_to_Refresh;
 			packageProductDependencies = (
 				55D6299A27DD38B70043188D /* Introspect */,
+				559C800927F3DC5000F1F426 /* Refreshable */,
 			);
 			productName = SwiftUI_Pull_to_Refresh;
 			productReference = 551C490624CC690E007C7C03 /* SwiftUI_Pull_to_Refresh.app */;
@@ -724,6 +713,7 @@
 			mainGroup = 551C48FD24CC690D007C7C03;
 			packageReferences = (
 				55D6299927DD38B60043188D /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				559C800827F3DC5000F1F426 /* XCRemoteSwiftPackageReference "iOS.Package" */,
 			);
 			productRefGroup = 551C490724CC690E007C7C03 /* Products */;
 			projectDirPath = "";
@@ -832,20 +822,18 @@
 				55EF270D27E7A2DD00705D1F /* OpenWeather+Extensions.swift in Sources */,
 				55A227D827E663C600DBBBB3 /* AppHostingController.swift in Sources */,
 				559BF2A627E62BCC0029B89E /* TransparentTabView.swift in Sources */,
-				55679B4427DEC88900A0800B /* ScrollViewExtensionView.swift in Sources */,
 				55A227D227E6590200DBBBB3 /* AttributeView.swift in Sources */,
 				55837E2C27E9F4D0009AC069 /* View+Introspect.swift in Sources */,
 				55AB863727EB9DF60049514E /* BackgroundView.swift in Sources */,
 				55679B4627DECAAD00A0800B /* ViewModel.swift in Sources */,
 				55573BE827EA53D500B130CC /* WeatherListViewModel.swift in Sources */,
-				5583A95827E1175900DF9BDF /* RefreshableModifier.swift in Sources */,
 				553EBF5A27E3F4FE00C1B40D /* Withable.swift in Sources */,
 				558C556227E49AE00014D52B /* HeaderView.swift in Sources */,
-				55679B4827DECE6700A0800B /* OnRefreshModifier.swift in Sources */,
 				55679B4A27DECEB500A0800B /* ClosureBasedModifierView.swift in Sources */,
 				55679B4027DEBBA900A0800B /* RefreshControlClosureView.swift in Sources */,
 				551C490C24CC690E007C7C03 /* SceneDelegate.swift in Sources */,
 				55573BF027EA72EE00B130CC /* TemperatureBarView.swift in Sources */,
+				559C800B27F3DD9000F1F426 /* ScrollViewExtensionView.swift in Sources */,
 				55B756BD27E5458C00FA7BA6 /* PaddingView.swift in Sources */,
 				5583A93C27E0D46400DF9BDF /* AsyncAwaitModifierView.swift in Sources */,
 				55A227DA27E6739100DBBBB3 /* SummaryView.swift in Sources */,
@@ -1287,6 +1275,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		559C800827F3DC5000F1F426 /* XCRemoteSwiftPackageReference "iOS.Package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Geri-Borbas/iOS.Package.Refreshable";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		55D6299927DD38B60043188D /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
@@ -1298,6 +1294,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		559C800927F3DC5000F1F426 /* Refreshable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 559C800827F3DC5000F1F426 /* XCRemoteSwiftPackageReference "iOS.Package" */;
+			productName = Refreshable;
+		};
 		55D6299A27DD38B70043188D /* Introspect */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 55D6299927DD38B60043188D /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;

@@ -1,5 +1,10 @@
 # Changelog
 
+* 1.10.0
+
+	+ Removed `Refreshable` group (and sources)
+	+ Added `Refreshable` package
+
 * Feature/Scroll_speed/0.0.3
 
 	+ `UIScrollView+Extensions`
