@@ -1,5 +1,9 @@
 # Changelog
 
+* 1.10.1
+
+	+ Layout tweak for iPhone 11
+
 * 1.10.0
 
 	+ Removed `Refreshable` group (and sources)

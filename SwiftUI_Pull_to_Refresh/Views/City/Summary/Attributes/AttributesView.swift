@@ -15,7 +15,7 @@ struct AttributesView: View {
 	let uv: String
 	
 	var body: some View {
-		HStack(spacing: 20) {
+		HStack(spacing: spacing) {
 			Spacer()
 			AttributeView(
 				image: "wind",
@@ -38,6 +38,10 @@ struct AttributesView: View {
 			Spacer()
 		}
 		.padding(.vertical, 16)
+	}
+	
+	var spacing: CGFloat {
+		UIScreen.main.bounds.size.width < 390 ? 10 : 20
 	}
 	
 	var humidityImageName: String {
